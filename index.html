@@ -48,7 +48,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
         <a href="#vacancies" class="hover:text-emerald-700 transition">Latest Jobs</a>
         <a href="#cv-service" class="text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200 hover:bg-amber-100 transition flex items-center gap-1.5">
-          <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 295)
+          <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
         </a>
         <a href="#employers" class="hover:text-emerald-700 transition">Employer CV Bank</a>
         <a href="#faq" class="hover:text-emerald-700 transition">FAQs</a>
@@ -73,7 +73,7 @@
           <i class="fas fa-user-check"></i> Register Profile (KES 199 / 6 Mo)
         </a>
         <a href="#cv-service" class="bg-amber-500 text-slate-950 font-black px-6 py-3.5 rounded-xl hover:bg-amber-400 shadow-lg transition flex items-center gap-2 text-sm">
-          <i class="fas fa-file-invoice"></i> Order CV Revamp (KES 295)
+          <i class="fas fa-file-invoice"></i> Order CV Revamp (KES 300)
         </a>
       </div>
       <div class="pt-8 grid grid-cols-3 max-w-lg mx-auto gap-4 border-t border-slate-800 text-center">
@@ -94,7 +94,7 @@
       <a href="#register" class="text-xs font-bold text-emerald-700 hover:underline">Register to apply for all roles &rarr;</a>
     </div>
 
-    <!-- The website automatically places your jobs inside here -->
+    <!-- Job Cards Destination -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="vacanciesContainer"></div>
   </section>
 
@@ -117,8 +117,8 @@
         </div>
         <div class="md:w-1/3 w-full bg-slate-900 text-white rounded-xl p-6 text-center space-y-4 shadow-xl">
           <span class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Standard Fee</span>
-          <div class="text-3xl font-black text-amber-400">KES 295</div>
-          <p class="text-[11px] text-slate-300">Send KES 295 to M-Pesa: <br><strong class="text-emerald-400 text-sm">0708 743 931</strong></p>
+          <div class="text-3xl font-black text-amber-400">KES 300</div>
+          <p class="text-[11px] text-slate-300">Send KES 300 to M-Pesa: <br><strong class="text-emerald-400 text-sm">0708 743 931</strong></p>
           <button onclick="orderCVRevampOnly()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg transition text-xs flex items-center justify-center gap-2">
             <i class="fab fa-whatsapp text-sm"></i> Order via WhatsApp Desk
           </button>
@@ -151,8 +151,8 @@
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Target Destination</label>
             <select id="regDest" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
               <option>Gulf Countries (UAE, Qatar, Saudi)</option>
+              <option>Canada / Europe (Caregivers, Hospitality)</option>
               <option>Both Kenya & Abroad</option>
-              <option>Europe / UK (Caregivers, Hospitality)</option>
               <option>Kenya Local Jobs Only</option>
             </select>
           </div>
@@ -169,13 +169,13 @@
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Main Job Specialization</label>
             <select id="regField" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
-              <option>Security Guard / Watchman</option>
               <option>Driver / Logistics / Heavy Equipment</option>
-              <option>Hospitality / Waiter / Barista / Chef</option>
-              <option>Healthcare / Nursing / Caregiver</option>
-              <option>Construction / Electrical / Plumbing</option>
               <option>Administration / Reception / Cashier</option>
               <option>General Work / Factory</option>
+              <option>Healthcare / Nursing / Caregiver</option>
+              <option>Security Guard / Watchman</option>
+              <option>Construction / Electrical / Plumbing</option>
+              <option>Hospitality / Waiter / Barista / Chef</option>
             </select>
           </div>
         </div>
@@ -188,7 +188,7 @@
             <input type="checkbox" id="cvUpsellCheckbox" onchange="updateTotalPayable()" class="mt-1 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
             <div>
               <span class="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2">
-                Add Professional CV Revamp (+ KES 295)
+                Add Professional CV Revamp (+ KES 300)
                 <span class="bg-amber-200 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded">RECOMMENDED</span>
               </span>
               <p class="text-xs text-slate-600 mt-0.5">Have our specialists redesign your CV into an international ATS standard before presenting to employers.</p>
@@ -202,7 +202,7 @@
         </div>
         <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs space-y-1.5">
           <div class="flex justify-between text-slate-600"><span>6-Month Listing Fee:</span><span class="font-bold text-slate-800">KES 199</span></div>
-          <div id="upsellSummaryRow" class="flex justify-between text-amber-700 hidden"><span>ATS CV Revamp Service:</span><span class="font-bold">KES 295</span></div>
+          <div id="upsellSummaryRow" class="flex justify-between text-amber-700 hidden"><span>ATS CV Revamp Service:</span><span class="font-bold">KES 300</span></div>
           <div class="border-t border-slate-200 pt-2 flex justify-between text-sm font-black text-slate-900"><span>Total Payable via M-Pesa:</span><span id="totalPayableText" class="text-emerald-700 text-base">KES 199</span></div>
         </div>
         <button type="submit" id="submitBtn" class="w-full bg-safaricom text-white font-black py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg flex items-center justify-center gap-2 text-sm">
@@ -237,7 +237,7 @@
           </select>
         </div>
         <button onclick="orderEmployerPass()" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-4 py-2 rounded-lg text-xs transition shadow flex items-center justify-center gap-1.5">
-          <i class="fas fa-key"></i> Unlock 20 Contacts (KES 999)
+          <i class="fas fa-key"></i> Unlock 20 Contacts (KES 1,000)
         </button>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="candidateCardsContainer">
@@ -324,6 +324,16 @@
     <i class="fab fa-whatsapp text-2xl"></i>
   </a>
 
+  <!-- Job Criteria Details Modal -->
+  <div id="jobDetailsModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 max-h-[90vh] overflow-y-auto shadow-2xl relative">
+      <button onclick="closeJobDetailsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="modalJobContent"></div>
+    </div>
+  </div>
+
   <!-- Admin Modal -->
   <div id="adminModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
     <div class="bg-white rounded-2xl max-w-4xl w-full p-6 max-h-[90vh] overflow-y-auto shadow-2xl space-y-5">
@@ -337,6 +347,7 @@
         </div>
         <p id="pinErrorMsg" class="text-xs text-red-500 font-bold hidden">Invalid PIN. Try again.</p>
       </div>
+
       <div id="adminPanelView" class="hidden space-y-5">
         <div class="flex flex-wrap justify-between items-center border-b border-slate-200 pb-3 gap-2">
           <div>
@@ -370,208 +381,197 @@
 
   <script>
     /* =====================================================================
-       EASY JOBS LIST: EDIT, ADD, OR CLOSE YOUR JOBS RIGHT HERE!
-       ---------------------------------------------------------------------
-       - To close a job that is already taken: change active: true to active: false
-       - To remove a job completely: just delete its block
-       - To add a new job: copy an existing block and fill in the details
+       ALL 10 VACANCIES (6 KENYA COUNTIES + 4 INTERNATIONAL)
        ===================================================================== */
-const MY_JOBS = [
-  /* ==========================================
-     KENYA LOCAL OPPORTUNITIES (6 COUNTIES)
-     ========================================== */
-  {
-    id: 1,
-    title: "Branch Logistics & Fleet Driver (4 Posts)",
-    location: "Mombasa County",
-    salary: "KES 42,000 - 55,000/mo",
-    deadline: "20 November 2026",
-    education: "KCSE Certificate",
-    experience: "3+ years commercial driving along Coastal / Upcountry routes",
-    requirements: [
-      "Valid NTSA Class BCE / Commercial driving license",
-      "Valid PSV badge and clean defensive driving record",
-      "Certificate of Good Conduct from DCI (valid)",
-      "Knowledge of Mombasa port clearance and transit routes"
-    ],
-    benefits: "Overtime allowances, NHIF/NSSF statutory benefits, medical cover.",
-    category: "Driver / Logistics / Heavy Equipment",
-    active: true
-  },
-  {
-    id: 2,
-    title: "Store Supervisor & Inventory Clerk (2 Posts)",
-    location: "Nairobi County (Industrial Area)",
-    salary: "KES 45,000 - 60,000/mo",
-    deadline: "18 November 2026",
-    education: "Diploma in Procurement, Supplies or Business Administration",
-    experience: "Minimum 2 years in fast-paced warehouse or retail FMCG",
-    requirements: [
-      "Proficiency with ERP, QuickBooks, or MS Excel inventory tracking",
-      "Strong reconciliation and stock audit skills",
-      "Clear police clearance certificate",
-      "Ability to supervise store attendants and offloading teams"
-    ],
-    benefits: "Performance bonuses, medical cover, annual leave allowance.",
-    category: "Administration / Reception / Cashier",
-    active: true
-  },
-  {
-    id: 3,
-    title: "Tea & Horticulture Field Supervisor (3 Posts)",
-    location: "Kericho County",
-    salary: "KES 38,000 - 50,000/mo",
-    deadline: "25 November 2026",
-    education: "Certificate or Diploma in General Agriculture / Horticulture",
-    experience: "2 years supervising plantation or greenhouse field teams",
-    requirements: [
-      "Experience monitoring crop yield and field labor outputs",
-      "Basic understanding of agricultural health & OSHA guidelines",
-      "Strong leadership and Swahili/English communication",
-      "Willingness to reside on-site at company plantation"
-    ],
-    benefits: "Free farm accommodation, utility subsidy, production bonuses.",
-    category: "General Work / Factory",
-    active: true
-  },
-  {
-    id: 4,
-    title: "Registered Community Nurse / Care Assistant (5 Posts)",
-    location: "Kisumu County",
-    salary: "KES 50,000 - 68,000/mo",
-    deadline: "22 November 2026",
-    education: "KRCHN Diploma in Community Health Nursing",
-    experience: "1–2 years bedside nursing or clinical outreach",
-    requirements: [
-      "Valid practicing license from Nursing Council of Kenya (NCK)",
-      "Basic Life Support (BLS) / First Aid certification",
-      "Patient triage and medication administration experience",
-      "Compassionate bedside demeanor and record-keeping skills"
-    ],
-    benefits: "Comprehensive inpatient/outpatient cover, shift allowances.",
-    category: "Healthcare / Nursing / Caregiver",
-    active: true
-  },
-  {
-    id: 5,
-    title: "Commercial Site Security Officers (10 Posts)",
-    location: "Nakuru County",
-    salary: "KES 28,000 - 36,000/mo",
-    deadline: "16 November 2026",
-    education: "KCSE Certificate (Mean Grade D+ or higher)",
-    experience: "Minimum 1 year in private security guarding or perimeter watch",
-    requirements: [
-      "Valid Certificate of Good Conduct (DCI)",
-      "Height: Minimum 5'8\" (Men), 5'4\" (Women)",
-      "Clean record with no previous criminal convictions",
-      "Physical fitness certificate from a recognized clinic"
-    ],
-    benefits: "Full uniform provided, statutory NSSF/NHIF, night shift meal allowance.",
-    category: "Security Guard / Watchman",
-    active: true
-  },
-  {
-    id: 6,
-    title: "Electrical & Plant Maintenance Technician (2 Posts)",
-    location: "Kiambu County (Thika)",
-    salary: "KES 48,000 - 65,000/mo",
-    deadline: "28 November 2026",
-    education: "Diploma / TVET Certificate in Electrical Engineering (NITA Grade I/II)",
-    experience: "2+ years troubleshooting industrial factory machinery",
-    requirements: [
-      "EPRA certification (Class C2 or higher is preferred)",
-      "Strong diagnostic ability in single & 3-phase motor controls",
-      "Safety mindset following lock-out/tag-out (LOTO) protocols",
-      "Flexible to work day and night shift rotations"
-    ],
-    benefits: "Transport allowance, tool allowance, annual safety bonuses.",
-    category: "Construction / Electrical / Plumbing",
-    active: true
-  },
+    const MY_JOBS = [
+      {
+        id: 1,
+        title: "Branch Logistics & Fleet Driver (4 Posts)",
+        location: "Mombasa County",
+        salary: "KES 42,000 - 55,000/mo",
+        deadline: "20 November 2026",
+        education: "KCSE Certificate",
+        experience: "3+ years commercial driving along Coastal routes",
+        requirements: [
+          "Valid NTSA Class BCE / Commercial driving license",
+          "Valid PSV badge and clean defensive driving record",
+          "Certificate of Good Conduct from DCI (valid)",
+          "Knowledge of Mombasa port clearance and transit routes"
+        ],
+        benefits: "Overtime allowances, NHIF/NSSF statutory benefits, medical cover.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 2,
+        title: "Store Supervisor & Inventory Clerk (2 Posts)",
+        location: "Nairobi County (Industrial Area)",
+        salary: "KES 45,000 - 60,000/mo",
+        deadline: "18 November 2026",
+        education: "Diploma in Procurement, Supplies or Business Administration",
+        experience: "Minimum 2 years in fast-paced warehouse or retail FMCG",
+        requirements: [
+          "Proficiency with ERP, QuickBooks, or MS Excel inventory tracking",
+          "Strong reconciliation and stock audit skills",
+          "Clear police clearance certificate",
+          "Ability to supervise store attendants and offloading teams"
+        ],
+        benefits: "Performance bonuses, medical cover, annual leave allowance.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 3,
+        title: "Tea & Horticulture Field Supervisor (3 Posts)",
+        location: "Kericho County",
+        salary: "KES 38,000 - 50,000/mo",
+        deadline: "25 November 2026",
+        education: "Certificate or Diploma in General Agriculture / Horticulture",
+        experience: "2 years supervising plantation or greenhouse field teams",
+        requirements: [
+          "Experience monitoring crop yield and field labor outputs",
+          "Basic understanding of agricultural health & OSHA guidelines",
+          "Strong leadership and Swahili/English communication",
+          "Willingness to reside on-site at company plantation"
+        ],
+        benefits: "Free farm accommodation, utility subsidy, production bonuses.",
+        category: "General Work / Factory",
+        active: true
+      },
+      {
+        id: 4,
+        title: "Registered Community Nurse / Care Assistant (5 Posts)",
+        location: "Kisumu County",
+        salary: "KES 50,000 - 68,000/mo",
+        deadline: "22 November 2026",
+        education: "KRCHN Diploma in Community Health Nursing",
+        experience: "1–2 years bedside nursing or clinical outreach",
+        requirements: [
+          "Valid practicing license from Nursing Council of Kenya (NCK)",
+          "Basic Life Support (BLS) / First Aid certification",
+          "Patient triage and medication administration experience",
+          "Compassionate bedside demeanor and record-keeping skills"
+        ],
+        benefits: "Comprehensive inpatient/outpatient cover, shift allowances.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      },
+      {
+        id: 5,
+        title: "Commercial Site Security Officers (10 Posts)",
+        location: "Nakuru County",
+        salary: "KES 28,000 - 36,000/mo",
+        deadline: "16 November 2026",
+        education: "KCSE Certificate (Mean Grade D+ or higher)",
+        experience: "Minimum 1 year in private security guarding or perimeter watch",
+        requirements: [
+          "Valid Certificate of Good Conduct (DCI)",
+          "Height: Minimum 5'8\" (Men), 5'4\" (Women)",
+          "Clean record with no previous criminal convictions",
+          "Physical fitness certificate from a recognized clinic"
+        ],
+        benefits: "Full uniform provided, statutory NSSF/NHIF, night shift meal allowance.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
+      {
+        id: 6,
+        title: "Electrical & Plant Maintenance Technician (2 Posts)",
+        location: "Kiambu County (Thika)",
+        salary: "KES 48,000 - 65,000/mo",
+        deadline: "28 November 2026",
+        education: "Diploma / TVET Certificate in Electrical Engineering (NITA Grade I/II)",
+        experience: "2+ years troubleshooting industrial factory machinery",
+        requirements: [
+          "EPRA certification (Class C2 or higher is preferred)",
+          "Strong diagnostic ability in single & 3-phase motor controls",
+          "Safety mindset following lock-out/tag-out (LOTO) protocols",
+          "Flexible to work day and night shift rotations"
+        ],
+        benefits: "Transport allowance, tool allowance, annual safety bonuses.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      {
+        id: 7,
+        title: "Hotel Waiters, Baristas & Stewards (15 Posts)",
+        location: "Dubai, UAE",
+        salary: "KES 75,000 - 95,000/mo",
+        deadline: "24 November 2026",
+        education: "KCSE Certificate / Hospitality Training",
+        experience: "1+ year customer-facing hospitality service",
+        requirements: [
+          "Valid Kenyan Passport (validity of 1+ year minimum)",
+          "Fluent spoken English (confident conversational ability)",
+          "Pleasant grooming with no visible tattoos",
+          "GAMCA medical clearance fitness"
+        ],
+        benefits: "Free 2-year work visa, round-trip flight ticket, accommodation, transport & meals.",
+        category: "Hospitality / Waiter / Barista / Chef",
+        active: true
+      },
+      {
+        id: 8,
+        title: "Event & Perimeter Security Guards (25 Posts)",
+        location: "Doha, Qatar",
+        salary: "KES 70,000 - 90,000/mo",
+        deadline: "26 November 2026",
+        education: "KCSE Certificate",
+        experience: "1–2 years security, NYS training, or disciplinary forces background",
+        requirements: [
+          "Valid Kenyan Passport ready for visa stamping",
+          "Valid Certificate of Good Conduct (issued within last 6 months)",
+          "Height: 5'9\"+ (Men), 5'5\"+ (Women)",
+          "Medically and physically fit for shift work"
+        ],
+        benefits: "Free employment visa, return air tickets, air-conditioned accommodation, uniform, and medical insurance.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
+      {
+        id: 9,
+        title: "Heavy Equipment & Plant Operators (10 Posts)",
+        location: "Riyadh & NEOM, Saudi Arabia",
+        salary: "KES 85,000 - 120,000/mo",
+        deadline: "30 November 2026",
+        education: "Trade Test Certificate / KCSE",
+        experience: "3+ years operating Excavators, Bulldozers, or Heavy Trucks",
+        requirements: [
+          "Valid Kenyan commercial driving license with heavy machinery endorsement",
+          "Valid Kenyan Passport",
+          "GAMCA medical fitness certificate",
+          "Ability to understand basic technical English operating manuals"
+        ],
+        benefits: "Free visa, flight tickets, camp accommodation, food provided, overtime pay, and medical coverage.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 10,
+        title: "Certified Home Caregiver / Elderly Care Aide (6 Posts)",
+        location: "Ontario & Alberta, Canada",
+        salary: "KES 240,000 - 320,000/mo",
+        deadline: "05 December 2026",
+        education: "Certificate or Diploma in Nursing, Community Health, or Caregiving",
+        experience: "Minimum 2 years verifiable elderly or palliative patient care",
+        requirements: [
+          "Valid Kenyan International Passport",
+          "Certified Caregiver course credentials or Nursing registration",
+          "IELTS General Training test (CLB 5 minimum score)",
+          "Clean police clearance and comprehensive medical examination"
+        ],
+        benefits: "Legal Canadian work permit sponsorship pathway, health coverage under provincial insurance, paid annual vacation.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      }
+    ];
 
-  /* ==========================================
-     INTERNATIONAL ROLES (GULF & CANADA)
-     ========================================== */
-  {
-    id: 7,
-    title: "Hotel Waiters, Baristas & Stewards (15 Posts)",
-    location: "Dubai, UAE",
-    salary: "KES 75,000 - 95,000/mo (AED 2,200 - 2,800)",
-    deadline: "24 November 2026",
-    education: "KCSE Certificate / Hospitality Training",
-    experience: "1+ year customer-facing hospitality or restaurant service",
-    requirements: [
-      "Valid Kenyan Passport (validity of 1+ year minimum)",
-      "Fluent spoken English (confident conversational ability)",
-      "Pleasant grooming with no visible tattoos",
-      "GAMCA medical clearance fitness"
-    ],
-    benefits: "Free 2-year work visa, round-trip flight ticket, free accommodation, company transport & daily duty meals.",
-    category: "Hospitality / Waiter / Barista / Chef",
-    active: true
-  },
-  {
-    id: 8,
-    title: "Event & Perimeter Security Guards (25 Posts)",
-    location: "Doha, Qatar",
-    salary: "KES 70,000 - 90,000/mo (QAR 2,000 - 2,500)",
-    deadline: "26 November 2026",
-    education: "KCSE Certificate",
-    experience: "1–2 years security, NYS training, or disciplinary forces background",
-    requirements: [
-      "Valid Kenyan Passport ready for visa stamping",
-      "Valid Certificate of Good Conduct (issued within last 6 months)",
-      "Height: 5'9\"+ (Men), 5'5\"+ (Women)",
-      "Medically and physically fit for shift work"
-    ],
-    benefits: "Free employment visa, return air tickets every 2 years, air-conditioned accommodation, uniform, and medical insurance.",
-    category: "Security Guard / Watchman",
-    active: true
-  },
-  {
-    id: 9,
-    title: "Heavy Equipment & Plant Operators (10 Posts)",
-    location: "Riyadh & NEOM, Saudi Arabia",
-    salary: "KES 85,000 - 120,000/mo (SAR 2,500 - 3,500)",
-    deadline: "30 November 2026",
-    education: "Trade Test Certificate / KCSE",
-    experience: "3+ years operating Excavators, Bulldozers, or Heavy Trucks",
-    requirements: [
-      "Valid Kenyan commercial driving license with heavy machinery endorsement",
-      "Valid Kenyan Passport",
-      "GAMCA medical fitness certificate",
-      "Ability to understand basic technical English operating manuals"
-    ],
-    benefits: "Free visa, flight tickets, camp accommodation, food provided, overtime pay, and medical coverage.",
-    category: "Driver / Logistics / Heavy Equipment",
-    active: true
-  },
-  {
-    id: 10,
-    title: "Certified Home Caregiver / Elderly Care Aide (6 Posts)",
-    location: "Ontario & Alberta, Canada",
-    salary: "KES 240,000 - 320,000/mo (CAD $18 - $23/hr)",
-    deadline: "05 December 2026",
-    education: "Certificate or Diploma in Nursing, Community Health, or Caregiving",
-    experience: "Minimum 2 years verifiable elderly or palliative patient care",
-    requirements: [
-      "Valid Kenyan International Passport",
-      "Certified Caregiver course credentials or Nursing registration",
-      "IELTS General Training test (CLB 5 minimum score)",
-      "Clean police clearance and comprehensive medical examination"
-    ],
-    benefits: "Legal Canadian work permit sponsorship pathway, health coverage under provincial insurance, paid annual vacation.",
-    category: "Healthcare / Nursing / Caregiver",
-    active: true
-  }
-];
-
-    // AUTOMATIC JOB CARD RENDERER
+    // RENDER VACANCIES FUNCTION
     function renderJobs() {
       const container = document.getElementById("vacanciesContainer");
       if (!container) return;
 
-      container.innerHTML = MY_JOBS.map(job => {
+      container.innerHTML = MY_JOBS.map((job, index) => {
         const isClosed = (job.active === false);
         return `
           <div class="bg-white p-5 rounded-xl border ${isClosed ? 'border-slate-300 opacity-60 bg-slate-50' : 'border-slate-200'} shadow-sm space-y-3 flex flex-col justify-between">
@@ -587,26 +587,99 @@ const MY_JOBS = [
               <h3 class="font-bold text-slate-900 ${isClosed ? 'line-through text-slate-500' : ''}">
                 ${job.title}
               </h3>
-              <p class="text-xs text-slate-500">${job.details}</p>
+              <p class="text-xs text-slate-500">
+                <i class="far fa-calendar-alt text-amber-600 mr-1"></i> Deadline: <strong class="text-slate-700">${job.deadline}</strong>
+              </p>
             </div>
-            ${isClosed ? `
-              <div class="w-full text-center bg-slate-200 text-slate-600 font-bold py-2 rounded-lg text-xs cursor-not-allowed">
-                <i class="fas fa-ban mr-1"></i> Position Filled / Closed
-              </div>
-            ` : `
-              <button onclick="applyForRole('${job.category}')" class="w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2 rounded-lg text-xs transition">
-                Apply via Profile
+
+            <div class="pt-2 flex flex-col gap-2">
+              <button onclick="openJobDetailsModal(${index})" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 rounded-lg text-xs transition border border-slate-300 flex items-center justify-center gap-1.5">
+                <i class="fas fa-eye text-emerald-700"></i> View Requirements & Details
               </button>
-            `}
+              ${isClosed ? `
+                <div class="w-full text-center bg-slate-200 text-slate-600 font-bold py-2 rounded-lg text-xs cursor-not-allowed">
+                  <i class="fas fa-ban mr-1"></i> Position Filled / Closed
+                </div>
+              ` : `
+                <button onclick="applyForRole('${job.category}')" class="w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-lg text-xs transition">
+                  Apply via Profile
+                </button>
+              `}
+            </div>
           </div>
         `;
       }).join('');
     }
 
-    // Call right away when the page loads
+    // MODAL CONTROL
+    function openJobDetailsModal(index) {
+      const job = MY_JOBS[index];
+      if (!job) return;
+
+      const reqListHtml = (job.requirements || []).map(r => `
+        <li class="flex items-start gap-2 text-xs text-slate-700">
+          <i class="fas fa-check-circle text-emerald-600 mt-0.5 flex-shrink-0"></i>
+          <span>${r}</span>
+        </li>
+      `).join('');
+
+      document.getElementById("modalJobContent").innerHTML = `
+        <div class="space-y-4">
+          <div class="border-b border-slate-200 pb-3">
+            <div class="flex justify-between items-start gap-2">
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">
+                ${job.location}
+              </span>
+              <span class="text-emerald-700 font-bold text-sm">${job.salary}</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900 mt-2">${job.title}</h3>
+            <p class="text-xs text-amber-700 font-semibold mt-1">
+              <i class="far fa-clock mr-1"></i> Application Deadline: ${job.deadline}
+            </p>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div>
+              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-400">Education Level</span>
+              <p class="text-slate-700 font-medium">${job.education}</p>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-400">Experience Required</span>
+              <p class="text-slate-700 font-medium">${job.experience}</p>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-400 mb-1">Mandatory Requirements</span>
+              <ul class="space-y-1.5">${reqListHtml}</ul>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+              <span class="font-bold text-emerald-900 block uppercase text-[10px] mb-0.5">Employer Provided Benefits</span>
+              <p class="text-emerald-800 text-xs">${job.benefits}</p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-200 flex gap-2">
+            <button onclick="closeJobDetailsModal(); applyForRole('${job.category}');" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-lg text-xs transition flex items-center justify-center gap-1.5">
+              <i class="fas fa-file-signature"></i> Apply with 6-Mo Profile
+            </button>
+            <button onclick="closeJobDetailsModal()" class="px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2.5 rounded-lg text-xs transition">
+              Close
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("jobDetailsModal").classList.remove("hidden");
+    }
+
+    function closeJobDetailsModal() {
+      document.getElementById("jobDetailsModal").classList.add("hidden");
+    }
+
+    // Run automatically when the webpage loads
+    document.addEventListener("DOMContentLoaded", renderJobs);
     renderJobs();
 
-    // Standard Numbers and Admin Passcode
+    // Numbers & Passcode
     const MPESA_PAYMENT_LINE = "0708 743 931";
     const WHATSAPP_DESK_NUMBER = "254739658520";
     const ADMIN_PASSCODE = "7439";
