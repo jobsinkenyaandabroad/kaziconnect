@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jobs in Kenya & Abroad | Official Recruitment & CV Portal</title>
+  <title>Jobs in Kenya & Abroad | Verified Jobs & Workers Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -22,11 +22,11 @@
         <span class="inline-flex items-center justify-center w-5 h-5 bg-blue-600 rounded-full text-white text-[11px]">
           <i class="fab fa-facebook-f"></i>
         </span>
-        <span>Official Portal of our <strong>14,000+ Followers</strong> Facebook Community</span>
+        <span>Official Community: <strong>13,000+ Followers</strong> • Verified Jobs & Talent Hub</span>
       </div>
       <div class="flex items-center gap-4 text-xs">
         <span class="hidden sm:inline text-slate-300">
-          <i class="fas fa-money-bill-wave text-emerald-400 mr-1"></i> M-Pesa Pay: <strong>0708 743 931</strong>
+          <i class="fas fa-money-bill-wave text-emerald-400 mr-1"></i> M-Pesa: <strong>0708 743 931</strong>
         </span>
         <a href="https://wa.me/254739658520?text=Hello%20Admin,%20inquiry%20from%20Jobs%20Kenya%20website" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded font-semibold transition flex items-center gap-1.5 shadow-sm">
           <i class="fab fa-whatsapp"></i> WhatsApp Desk: <strong>0739 658 520</strong>
@@ -35,79 +35,225 @@
     </div>
   </div>
 
-  <!-- Main Navigation -->
+  <!-- Main Header -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-black text-xl shadow">K</div>
         <div>
           <span class="text-lg font-black tracking-tight text-slate-900 block leading-tight">KaziKenya<span class="text-emerald-600">&Abroad</span></span>
-          <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Recruitment & CV Hub</span>
+          <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Verified Jobs & Workers Platform</span>
         </div>
       </div>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
-        <a href="#vacancies" class="hover:text-emerald-700 transition">November Openings</a>
-        <a href="#cv-service" class="text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200 hover:bg-amber-100 transition flex items-center gap-1.5">
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-600">
+        <a href="#vacancies" class="hover:text-emerald-700 transition">Find Jobs</a>
+        <a href="#employers" class="hover:text-emerald-700 transition">Verified Workers</a>
+        <a href="#cv-service" class="text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 hover:bg-amber-100 transition flex items-center gap-1">
           <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
         </a>
-        <a href="#employers" class="hover:text-emerald-700 transition">Employer CV Bank</a>
-        <a href="#faq" class="hover:text-emerald-700 transition">FAQs</a>
-        <a href="#register" class="bg-emerald-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-emerald-700 transition shadow">Register Profile (KES 199)</a>
+        <a href="#register" class="bg-emerald-600 text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-emerald-700 transition shadow">Get Listed (KES 199)</a>
         <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 text-xs flex items-center gap-1"><i class="fas fa-lock"></i> Admin</button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-16 px-4">
+  <!-- Hero Section with Search Bar (Borrowed from VerifiedWorkers) -->
+  <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4">
     <div class="max-w-4xl mx-auto text-center space-y-5">
-      <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-300">
-        <i class="fas fa-shield-alt"></i> Backed by 13,000+ Job Seekers & Verified Employers
+      <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-semibold text-emerald-300">
+        <i class="fas fa-check-double"></i> Kenya's Verified Jobs & Workers Directory
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya, Gulf & Overseas</h1>
-      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-        Updated for <strong>November</strong>. List your CV for 6 continuous months in front of hiring agencies, or get an ATS-optimized international CV delivered straight to your WhatsApp for just KES 300.
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Find Verified Jobs or Hire Vetted Talent</h1>
+      <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto">
+        Search vacancies by Kenyan county or international destination. Connect directly or register your verified profile for recruiters.
       </p>
-      <div class="flex flex-wrap justify-center gap-3 pt-3">
-        <a href="#register" class="bg-safaricom text-white font-black px-6 py-3.5 rounded-xl hover:bg-emerald-600 shadow-lg transition flex items-center gap-2 text-sm">
-          <i class="fas fa-user-check"></i> Register Profile (KES 199 / 6 Mo)
-        </a>
-        <a href="#cv-service" class="bg-amber-500 text-slate-950 font-black px-6 py-3.5 rounded-xl hover:bg-amber-400 shadow-lg transition flex items-center gap-2 text-sm">
-          <i class="fas fa-file-invoice"></i> Order CV Revamp (KES 300)
-        </a>
+
+      <!-- Dynamic Live Search Form -->
+      <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row gap-2 text-slate-800">
+        <div class="flex-1 flex items-center px-3 gap-2">
+          <i class="fas fa-search text-slate-400"></i>
+          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Job title, trade, or keyword (e.g. Driver, Nurse, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
+        </div>
+        <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+          Search Jobs
+        </button>
       </div>
-      <div class="pt-8 grid grid-cols-3 max-w-lg mx-auto gap-4 border-t border-slate-800 text-center">
-        <div><div class="text-xl sm:text-2xl font-black text-emerald-400">14,000+</div><div class="text-[11px] text-slate-400 uppercase font-medium">Followers</div></div>
-        <div><div class="text-xl sm:text-2xl font-black text-amber-400">KES 199</div><div class="text-[11px] text-slate-400 uppercase font-medium">6 Months Listing</div></div>
-        <div><div class="text-xl sm:text-2xl font-black text-emerald-400">24-48 Hrs</div><div class="text-[11px] text-slate-400 uppercase font-medium">CV Turnaround</div></div>
+
+      <!-- County / Destination Quick Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-1.5 pt-2 text-xs">
+        <span class="text-slate-400 self-center text-[11px] mr-1 hidden sm:inline">Popular:</span>
+        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All</button>
+        <button onclick="setFilterLocation('Nairobi')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Nairobi</button>
+        <button onclick="setFilterLocation('Mombasa')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Mombasa</button>
+        <button onclick="setFilterLocation('Kiambu')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Thika / Kiambu</button>
+        <button onclick="setFilterLocation('Dubai')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Dubai (UAE)</button>
+        <button onclick="setFilterLocation('Qatar')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Qatar</button>
+        <button onclick="setFilterLocation('Canada')" class="bg-blue-900/60 border border-blue-500/40 px-3 py-1 rounded-full text-blue-300 font-medium text-[11px] transition">Canada</button>
       </div>
     </div>
   </section>
 
-  <!-- Vacancies Section -->
+  <!-- Companies Hiring Section (Borrowed from VerifiedJobs) -->
+  <section class="py-8 bg-white border-b border-slate-200 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-4">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Trusted Employers & Hiring Partners</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-600 font-bold text-xs sm:text-sm">
+        <span class="flex items-center gap-2"><i class="fas fa-university text-emerald-700"></i> Co-operative Bank</span>
+        <span class="flex items-center gap-2"><i class="fas fa-car text-blue-700"></i> AutoXpress</span>
+        <span class="flex items-center gap-2"><i class="fas fa-plane-departure text-red-600"></i> Kenya Airways Pride</span>
+        <span class="flex items-center gap-2"><i class="fas fa-industry text-amber-700"></i> Twyford Tile</span>
+        <span class="flex items-center gap-2"><i class="fas fa-headset text-purple-700"></i> Teleperformance</span>
+        <span class="flex items-center gap-2"><i class="fas fa-city text-indigo-700"></i> Rentalle PropTech</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vacancies Grid with Real-Time Filter -->
   <section id="vacancies" class="py-12 px-4 max-w-6xl mx-auto">
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-3">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-2">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Verified Opportunities</span>
-        <h2 class="text-2xl font-extrabold text-slate-900">Featured Openings (November)</h2>
-        <p class="text-xs text-slate-500 mt-1">Tap "View Details & Requirements" for application contacts, qualification levels, and deadlines.</p>
+        <h2 class="text-2xl font-black text-slate-900">Featured Openings (November)</h2>
       </div>
-      <a href="#register" class="text-xs font-bold text-emerald-700 hover:underline">Register to apply for all roles &rarr;</a>
+      <div class="text-xs text-slate-500" id="jobCountDisplay">Showing all jobs</div>
     </div>
 
-    <!-- Job Cards Auto-Populated Here -->
+    <!-- Container for dynamic job cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="vacanciesContainer"></div>
   </section>
 
-  <!-- CV Service Section -->
+  <!-- Verified Workers Section (Borrowed from VerifiedWorkers.co.ke) -->
+  <section id="employers" class="py-14 bg-slate-100 px-4 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto space-y-6">
+      <div class="text-center max-w-xl mx-auto">
+        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">For Employers & Contractors</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Browse Verified Workers in Kenya</h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+          Pre-vetted workers with police clearance and verified identification. Unlock 20 verified candidate contacts for KES 1,000.
+        </p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-wrap gap-3 items-center justify-between">
+        <div class="flex flex-wrap gap-2 w-full sm:w-auto">
+          <select id="empFilterField" onchange="filterCandidateBank()" class="text-xs border border-slate-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-600 bg-white font-medium">
+            <option value="all">All Trades & Skills</option>
+            <option value="Security">Security Guard</option>
+            <option value="Driver">Driver / Logistics</option>
+            <option value="Healthcare">Healthcare / Nurse</option>
+            <option value="Hospitality">Hospitality / Chef</option>
+            <option value="Construction">Construction / Fundi</option>
+          </select>
+          <select id="empFilterPassport" onchange="filterCandidateBank()" class="text-xs border border-slate-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-600 bg-white font-medium">
+            <option value="all">All Locations / Statuses</option>
+            <option value="Ready">Passport Ready (Gulf / Abroad)</option>
+            <option value="Kenya">Kenya Local Ready</option>
+          </select>
+        </div>
+        <button onclick="orderEmployerPass()" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-4 py-2 rounded-lg text-xs transition shadow flex items-center justify-center gap-1.5">
+          <i class="fas fa-key"></i> Unlock 20 Verified Contacts (KES 1,000)
+        </button>
+      </div>
+
+      <!-- Verified Worker Badged Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="candidateCardsContainer">
+        <!-- Worker 1 -->
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3 relative overflow-hidden" data-field="Security" data-passport="Ready">
+          <div class="flex justify-between items-start">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">JM</div>
+              <div>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                  John M. 
+                  <span class="text-blue-600 text-xs" title="Verified ID & Good Conduct"><i class="fas fa-check-circle"></i></span>
+                </h3>
+                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Nairobi • Security Guard</span>
+              </div>
+            </div>
+            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-600 pt-1">
+            <div><strong class="text-slate-800">Experience:</strong> 4 Years Commercial Security</div>
+            <div><strong class="text-slate-800">Expected Salary:</strong> KES 30,000 – 40,000/mo</div>
+            <div><strong class="text-slate-800">Status:</strong> Passport Ready • Clean DCI Certificate</div>
+          </div>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">
+            Tel: +254 712 345 *** | M-Pesa ID: Verified
+          </div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">
+            Unlock Verified Phone & CV
+          </button>
+        </div>
+
+        <!-- Worker 2 -->
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3 relative overflow-hidden" data-field="Healthcare" data-passport="Ready">
+          <div class="flex justify-between items-start">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-sm">FW</div>
+              <div>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                  Faith W. 
+                  <span class="text-blue-600 text-xs" title="Verified Nursing Credentials"><i class="fas fa-check-circle"></i></span>
+                </h3>
+                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Mombasa • Caregiver / Nurse</span>
+              </div>
+            </div>
+            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-600 pt-1">
+            <div><strong class="text-slate-800">Experience:</strong> 3 Years Bedside & Homecare</div>
+            <div><strong class="text-slate-800">Expected Salary:</strong> KES 50,000 – 70,000/mo</div>
+            <div><strong class="text-slate-800">Status:</strong> UK / Gulf Ready • BLS Certified</div>
+          </div>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">
+            Tel: +254 722 890 *** | Nursing Lic: Verified
+          </div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">
+            Unlock Verified Phone & CV
+          </button>
+        </div>
+
+        <!-- Worker 3 -->
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3 relative overflow-hidden" data-field="Driver" data-passport="Kenya">
+          <div class="flex justify-between items-start">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-sm">DK</div>
+              <div>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                  David K. 
+                  <span class="text-blue-600 text-xs" title="Verified NTSA BCE Badge"><i class="fas fa-check-circle"></i></span>
+                </h3>
+                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Nakuru • Commercial Driver</span>
+              </div>
+            </div>
+            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-600 pt-1">
+            <div><strong class="text-slate-800">Experience:</strong> 7 Years Transit & BCE Heavy Truck</div>
+            <div><strong class="text-slate-800">Expected Salary:</strong> KES 45,000 – 60,000/mo</div>
+            <div><strong class="text-slate-800">Status:</strong> Clean NTSA Record • PSV Badge</div>
+          </div>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">
+            Tel: +254 733 456 *** | License: Verified
+          </div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">
+            Unlock Verified Phone & CV
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Revamp Section -->
   <section id="cv-service" class="py-12 px-4 bg-amber-50/60 border-y border-amber-200">
     <div class="max-w-5xl mx-auto">
       <div class="bg-white rounded-2xl shadow border border-amber-200 p-6 sm:p-8 flex flex-col md:flex-row items-center gap-8">
         <div class="md:w-2/3 space-y-3">
-          <div class="inline-block bg-amber-100 text-amber-900 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Fast Track Service • Delivered to WhatsApp</div>
+          <div class="inline-block bg-amber-100 text-amber-900 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Fast Track Service • Delivered via WhatsApp</div>
           <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Professional ATS CV Revamp (KES 300 Only)</h2>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Kenyan corporate employers and overseas Gulf agencies (UAE, Qatar, Saudi Arabia, Canada) use Applicant Tracking Systems (ATS) that auto-reject unstructured CVs. Get your CV restructured into clean achievement bullets and delivered to your WhatsApp in both editable Word & PDF formats.
+            Kenyan corporate employers and overseas Gulf agencies use Applicant Tracking Systems (ATS) that auto-reject unstructured CVs. Get your CV restructured into clean achievement bullets and delivered to your WhatsApp in both editable Word & PDF formats.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-700 pt-2">
             <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Gulf & Canadian ATS standard</div>
@@ -129,13 +275,13 @@
     </div>
   </section>
 
-  <!-- Registration Form -->
+  <!-- Job Seeker Registration -->
   <section id="register" class="py-14 px-4">
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-10">
       <div class="text-center pb-6 border-b border-slate-100">
         <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Candidate Enrollment</span>
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">6-Month Profile Registration</h2>
-        <p class="text-xs sm:text-sm text-slate-500 mt-1">Make your profile visible to verified recruiting employers across Kenya, UAE, Qatar, Saudi Arabia, and Canada.</p>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Get indexed in our verified candidate directory for registered employers across Kenya and abroad.</p>
       </div>
 
       <form id="candidateForm" onsubmit="handleRegistrationSubmit(event)" class="mt-6 space-y-4">
@@ -192,7 +338,7 @@
                 Add Professional CV Revamp (+ KES 300)
                 <span class="bg-amber-200 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded">RECOMMENDED</span>
               </span>
-              <p class="text-xs text-slate-600 mt-0.5">Have our team format and standardize your CV into an international ATS standard before submitting.</p>
+              <p class="text-xs text-slate-600 mt-0.5">Have our specialists redesign your CV into an international ATS standard before submitting.</p>
             </div>
           </label>
         </div>
@@ -213,119 +359,7 @@
     </div>
   </section>
 
-  <!-- Employer CV Bank -->
-  <section id="employers" class="py-14 bg-slate-100 px-4 border-t border-slate-200">
-    <div class="max-w-6xl mx-auto space-y-6">
-      <div class="text-center max-w-xl mx-auto">
-        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">For Recruiters & Agencies</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Search Verified Candidate CV Bank</h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-1">Filter candidates and unlock 20 verified profiles with direct contacts for KES 1,000.</p>
-      </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-wrap gap-3 items-center justify-between">
-        <div class="flex flex-wrap gap-2 w-full sm:w-auto">
-          <select id="empFilterField" onchange="filterCandidateBank()" class="text-xs border border-slate-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-600 bg-white">
-            <option value="all">All Fields</option>
-            <option value="Security">Security Guard</option>
-            <option value="Driver">Driver / Logistics</option>
-            <option value="Healthcare">Healthcare / Nurse</option>
-            <option value="Hospitality">Hospitality / Chef</option>
-            <option value="Construction">Construction</option>
-          </select>
-          <select id="empFilterPassport" onchange="filterCandidateBank()" class="text-xs border border-slate-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-600 bg-white">
-            <option value="all">All Passport Statuses</option>
-            <option value="Ready">Passport Ready</option>
-            <option value="Progress">In Progress</option>
-          </select>
-        </div>
-        <button onclick="orderEmployerPass()" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-4 py-2 rounded-lg text-xs transition shadow flex items-center justify-center gap-1.5">
-          <i class="fas fa-key"></i> Unlock 20 Contacts (KES 1,000)
-        </button>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="candidateCardsContainer">
-        <div class="candidate-card bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-3" data-field="Security" data-passport="Ready">
-          <div class="flex justify-between items-start">
-            <div><h3 class="font-bold text-slate-900">John M. (Verified)</h3><p class="text-xs text-slate-500">Security Guard • 4 Yrs Exp</p></div>
-            <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded">Passport Ready</span>
-          </div>
-          <p class="text-xs text-slate-600">Targeting Qatar / UAE. Police clearance certificate verified.</p>
-          <div class="bg-slate-50 p-2 rounded text-xs text-slate-400 select-none blur-[3px]">Tel: +254 712 *** *** | Email: j***@gmail.com</div>
-          <button onclick="orderEmployerPass()" class="w-full border border-emerald-600 text-emerald-700 text-xs font-bold py-2 rounded-lg hover:bg-emerald-50 transition">Unlock Full Profile</button>
-        </div>
-        <div class="candidate-card bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-3" data-field="Healthcare" data-passport="Ready">
-          <div class="flex justify-between items-start">
-            <div><h3 class="font-bold text-slate-900">Faith W. (Verified)</h3><p class="text-xs text-slate-500">Certified Nurse / Caregiver</p></div>
-            <span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded">UK / Gulf Ready</span>
-          </div>
-          <p class="text-xs text-slate-600">KRCHN Registered Nurse. BLS & First Aid certified.</p>
-          <div class="bg-slate-50 p-2 rounded text-xs text-slate-400 select-none blur-[3px]">Tel: +254 722 *** *** | Email: f***@yahoo.com</div>
-          <button onclick="orderEmployerPass()" class="w-full border border-emerald-600 text-emerald-700 text-xs font-bold py-2 rounded-lg hover:bg-emerald-50 transition">Unlock Full Profile</button>
-        </div>
-        <div class="candidate-card bg-white p-5 rounded-xl shadow-sm border border-slate-200 space-y-3" data-field="Driver" data-passport="Ready">
-          <div class="flex justify-between items-start">
-            <div><h3 class="font-bold text-slate-900">David K. (Verified)</h3><p class="text-xs text-slate-500">Commercial Driver (BCE)</p></div>
-            <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded">Passport Ready</span>
-          </div>
-          <p class="text-xs text-slate-600">Clean 7-year driving record, defensive driving certified.</p>
-          <div class="bg-slate-50 p-2 rounded text-xs text-slate-400 select-none blur-[3px]">Tel: +254 733 *** *** | Email: d***@outlook.com</div>
-          <button onclick="orderEmployerPass()" class="w-full border border-emerald-600 text-emerald-700 text-xs font-bold py-2 rounded-lg hover:bg-emerald-50 transition">Unlock Full Profile</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQs -->
-  <section id="faq" class="py-14 px-4 max-w-4xl mx-auto">
-    <div class="text-center mb-8">
-      <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Clear Answers</span>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h2>
-    </div>
-    <div class="space-y-3">
-      <details class="group bg-white rounded-xl border border-slate-200 p-4 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm">
-        <summary class="flex justify-between items-center font-bold text-slate-900 text-sm">
-          <span>How does the KES 199 registration fee work?</span>
-          <span class="transition group-open:rotate-180 text-emerald-700"><i class="fas fa-chevron-down"></i></span>
-        </summary>
-        <p class="text-xs text-slate-600 mt-2.5 leading-relaxed">The KES 199 registration keeps your CV active and indexed in our verified candidate directory for 6 continuous months. Registered recruitment agencies and Gulf hiring managers screen this database directly when filling vacancies.</p>
-      </details>
-      <details class="group bg-white rounded-xl border border-slate-200 p-4 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm">
-        <summary class="flex justify-between items-center font-bold text-slate-900 text-sm">
-          <span>What do I receive when I pay KES 300 for the CV Revamp?</span>
-          <span class="transition group-open:rotate-180 text-emerald-700"><i class="fas fa-chevron-down"></i></span>
-        </summary>
-        <p class="text-xs text-slate-600 mt-2.5 leading-relaxed">You receive an ATS-optimized CV delivered via WhatsApp within 24 to 48 hours. We restructure your experience into clean achievement bullets, highlight your passport readiness and clearances, and provide both an editable Microsoft Word (.docx) file and a clean PDF.</p>
-      </details>
-      <details class="group bg-white rounded-xl border border-slate-200 p-4 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm">
-        <summary class="flex justify-between items-center font-bold text-slate-900 text-sm">
-          <span>Where do I send the M-Pesa payment?</span>
-          <span class="transition group-open:rotate-180 text-emerald-700"><i class="fas fa-chevron-down"></i></span>
-        </summary>
-        <p class="text-xs text-slate-600 mt-2.5 leading-relaxed">All payments are sent directly to official Safaricom line <strong>0708 743 931</strong>. After sending, you forward your confirmation SMS code to our WhatsApp Desk at <strong>0739 658 520</strong> for instant verification.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 text-xs py-10 px-4 border-t border-slate-800">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-      <div>
-        <p class="text-white font-bold text-sm">Jobs in Kenya & Abroad Portal</p>
-        <p class="mt-1 text-slate-400">Official Community: 13,000+ Facebook Followers • M-Pesa: <strong class="text-white">0708 743 931</strong> • Desk: <strong class="text-white">0739 658 520</strong></p>
-      </div>
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/254739658520" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition">
-          <i class="fab fa-whatsapp"></i> Chat Support Desk
-        </a>
-        <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-white underline">Admin Portal</button>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp Desk Button -->
-  <a href="https://wa.me/254739658520?text=Hello%20Admin,%20inquiry%20regarding%20Jobs%20Kenya%20portal" target="_blank" class="fixed bottom-5 right-5 bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition z-50">
-    <i class="fab fa-whatsapp text-2xl"></i>
-  </a>
-
-  <!-- In-Depth Job Criteria Details Modal -->
+  <!-- Job Criteria Modal -->
   <div id="jobDetailsModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
     <div class="bg-white rounded-2xl max-w-lg w-full p-6 max-h-[90vh] overflow-y-auto shadow-2xl relative">
       <button onclick="closeJobDetailsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
@@ -380,12 +414,32 @@
     </div>
   </div>
 
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-10 px-4 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+      <div>
+        <p class="text-white font-bold text-sm">Jobs in Kenya & Abroad Portal</p>
+        <p class="mt-1 text-slate-400">Official Community: 13,000+ Facebook Followers • M-Pesa: <strong class="text-white">0708 743 931</strong> • Desk: <strong class="text-white">0739 658 520</strong></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/254739658520" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition">
+          <i class="fab fa-whatsapp"></i> Chat Support Desk
+        </a>
+        <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-white underline">Admin Portal</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Desk Button -->
+  <a href="https://wa.me/254739658520?text=Hello%20Admin,%20inquiry%20regarding%20Jobs%20Kenya%20portal" target="_blank" class="fixed bottom-5 right-5 bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition z-50">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
   <script>
     /* =====================================================================
-       CURATED NOVEMBER VACANCIES (KENYA + GULF + OVERSEAS)
+       ALL 12 CURATED VACANCIES (KENYA + GULF + OVERSEAS + RENTALLE)
        ===================================================================== */
     const MY_JOBS = [
-      // 1. AutoXpress Kenya
       {
         id: 1,
         title: "Automotive Technicians & Wheel Mechanics",
@@ -404,7 +458,6 @@
         category: "Construction / Electrical / Plumbing",
         active: true
       },
-      // 2. Co-operative Bank of Kenya
       {
         id: 2,
         title: "Co-op Bank AI, Data & Tech Specialists (8 Tracks)",
@@ -423,7 +476,6 @@
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 3. Teleperformance Kenya
       {
         id: 3,
         title: "International Customer Support & Technical Agents",
@@ -442,7 +494,6 @@
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 4. Kenya Airways
       {
         id: 4,
         title: "Financial Accountant",
@@ -461,7 +512,6 @@
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 5. Twyford Tile Kenya
       {
         id: 5,
         title: "Industrial Electrical Technicians & Crane Operators",
@@ -480,7 +530,6 @@
         category: "Construction / Electrical / Plumbing",
         active: true
       },
-      // 6. Fresh Produce Packhouse
       {
         id: 6,
         title: "Fresh Produce Packhouse & Sorting Supervisors",
@@ -499,7 +548,6 @@
         category: "General Work / Factory",
         active: true
       },
-      // 7. Coastal Logistics Fleet
       {
         id: 7,
         title: "Heavy Commercial Transit Drivers (BCE License)",
@@ -518,7 +566,6 @@
         category: "Driver / Logistics / Heavy Equipment",
         active: true
       },
-      // 8. Dubai, UAE
       {
         id: 8,
         title: "Hotel Waiters, Baristas & Stewards (20 Posts)",
@@ -537,7 +584,6 @@
         category: "Hospitality / Waiter / Barista / Chef",
         active: true
       },
-      // 9. Doha, Qatar
       {
         id: 9,
         title: "Event & Perimeter Security Marshals (30 Posts)",
@@ -556,7 +602,6 @@
         category: "Security Guard / Watchman",
         active: true
       },
-      // 10. Saudi Arabia
       {
         id: 10,
         title: "Heavy Equipment Operators (Excavators & Bulldozers)",
@@ -575,7 +620,6 @@
         category: "Driver / Logistics / Heavy Equipment",
         active: true
       },
-      // 11. Canada
       {
         id: 11,
         title: "Certified Home Caregivers & Elderly Aides (8 Posts)",
@@ -594,7 +638,6 @@
         category: "Healthcare / Nursing / Caregiver",
         active: true
       },
-      // 12. Rentalle PropTech Kenya
       {
         id: 12,
         title: "Field Sales and Customer Onboarding Agent",
@@ -616,18 +659,58 @@
       }
     ];
 
-    // AUTOMATIC JOB CARD GENERATOR
+    let activeFilterTerm = "";
+
+    // SEARCH & FILTER LOGIC
+    function setFilterLocation(loc) {
+      document.getElementById("jobSearchInput").value = (loc === "all" ? "" : loc);
+      filterJobsLive();
+      document.getElementById("vacancies").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterJobsLive() {
+      const term = document.getElementById("jobSearchInput").value.toLowerCase().trim();
+      activeFilterTerm = term;
+      renderJobs();
+    }
+
+    // AUTOMATIC JOB CARD GENERATOR WITH SEARCH HIGHLIGHTING
     function renderJobs() {
       const container = document.getElementById("vacanciesContainer");
       if (!container) return;
 
-      container.innerHTML = MY_JOBS.map((job, index) => {
+      const filtered = MY_JOBS.filter(job => {
+        if (!activeFilterTerm) return true;
+        return (
+          job.title.toLowerCase().includes(activeFilterTerm) ||
+          job.location.toLowerCase().includes(activeFilterTerm) ||
+          job.category.toLowerCase().includes(activeFilterTerm) ||
+          job.education.toLowerCase().includes(activeFilterTerm)
+        );
+      });
+
+      document.getElementById("jobCountDisplay").innerText = `Showing ${filtered.length} of ${MY_JOBS.length} positions`;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center bg-white rounded-2xl border border-slate-200">
+            <i class="fas fa-search text-3xl text-slate-300 mb-2"></i>
+            <p class="text-sm font-bold text-slate-700">No vacancies matched "${activeFilterTerm}"</p>
+            <p class="text-xs text-slate-500 mt-1">Try searching for "Nairobi", "Driver", "UAE", or "Nurse".</p>
+            <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all jobs</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map((job) => {
         const isClosed = (job.active === false);
+        const originalIndex = MY_JOBS.findIndex(j => j.id === job.id);
         return `
-          <div class="bg-white p-5 rounded-xl border ${isClosed ? 'border-slate-300 opacity-60 bg-slate-50' : 'border-slate-200'} shadow-sm space-y-3 flex flex-col justify-between">
+          <div class="bg-white p-5 rounded-2xl border ${isClosed ? 'border-slate-300 opacity-60 bg-slate-50' : 'border-slate-200'} shadow-sm space-y-3 flex flex-col justify-between hover:border-emerald-500 transition duration-150">
             <div class="space-y-2">
               <div class="flex justify-between items-start gap-2">
-                <span class="${isClosed ? 'bg-slate-200 text-slate-600' : 'bg-emerald-100 text-emerald-800'} text-[10px] font-black px-2 py-0.5 rounded uppercase">
+                <span class="${isClosed ? 'bg-slate-200 text-slate-600' : 'bg-emerald-100 text-emerald-800'} text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
                   ${job.location}
                 </span>
                 <span class="${isClosed ? 'text-slate-500 line-through' : 'text-emerald-700'} font-bold text-xs">
@@ -643,7 +726,7 @@
             </div>
 
             <div class="pt-2 flex flex-col gap-2">
-              <button onclick="openJobDetailsModal(${index})" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 rounded-lg text-xs transition border border-slate-300 flex items-center justify-center gap-1.5">
+              <button onclick="openJobDetailsModal(${originalIndex})" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 rounded-lg text-xs transition border border-slate-300 flex items-center justify-center gap-1.5">
                 <i class="fas fa-eye text-emerald-700"></i> View Requirements & Details
               </button>
               ${isClosed ? `
@@ -725,7 +808,6 @@
       document.getElementById("jobDetailsModal").classList.add("hidden");
     }
 
-    // Auto-load on ready
     document.addEventListener("DOMContentLoaded", renderJobs);
     renderJobs();
 
