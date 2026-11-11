@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jobs in Kenya & Abroad | Verified Jobs & Workers Portal</title>
+  <title>Jobs in Kenya & Abroad | Official Recruitment & Verified Workers Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -22,7 +22,7 @@
         <span class="inline-flex items-center justify-center w-5 h-5 bg-blue-600 rounded-full text-white text-[11px]">
           <i class="fab fa-facebook-f"></i>
         </span>
-        <span>Official Community: <strong>13,000+ Followers</strong> • Verified Jobs & Talent Hub</span>
+        <span>Official Community: <strong>13,000+ Followers</strong> • Government, Parastatal, NGO & Private Jobs</span>
       </div>
       <div class="flex items-center gap-4 text-xs">
         <span class="hidden sm:inline text-slate-300">
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <!-- Main Header -->
+  <!-- Main Navigation -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -51,88 +51,81 @@
         <a href="#cv-service" class="text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 hover:bg-amber-100 transition flex items-center gap-1">
           <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
         </a>
-        <a href="#register" class="bg-emerald-600 text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-emerald-700 transition shadow">Get Listed (KES 199)</a>
+        <a href="#register" class="bg-emerald-600 text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-emerald-700 transition shadow">Register Profile (KES 199)</a>
         <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 text-xs flex items-center gap-1"><i class="fas fa-lock"></i> Admin</button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section with Search Bar (Borrowed from VerifiedWorkers) -->
+  <!-- Hero Section with Live Search -->
   <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4">
     <div class="max-w-4xl mx-auto text-center space-y-5">
       <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-semibold text-emerald-300">
-        <i class="fas fa-check-double"></i> Kenya's Verified Jobs & Workers Directory
+        <i class="fas fa-check-double"></i> 30 Fresh Openings • Government, NGO, Corporate & Overseas
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Find Verified Jobs or Hire Vetted Talent</h1>
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya & Overseas</h1>
       <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto">
-        Search vacancies by Kenyan county or international destination. Connect directly or register your verified profile for recruiters.
+        Search public sector tenders, parastatals, NGO humanitarian roles, and corporate vacancies across Kenya or international placements.
       </p>
 
-      <!-- Dynamic Live Search Form -->
+      <!-- Live Search Box -->
       <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row gap-2 text-slate-800">
         <div class="flex-1 flex items-center px-3 gap-2">
           <i class="fas fa-search text-slate-400"></i>
-          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Job title, trade, or keyword (e.g. Driver, Nurse, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
+          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by job title, company, county, or trade (e.g. Driver, NGO, Mombasa, Bank)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
         </div>
         <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-          Search Jobs
+          Search 30 Jobs
         </button>
       </div>
 
-      <!-- County / Destination Quick Filter Pills -->
+      <!-- Quick Filter Pills -->
       <div class="flex flex-wrap justify-center gap-1.5 pt-2 text-xs">
-        <span class="text-slate-400 self-center text-[11px] mr-1 hidden sm:inline">Popular:</span>
-        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All</button>
+        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All Jobs</button>
+        <button onclick="setFilterLocation('Government')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Gov / Parastatal</button>
+        <button onclick="setFilterLocation('NGO')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">NGOs / Non-Profit</button>
         <button onclick="setFilterLocation('Nairobi')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Nairobi</button>
         <button onclick="setFilterLocation('Mombasa')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Mombasa</button>
-        <button onclick="setFilterLocation('Kiambu')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Thika / Kiambu</button>
-        <button onclick="setFilterLocation('Dubai')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Dubai (UAE)</button>
-        <button onclick="setFilterLocation('Qatar')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Qatar</button>
-        <button onclick="setFilterLocation('Canada')" class="bg-blue-900/60 border border-blue-500/40 px-3 py-1 rounded-full text-blue-300 font-medium text-[11px] transition">Canada</button>
+        <button onclick="setFilterLocation('Remote')" class="bg-indigo-900/60 border border-indigo-500/40 px-3 py-1 rounded-full text-indigo-300 font-medium text-[11px] transition">Remote / Hybrid</button>
+        <button onclick="setFilterLocation('Abroad')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Gulf & Overseas</button>
       </div>
     </div>
   </section>
 
-  <!-- Companies Hiring Section (Borrowed from VerifiedJobs) -->
-  <section class="py-8 bg-white border-b border-slate-200 px-4">
+  <!-- Hiring Partners & Parastatals Ribbon -->
+  <section class="py-6 bg-white border-b border-slate-200 px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-4">
-        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Trusted Employers & Hiring Partners</span>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-600 font-bold text-xs sm:text-sm">
-        <span class="flex items-center gap-2"><i class="fas fa-university text-emerald-700"></i> Co-operative Bank</span>
-        <span class="flex items-center gap-2"><i class="fas fa-car text-blue-700"></i> AutoXpress</span>
-        <span class="flex items-center gap-2"><i class="fas fa-plane-departure text-red-600"></i> Kenya Airways Pride</span>
-        <span class="flex items-center gap-2"><i class="fas fa-industry text-amber-700"></i> Twyford Tile</span>
-        <span class="flex items-center gap-2"><i class="fas fa-headset text-purple-700"></i> Teleperformance</span>
-        <span class="flex items-center gap-2"><i class="fas fa-city text-indigo-700"></i> Rentalle PropTech</span>
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-slate-600 font-bold text-xs">
+        <span class="flex items-center gap-1.5"><i class="fas fa-landmark text-emerald-700"></i> Public Service Commission</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-heartbeat text-blue-600"></i> Digital Health Agency</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-hands-helping text-amber-600"></i> Save the Children / World Vision</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Co-operative Bank</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-plane text-red-600"></i> Kenya Airways</span>
       </div>
     </div>
   </section>
 
-  <!-- Vacancies Grid with Real-Time Filter -->
+  <!-- Vacancies Grid with Filter Counter -->
   <section id="vacancies" class="py-12 px-4 max-w-6xl mx-auto">
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-2">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Verified Opportunities</span>
         <h2 class="text-2xl font-black text-slate-900">Featured Openings (November)</h2>
       </div>
-      <div class="text-xs text-slate-500" id="jobCountDisplay">Showing all jobs</div>
+      <div class="text-xs text-slate-500" id="jobCountDisplay">Loading all vacancies...</div>
     </div>
 
-    <!-- Container for dynamic job cards -->
+    <!-- 30 Job Cards Render Container -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="vacanciesContainer"></div>
   </section>
 
-  <!-- Verified Workers Section (Borrowed from VerifiedWorkers.co.ke) -->
+  <!-- Verified Workers Section -->
   <section id="employers" class="py-14 bg-slate-100 px-4 border-t border-slate-200">
     <div class="max-w-6xl mx-auto space-y-6">
       <div class="text-center max-w-xl mx-auto">
-        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">For Employers & Contractors</span>
+        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">For Recruiters & Contractors</span>
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Browse Verified Workers in Kenya</h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-1">
-          Pre-vetted workers with police clearance and verified identification. Unlock 20 verified candidate contacts for KES 1,000.
-        </p>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">Pre-vetted workers with police clearance and validated identification. Unlock 20 verified profiles for KES 1,000.</p>
       </div>
 
       <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-wrap gap-3 items-center justify-between">
@@ -143,7 +136,7 @@
             <option value="Driver">Driver / Logistics</option>
             <option value="Healthcare">Healthcare / Nurse</option>
             <option value="Hospitality">Hospitality / Chef</option>
-            <option value="Construction">Construction / Fundi</option>
+            <option value="Construction">Construction / Technical</option>
           </select>
           <select id="empFilterPassport" onchange="filterCandidateBank()" class="text-xs border border-slate-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-600 bg-white font-medium">
             <option value="all">All Locations / Statuses</option>
@@ -159,15 +152,12 @@
       <!-- Verified Worker Badged Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="candidateCardsContainer">
         <!-- Worker 1 -->
-        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3 relative overflow-hidden" data-field="Security" data-passport="Ready">
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Security" data-passport="Ready">
           <div class="flex justify-between items-start">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">JM</div>
               <div>
-                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
-                  John M. 
-                  <span class="text-blue-600 text-xs" title="Verified ID & Good Conduct"><i class="fas fa-check-circle"></i></span>
-                </h3>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">John M. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
                 <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Nairobi • Security Guard</span>
               </div>
             </div>
@@ -178,24 +168,17 @@
             <div><strong class="text-slate-800">Expected Salary:</strong> KES 30,000 – 40,000/mo</div>
             <div><strong class="text-slate-800">Status:</strong> Passport Ready • Clean DCI Certificate</div>
           </div>
-          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">
-            Tel: +254 712 345 *** | M-Pesa ID: Verified
-          </div>
-          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">
-            Unlock Verified Phone & CV
-          </button>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 712 345 *** | M-Pesa ID: Verified</div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
         </div>
 
         <!-- Worker 2 -->
-        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3 relative overflow-hidden" data-field="Healthcare" data-passport="Ready">
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Healthcare" data-passport="Ready">
           <div class="flex justify-between items-start">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-sm">FW</div>
               <div>
-                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
-                  Faith W. 
-                  <span class="text-blue-600 text-xs" title="Verified Nursing Credentials"><i class="fas fa-check-circle"></i></span>
-                </h3>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">Faith W. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
                 <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Mombasa • Caregiver / Nurse</span>
               </div>
             </div>
@@ -206,24 +189,17 @@
             <div><strong class="text-slate-800">Expected Salary:</strong> KES 50,000 – 70,000/mo</div>
             <div><strong class="text-slate-800">Status:</strong> UK / Gulf Ready • BLS Certified</div>
           </div>
-          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">
-            Tel: +254 722 890 *** | Nursing Lic: Verified
-          </div>
-          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">
-            Unlock Verified Phone & CV
-          </button>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 722 890 *** | Nursing Lic: Verified</div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
         </div>
 
         <!-- Worker 3 -->
-        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3 relative overflow-hidden" data-field="Driver" data-passport="Kenya">
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Driver" data-passport="Kenya">
           <div class="flex justify-between items-start">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-sm">DK</div>
               <div>
-                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
-                  David K. 
-                  <span class="text-blue-600 text-xs" title="Verified NTSA BCE Badge"><i class="fas fa-check-circle"></i></span>
-                </h3>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">David K. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
                 <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Nakuru • Commercial Driver</span>
               </div>
             </div>
@@ -234,12 +210,8 @@
             <div><strong class="text-slate-800">Expected Salary:</strong> KES 45,000 – 60,000/mo</div>
             <div><strong class="text-slate-800">Status:</strong> Clean NTSA Record • PSV Badge</div>
           </div>
-          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">
-            Tel: +254 733 456 *** | License: Verified
-          </div>
-          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">
-            Unlock Verified Phone & CV
-          </button>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 733 456 *** | License: Verified</div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
         </div>
       </div>
     </div>
@@ -250,16 +222,16 @@
     <div class="max-w-5xl mx-auto">
       <div class="bg-white rounded-2xl shadow border border-amber-200 p-6 sm:p-8 flex flex-col md:flex-row items-center gap-8">
         <div class="md:w-2/3 space-y-3">
-          <div class="inline-block bg-amber-100 text-amber-900 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Fast Track Service • Delivered via WhatsApp</div>
+          <div class="inline-block bg-amber-100 text-amber-900 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Delivered to WhatsApp in 24-48 Hours</div>
           <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Professional ATS CV Revamp (KES 300 Only)</h2>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Kenyan corporate employers and overseas Gulf agencies use Applicant Tracking Systems (ATS) that auto-reject unstructured CVs. Get your CV restructured into clean achievement bullets and delivered to your WhatsApp in both editable Word & PDF formats.
+            Kenyan public boards, parastatals, NGOs, and Gulf recruitment agencies use Applicant Tracking Systems (ATS) that auto-reject unstructured resumes. We reformat your CV to international ATS standards in Word and PDF formats.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-700 pt-2">
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Gulf & Canadian ATS standard</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Passport & clearance badges highlighted</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Clean, concise career achievements</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> 24 to 48 hours delivery</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Public Sector & NGO ATS formats</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Gulf & European standard ready</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> DCI & professional clearance badges</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Word (.docx) & PDF copy</div>
           </div>
         </div>
         <div class="md:w-1/3 w-full bg-slate-900 text-white rounded-xl p-6 text-center space-y-4 shadow-xl">
@@ -275,13 +247,13 @@
     </div>
   </section>
 
-  <!-- Job Seeker Registration -->
+  <!-- Registration Form -->
   <section id="register" class="py-14 px-4">
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-10">
       <div class="text-center pb-6 border-b border-slate-100">
         <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Candidate Enrollment</span>
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">6-Month Profile Registration</h2>
-        <p class="text-xs sm:text-sm text-slate-500 mt-1">Get indexed in our verified candidate directory for registered employers across Kenya and abroad.</p>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Get listed for 6 months across registered employers and recruitment desks in Kenya and abroad.</p>
       </div>
 
       <form id="candidateForm" onsubmit="handleRegistrationSubmit(event)" class="mt-6 space-y-4">
@@ -297,10 +269,10 @@
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Target Destination</label>
             <select id="regDest" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
-              <option>Gulf Countries (UAE, Qatar, Saudi)</option>
-              <option>Canada / Europe (Caregivers, Hospitality)</option>
               <option>Both Kenya & Abroad</option>
               <option>Kenya Local Jobs Only</option>
+              <option>Gulf Countries (UAE, Qatar, Saudi)</option>
+              <option>Europe / UK / Canada (Caregiving & Hospitality)</option>
             </select>
           </div>
         </div>
@@ -338,7 +310,7 @@
                 Add Professional CV Revamp (+ KES 300)
                 <span class="bg-amber-200 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded">RECOMMENDED</span>
               </span>
-              <p class="text-xs text-slate-600 mt-0.5">Have our specialists redesign your CV into an international ATS standard before submitting.</p>
+              <p class="text-xs text-slate-600 mt-0.5">Format and restructure your resume to ATS compliance standards before presenting to employers.</p>
             </div>
           </label>
         </div>
@@ -359,7 +331,7 @@
     </div>
   </section>
 
-  <!-- Job Criteria Modal -->
+  <!-- In-Depth Job Criteria Modal -->
   <div id="jobDetailsModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
     <div class="bg-white rounded-2xl max-w-lg w-full p-6 max-h-[90vh] overflow-y-auto shadow-2xl relative">
       <button onclick="closeJobDetailsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
@@ -437,224 +409,578 @@
 
   <script>
     /* =====================================================================
-       ALL 12 CURATED VACANCIES (KENYA + GULF + OVERSEAS + RENTALLE)
+       30 CURATED JOBS FOR NOVEMBER 2026:
+       Government • Parastatals • NGOs • Private • Remote/Hybrid • Overseas
        ===================================================================== */
     const MY_JOBS = [
+      // 1. Digital Health Agency (Government)
       {
         id: 1,
-        title: "Automotive Technicians & Wheel Mechanics",
-        location: "Nairobi & Mombasa (AutoXpress Kenya)",
-        salary: "KES 40,000 - 55,000/mo",
-        deadline: "02 December 2026",
-        education: "Certificate or Diploma in Automotive / Mechanical Engineering (NITA Grade I/II)",
-        experience: "Minimum 2 years servicing commercial vehicles, suspension, or tyre balancing",
+        title: "Senior Drivers & Transport Logistics Officers (4 Posts)",
+        location: "Nairobi (Digital Health Agency - DHA)",
+        salary: "Civil Service Scale / KES 45,000 - 65,000/mo",
+        deadline: "01 December 2026",
+        education: "KCSE Certificate & NTSA Driving License (Class BCE)",
+        experience: "Minimum 4 years continuous government or corporate fleet operations",
         requirements: [
-          "Demonstrated expertise in tyre fitting, 3D wheel alignment, and suspension diagnostics",
-          "Clean driving license with accident-free track record",
-          "Strong communication and customer consultation etiquette",
-          "Valid Certificate of Good Conduct from DCI"
+          "Valid PSV endorsement and clean occupational driving record",
+          "Certificate of Good Conduct from DCI (valid)",
+          "Chapter Six compliance clearance certificates",
+          "Apply directly via official DHA portal: dha.go.ke/careers"
         ],
-        benefits: "Medical insurance, tool allowances, annual leave bonus, technical training.",
-        category: "Construction / Electrical / Plumbing",
+        benefits: "Comprehensive civil service medical cover, government pension scheme, commuter allowance.",
+        category: "Driver / Logistics / Heavy Equipment",
         active: true
       },
+      // 2. Digital Health Agency (Government)
       {
         id: 2,
-        title: "Co-op Bank AI, Data & Tech Specialists (8 Tracks)",
-        location: "Nairobi County (Co-op Bank HQ)",
-        salary: "Bank Scale / Executive Remuneration",
-        deadline: "09 November 2026",
-        education: "BSc in Computer Science, Data Science, Software Engineering or related field",
-        experience: "Enterprise banking, machine learning integration, or cloud data architecture background",
+        title: "ICT Officers & Digital Health Assistants (6 Posts)",
+        location: "Nairobi (Digital Health Agency - DHA)",
+        salary: "Government CSG Grade / KES 65,000 - 95,000/mo",
+        deadline: "01 December 2026",
+        education: "Bachelor's Degree in Computer Science, IT, BBIT or Health Informatics",
+        experience: "2+ years implementing digital health databases or enterprise software",
         requirements: [
-          "Open tracks: AI Application Engineer, AI Integration, AIQA Automation, Data Architect, Data Scientist",
-          "Strong expertise in scalable ML deployment, cloud data lakes, and banking security compliance",
-          "Clean credit history (CRB clearance certificate)",
-          "Apply directly via official Co-op Bank Career portal before Nov 9"
+          "Demonstrated proficiency in database administration and web APIs",
+          "Compliance with Chapter Six leadership integrity guidelines",
+          "Credit Reference Bureau (CRB) clearance report",
+          "Online application via dha.go.ke/careers"
         ],
-        benefits: "Comprehensive banking medical cover, staff pension scheme, annual performance bonus.",
+        benefits: "Government statutory pension, inpatient/outpatient cover, hardship and commuter stipends.",
         category: "Administration / Reception / Cashier",
         active: true
       },
+      // 3. Insurance Regulatory Authority (Parastatal)
       {
         id: 3,
-        title: "International Customer Support & Technical Agents",
-        location: "Nairobi County (Teleperformance Kenya)",
-        salary: "KES 45,000 - 62,000/mo",
+        title: "Customer Care & Public Relations Assistants (3 Posts)",
+        location: "Nairobi (Insurance Regulatory Authority - IRA)",
+        salary: "KES 60,000 - 85,000/mo",
         deadline: "24 November 2026",
-        education: "KCSE Certificate / College Diploma",
-        experience: "Fresh graduates welcome or 6+ months customer service experience",
+        education: "Diploma in Customer Care, Public Relations, or Communication Studies",
+        experience: "Minimum 2 years front-office customer handling in financial or corporate sector",
         requirements: [
-          "Exceptional written and spoken English fluency (neutral accent)",
-          "Typing speed of 35+ words per minute with 95% accuracy",
-          "Comfortable working flexible 24/7 rotational shifts",
-          "Strong computer literacy and active problem-solving skills"
+          "Excellent verbal and written English and Swahili communication",
+          "Computer packages proficiency with CRM experience",
+          "High integrity with clean police certificate",
+          "Apply online via IRA careers portal"
         ],
-        benefits: "Free company shuttle transport for night shifts, medical insurance, career progression.",
+        benefits: "Full medical cover, pension, leave allowances.",
         category: "Administration / Reception / Cashier",
         active: true
       },
+      // 4. Insurance Regulatory Authority (Parastatal)
       {
         id: 4,
-        title: "Financial Accountant",
-        location: "Nairobi (Kenya Airways Pride Centre)",
-        salary: "Competitive Airline Scale",
-        deadline: "17 November 2026",
-        education: "Bachelor's Degree in Accounting/Finance + CPA(K) or ACCA qualification",
-        experience: "3+ years financial accounting experience in aviation, logistics, or audit",
+        title: "Supply Chain & Procurement Officer",
+        location: "Nairobi (Insurance Regulatory Authority - IRA)",
+        salary: "KES 85,000 - 120,000/mo",
+        deadline: "25 November 2026",
+        education: "Bachelor's Degree in Procurement, Supply Chain Management or Commerce",
+        experience: "3+ years public procurement experience adhering to PPDA Act",
         requirements: [
-          "Member of ICPAK in good standing",
-          "Proficiency with ERP platforms (SAP/Oracle) and advanced Excel modeling",
-          "Experience with IFRS standards and multi-currency reconciliations",
-          "Uncompromising integrity and detail orientation"
+          "Active registered member of KISM in good standing",
+          "Proven experience with IFMIS and e-procurement portals",
+          "Chapter Six clearance certificates from EACC and DCI",
+          "Apply via official IRA portal"
         ],
-        benefits: "Concessional flight ticket privileges, comprehensive inpatient/outpatient cover, pension.",
+        benefits: "Competitive public sector allowances, comprehensive healthcare, retirement benefits.",
         category: "Administration / Reception / Cashier",
         active: true
       },
+      // 5. National Construction Authority (Government Parastatal)
       {
         id: 5,
-        title: "Industrial Electrical Technicians & Crane Operators",
-        location: "Kajiado / Nairobi (Twyford Tile)",
-        salary: "KES 45,000 - 65,000/mo",
-        deadline: "20 November 2026",
-        education: "Certificate or Diploma in Electrical Engineering or Crane Operations License",
-        experience: "2+ years in manufacturing plant maintenance or heavy overhead crane lifting",
+        title: "Manager, Construction Information Management Systems",
+        location: "Nairobi (National Construction Authority - NCA)",
+        salary: "Parastatal Grade Scale / KES 140,000 - 200,000/mo",
+        deadline: "23 November 2026",
+        education: "Degree in Computer Science, Software Engineering or Civil Engineering Informatics",
+        experience: "5+ years managing construction sector digital databases or project ERPs",
         requirements: [
-          "For Technicians: Diagnostic skills in 3-phase industrial power, sensors, and motor drives",
-          "For Crane Operators: Valid operator license with zero site safety infractions",
-          "Willingness to work 8-hour day and night shift rotations",
-          "Valid police Certificate of Good Conduct"
+          "Proven management of national databases and contractor licensing workflows",
+          "Leadership in compliance audits and system security",
+          "Valid tax compliance and Chapter Six clearances",
+          "Apply online via NCA official recruitment system"
         ],
-        benefits: "Full industrial safety equipment provided, overtime allowances, health insurance.",
-        category: "Construction / Electrical / Plumbing",
+        benefits: "Generous medical cover, car allowance, gratuity/pension.",
+        category: "Administration / Reception / Cashier",
         active: true
       },
+      // 6. Food For Education (NGO / Non-Profit)
       {
         id: 6,
-        title: "Fresh Produce Packhouse & Sorting Supervisors",
-        location: "Thika, Kiambu County",
-        salary: "KES 38,000 - 52,000/mo",
-        deadline: "18 November 2026",
-        education: "Certificate or Diploma in Food Science, Horticulture, or Production Management",
-        experience: "2+ years supervising fresh fruit sorting, grading, or packhouse cold rooms",
+        title: "Driver - Field Logistics & Operations (5 Posts)",
+        location: "Nairobi & Kiambu (Food For Education)",
+        salary: "KES 38,000 - 48,000/mo",
+        deadline: "21 November 2026",
+        education: "KCSE Certificate",
+        experience: "3+ years commercial driving supplying schools or cold-chain goods",
         requirements: [
-          "Knowledge of KEPHIS export guidelines and Global GAP hygiene protocols",
-          "Experience monitoring weighing, fruit ripening chambers, and loading manifests",
-          "Leadership skills to manage teams of 30+ packhouse casual workers",
-          "Valid medical Food Handlers Certificate"
+          "Valid Class BCE driving license with clean record",
+          "Punctual, safety-conscious, and compassionate around school children",
+          "Clean DCI Certificate of Good Conduct",
+          "Basic mechanical inspection skills"
         ],
-        benefits: "Subsidized farm produce, production incentives, overtime pay.",
+        benefits: "Duty meals, health insurance, overtime compensation.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      // 7. Save the Children International (NGO)
+      {
+        id: 7,
+        title: "Lead, IT Systems Change & Field Interventions",
+        location: "Nairobi (Save the Children - Hybrid)",
+        salary: "NGO Scale / KES 150,000 - 220,000/mo",
+        deadline: "22 November 2026",
+        education: "BSc in Information Technology, Software Engineering or Computer Science",
+        experience: "4+ years driving digital transformation across humanitarian field hubs",
+        requirements: [
+          "Hands-on experience in enterprise change management and cloud IT infrastructure",
+          "Strong understanding of NGO safeguarding and child data privacy",
+          "Comfortable supporting remote country operations",
+          "Apply via Save the Children Careers online"
+        ],
+        benefits: "International medical cover, hybrid work flexibility, life insurance, pension.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      // 8. World Vision Kenya (NGO)
+      {
+        id: 8,
+        title: "Project Field Monitor - Community Relief Operations (8 Posts)",
+        location: "Turkana & Marsabit Counties (World Vision Kenya)",
+        salary: "KES 45,000 - 60,000/mo",
+        deadline: "20 November 2026",
+        education: "Diploma in Community Development, Social Work, or Agriculture",
+        experience: "2+ years community mobilization and food advisory committee supervision",
+        requirements: [
+          "Resident of or familiar with ASAL counties local languages and terrain",
+          "Experience in electronic beneficiary registration and food distribution",
+          "Strong physical fitness and field stamina",
+          "Clean police clearance certificate"
+        ],
+        benefits: "Field hardship allowances, comprehensive medical cover, emergency medical evacuation.",
         category: "General Work / Factory",
         active: true
       },
-      {
-        id: 7,
-        title: "Heavy Commercial Transit Drivers (BCE License)",
-        location: "Mombasa County (Port & Transit Route)",
-        salary: "KES 45,000 - 58,000/mo",
-        deadline: "25 November 2026",
-        education: "KCSE Certificate",
-        experience: "4+ years driving articulated heavy commercial trucks (Mombasa-Malaba corridor)",
-        requirements: [
-          "Valid NTSA Driving License (Class BCE / Articulated Endorsement)",
-          "Clean driving record with no major fault accidents",
-          "Valid PSV badge and valid Certificate of Good Conduct from DCI",
-          "Experience with transit cargo security and border port documentation"
-        ],
-        benefits: "Trip allowances, transit meal stipends, NHIF/NSSF coverage.",
-        category: "Driver / Logistics / Heavy Equipment",
-        active: true
-      },
-      {
-        id: 8,
-        title: "Hotel Waiters, Baristas & Stewards (20 Posts)",
-        location: "Dubai, UAE",
-        salary: "KES 75,000 - 95,000/mo (AED 2,200 - 2,800)",
-        deadline: "26 November 2026",
-        education: "KCSE Certificate / Hospitality Certificate",
-        experience: "Minimum 1 year restaurant, hotel, or barista customer service",
-        requirements: [
-          "Valid Kenyan Passport with at least 18 months validity remaining",
-          "Confident spoken English etiquette with neat personal grooming",
-          "GAMCA medical fitness certificate (medically cleared)",
-          "Clear police record with no criminal history"
-        ],
-        benefits: "Free 2-year UAE employment visa, round-trip flight ticket, company housing, transport & daily duty meals.",
-        category: "Hospitality / Waiter / Barista / Chef",
-        active: true
-      },
+      // 9. Aga Khan Foundation (NGO / Foundation)
       {
         id: 9,
-        title: "Event & Perimeter Security Marshals (30 Posts)",
-        location: "Doha, Qatar",
-        salary: "KES 70,000 - 88,000/mo (QAR 2,000 - 2,500)",
-        deadline: "28 November 2026",
-        education: "KCSE Certificate",
-        experience: "1+ year private security, NYS paramilitary, or event crowd control",
+        title: "Programme Coordinator - Government Relations & Systems Change",
+        location: "Mombasa County (Aga Khan Foundation)",
+        salary: "Competitive NGO Remuneration",
+        deadline: "19 November 2026",
+        education: "Bachelor's Degree in Social Sciences, Public Policy, or Development Studies",
+        experience: "3+ years coordinating government initiatives and community stakeholders in Coast Region",
         requirements: [
-          "Valid Kenyan Passport ready for visa stamping",
-          "Height: 5'9\"+ (Men), 5'5\"+ (Women); physically fit with no visible tattoos",
-          "Clean Certificate of Good Conduct from DCI (issued within last 6 months)",
-          "Ready to deploy immediately upon visa approval"
+          "Strong background working with coastal county governments and early education programs",
+          "Superior stakeholder reporting and presentation skills",
+          "Fluency in English and Swahili",
+          "Immediate availability"
         ],
-        benefits: "Free Qatar work visa, free air tickets, air-conditioned accommodation, uniform, and medical insurance.",
-        category: "Security Guard / Watchman",
+        benefits: "Aga Khan Health services medical insurance, retirement plan, travel per diems.",
+        category: "Administration / Reception / Cashier",
         active: true
       },
+      // 10. International Rescue Committee - IRC (NGO)
       {
         id: 10,
-        title: "Heavy Equipment Operators (Excavators & Bulldozers)",
-        location: "Riyadh & NEOM Project, Saudi Arabia",
-        salary: "KES 85,000 - 120,000/mo (SAR 2,500 - 3,500)",
-        deadline: "30 November 2026",
-        education: "Trade Test Certificate / National Driving License with Plant Endorsement",
-        experience: "3+ years operating excavators, graders, or mobile cranes on civil sites",
+        title: "Health Supply Chain & Pharmaceutical Specialist",
+        location: "Nairobi & Garissa (IRC Kenya)",
+        salary: "KES 110,000 - 160,000/mo",
+        deadline: "25 November 2026",
+        education: "Degree in Pharmacy, Supply Chain, or Health Logistics",
+        experience: "3+ years managing medical logistics in humanitarian emergency response",
         requirements: [
-          "Valid Kenyan Passport",
-          "GAMCA Medical Fitness Clearance",
-          "Ability to pass site machinery maneuverability and safety trade test",
-          "Physical stamina and adaptability to hot desert climate conditions"
+          "Knowledge of cold-chain monitoring and pharmacy dispensing protocols",
+          "Experience tracking donor-funded commodities (USAID/UNHCR)",
+          "Clean police certificate and professional licenses",
+          "Apply via IRC careers website"
         ],
-        benefits: "Free employment visa, flight tickets, camp housing, food provided, overtime pay, and medical cover.",
-        category: "Driver / Logistics / Heavy Equipment",
-        active: true
-      },
-      {
-        id: 11,
-        title: "Certified Home Caregivers & Elderly Aides (8 Posts)",
-        location: "Ontario & Alberta, Canada",
-        salary: "KES 240,000 - 320,000/mo (CAD $18 - $23/hr)",
-        deadline: "05 December 2026",
-        education: "Certificate or Diploma in Nursing, Community Health, or Caregiving",
-        experience: "Minimum 2 years verifiable hands-on elderly or palliative care",
-        requirements: [
-          "Valid Kenyan International Passport",
-          "Recognized Caregiving credentials or Nursing Council registration",
-          "IELTS General Training test (minimum CLB 5 score)",
-          "Clean police certificate and comprehensive panel physician medical exam"
-        ],
-        benefits: "Legal Canadian work permit sponsorship pathway, provincial healthcare coverage, paid annual vacation.",
+        benefits: "International medical coverage, hardship allowances, global career mobility.",
         category: "Healthcare / Nursing / Caregiver",
         active: true
       },
+      // 11. Co-operative Bank of Kenya (Corporate / Banking)
+      {
+        id: 11,
+        title: "AI, Data & Analytics Specialists (8 Tracks)",
+        location: "Nairobi County (Co-op Bank HQ)",
+        salary: "Competitive Bank Scale / Executive Package",
+        deadline: "18 November 2026",
+        education: "BSc in Computer Science, Data Science, Software Engineering or related discipline",
+        experience: "Enterprise banking, machine learning integration, or cloud data architecture background",
+        requirements: [
+          "Tracks: AI App Engineer, AIQA Automation, Data Architect, Data Scientist, Risk Specialist",
+          "Experience building scalable machine learning data pipelines and secure APIs",
+          "Clean credit history (CRB clearance certificate)",
+          "Apply strictly via official Co-op Bank portal"
+        ],
+        benefits: "Comprehensive bank health scheme, staff preferential loans, pension.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      // 12. Kenya Airways (Aviation / Corporate)
       {
         id: 12,
-        title: "Field Sales and Customer Onboarding Agent",
-        location: "Kenya (Field Assignment - Rentalle)",
-        salary: "Commission + Performance Incentives",
-        deadline: "30 November 2026",
-        education: "Certificate, Diploma or Degree (Sales, Marketing, Business, ICT or related field is an added advantage)",
-        experience: "Entry level / Experience in field sales, customer onboarding or property marketing preferred",
+        title: "Financial Accountant & Multi-Currency Auditor",
+        location: "Nairobi (Kenya Airways Pride Centre)",
+        salary: "Airline Industry Scale",
+        deadline: "17 November 2026",
+        education: "Bachelor's Degree in Finance/Accounting + CPA(K) or ACCA",
+        experience: "3+ years financial reporting in aviation, multinational logistics, or Big 4 audit",
         requirements: [
-          "Identify, pitch, and onboard landlords and property managers to the Rentalle digital platform",
-          "Demonstrate platform features, register rental properties, units, and tenants",
-          "Confident, self-motivated, target-oriented, and excellent communicator",
-          "Interested in technology and able to work independently in the field",
+          "Active registered member of ICPAK in good standing",
+          "Proficiency in Oracle ERP, SAP, and advanced financial modeling",
+          "Clear understanding of IFRS standards and airline clearing houses",
+          "High level of integrity and background check clearance"
+        ],
+        benefits: "Concessional flight ticket privileges for employee & dependents, pension, outpatient/inpatient cover.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      // 13. AutoXpress Kenya (Private Automotive)
+      {
+        id: 13,
+        title: "Automotive Technicians & Wheel Alignment Specialists (6 Posts)",
+        location: "Nairobi, Mombasa & Kisumu (AutoXpress Kenya)",
+        salary: "KES 40,000 - 58,000/mo",
+        deadline: "02 December 2026",
+        education: "Certificate or Diploma in Automotive Engineering (NITA Grade I/II)",
+        experience: "2+ years hands-on commercial vehicle suspension, brake repair, and 3D wheel balancing",
+        requirements: [
+          "Demonstrated technical skills in passenger and 4x4 vehicles",
+          "Clean driving license with accident-free track record",
+          "Polite customer handling and diagnostic reporting",
+          "Valid Certificate of Good Conduct"
+        ],
+        benefits: "Tool kit allowances, technical certification sponsorships, healthcare cover.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      // 14. Twyford Tile Kenya (Manufacturing / Industry)
+      {
+        id: 14,
+        title: "Industrial Electrical Technicians & Overhead Crane Operators",
+        location: "Kajiado / Nairobi (Twyford Tile)",
+        salary: "KES 45,000 - 68,000/mo",
+        deadline: "20 November 2026",
+        education: "Certificate/Diploma in Electrical Installation or Certified Crane Operator Permit",
+        experience: "2+ years in manufacturing factory line maintenance or heavy crane yard operations",
+        requirements: [
+          "Electrical: Troubleshooting 3-phase high voltage motors, sensors, and PLCs",
+          "Crane: Valid operator license with zero site safety infractions",
+          "Readiness for 8-hour day/night shift rotations",
+          "Valid DCI Certificate of Good Conduct"
+        ],
+        benefits: "Safety gear supplied, production bonuses, medical cover, overtime pay.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      // 15. Githunguri Dairy Farmers Co-op (Agribusiness)
+      {
+        id: 15,
+        title: "Dairy Extension Officers & Animal Health Technicians (4 Posts)",
+        location: "Kiambu County (Githunguri)",
+        salary: "KES 38,000 - 50,000/mo",
+        deadline: "24 November 2026",
+        education: "Certificate or Diploma in Animal Health, Food Science, or Dairy Technology",
+        experience: "3+ years technical field support and training for dairy farmers",
+        requirements: [
+          "Registered with Kenya Veterinary Board (KVB) or relevant body",
+          "Valid motorcycle riding license (Class A) with off-road experience",
+          "Experience in artificial insemination (AI) and milk quality testing",
+          "Fluency in Kikuyu and Swahili is an added advantage"
+        ],
+        benefits: "Motorbike fuel allowance, field per diems, comprehensive cooperative healthcare.",
+        category: "General Work / Factory",
+        active: true
+      },
+      // 16. Teleperformance Kenya (BPO / Remote Hybrid)
+      {
+        id: 16,
+        title: "Customer Support & Technical Agents (Rotational Shifts)",
+        location: "Nairobi County (Teleperformance Kenya - Hybrid)",
+        salary: "KES 45,000 - 62,000/mo",
+        deadline: "24 November 2026",
+        education: "KCSE Certificate / College Diploma",
+        experience: "Entry level welcome or 6+ months customer service experience",
+        requirements: [
+          "Excellent spoken and written English communication (neutral accent)",
+          "Typing speed of 35+ words per minute",
+          "Comfortable with 24/7 rotational night shifts",
+          "Quiet home environment for hybrid days"
+        ],
+        benefits: "Free company night shuttle transport, medical scheme, performance incentives.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      // 17. Rentalle PropTech (Private Tech / Field)
+      {
+        id: 17,
+        title: "Field Sales and Customer Onboarding Agent (10 Posts)",
+        location: "Nairobi, Mombasa & Nakuru (Rentalle PropTech)",
+        salary: "Commission + Performance Incentives (KES 35,000 - 65,000 potential)",
+        deadline: "30 November 2026",
+        education: "Certificate, Diploma or Degree in Sales, Marketing, ICT or Business",
+        experience: "Entry level / Field sales, real estate, or app onboarding experience preferred",
+        requirements: [
+          "Identify and onboard landlords and estate managers to digital rental platform",
+          "Demonstrate mobile portal, register properties, and verify units",
+          "Strong communication, hunger to close deals, and self-drive",
           "Send CV & brief cover letter to: adminrentalle@gmail.com"
         ],
-        benefits: "Valuable hands-on experience in digital proptech sales, career growth opportunities, and performance incentives.",
+        benefits: "High uncapped commissions, tech sales mentorship, career progression to Territory Lead.",
         category: "Administration / Reception / Cashier",
+        active: true
+      },
+      // 18. Buysimu Technologies (FinTech / Credit)
+      {
+        id: 18,
+        title: "Portfolio Management & Credit Recovery Officers",
+        location: "Nairobi County (Buysimu Tech)",
+        salary: "KES 35,000 - 50,000/mo + Collections Bonus",
+        deadline: "22 November 2026",
+        education: "Degree or Diploma in Business, Finance, Credit Management or Marketing",
+        experience: "1–2 years handling customer debt resolution or phone portfolio management",
+        requirements: [
+          "Proficiency in CRM platforms and professional telephone etiquette",
+          "Negotiation skills with ethical debt resolution approach",
+          "Clear police clearance certificate",
+          "High emotional intelligence and stress tolerance"
+        ],
+        benefits: "Monthly performance bonuses, medical insurance, airtime and lunch subsidy.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      // 19. Fresh Produce Packhouse (Agribusiness / Manufacturing)
+      {
+        id: 19,
+        title: "Fresh Produce Packhouse & Sorting Supervisors",
+        location: "Thika, Kiambu County (Bollard Consulting)",
+        salary: "KES 38,000 - 52,000/mo",
+        deadline: "18 November 2026",
+        education: "Certificate or Diploma in Food Science, Horticulture, or Production",
+        experience: "2+ years supervising avocado, mango, or fresh vegetable cold packhouses",
+        requirements: [
+          "Knowledge of KEPHIS export guidelines and Global GAP hygiene protocols",
+          "Experience monitoring weighing, fruit ripening chambers, and loading manifests",
+          "Supervisory ability over 30+ packhouse casual workers",
+          "Valid Food Handlers medical clearance"
+        ],
+        benefits: "Performance bonuses, subsidized farm produce, overtime allowances.",
+        category: "General Work / Factory",
+        active: true
+      },
+      // 20. Coastal Logistics Fleet (Transport / Port)
+      {
+        id: 20,
+        title: "Heavy Commercial Articulated Truck Drivers (8 Posts)",
+        location: "Mombasa County (Port & Transit Route)",
+        salary: "KES 45,000 - 62,000/mo",
+        deadline: "25 November 2026",
+        education: "KCSE Certificate",
+        experience: "4+ years driving articulated semi-trailers along Northern Corridor (Mombasa-Uganda)",
+        requirements: [
+          "Valid NTSA Driving License (Class BCE / Articulated endorsement)",
+          "Clean driving record with no fatal accident record",
+          "Valid PSV badge and valid Certificate of Good Conduct from DCI",
+          "Experience with transit container seal security and port gate-passes"
+        ],
+        benefits: "Trip per diems, transit meal allowances, NHIF/NSSF statutory cover.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      // 21. Private Junior Academy (Education)
+      {
+        id: 21,
+        title: "Deputy Headteacher & Junior School Curriculum Lead",
+        location: "Nakuru County",
+        salary: "KES 40,000 - 55,000/mo",
+        deadline: "20 November 2026",
+        education: "Bachelor's Degree or Diploma in Education (CBC Certified)",
+        experience: "Minimum 5 years active teaching experience with 2+ years in school leadership",
+        requirements: [
+          "Registered with Teachers Service Commission (TSC)",
+          "Thorough mastery of CBC assessment rubrics and learner portfolio management",
+          "Demonstrated record of pupil discipline and co-curricular leadership",
+          "Valid police clearance certificate"
+        ],
+        benefits: "Staff housing allowance, school meals, fee concession for children.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      // 22. Commercial Farm (Rift Valley)
+      {
+        id: 22,
+        title: "Assistant Farm Operations Manager (Horticulture & Crops)",
+        location: "Naivasha, Nakuru County",
+        salary: "KES 60,000 - 80,000/mo",
+        deadline: "26 November 2026",
+        education: "Degree or Diploma in Agriculture, Agribusiness, or Horticulture",
+        experience: "4+ years managing greenhouse irrigation, crop protection, and labor teams",
+        requirements: [
+          "Expertise in drip irrigation scheduling, fertigation, and chemical scouting",
+          "Supervision of 50+ field laborers and compliance with export audits",
+          "Clean driving license and valid police clearance",
+          "Willingness to live on farm premises"
+        ],
+        benefits: "Free furnished farm cottage, utility allowances, farm produce.",
+        category: "General Work / Factory",
+        active: true
+      },
+      // 23. Precision Development - PxD (Remote / Tech NGO)
+      {
+        id: 23,
+        title: "Mobile Agronomy Content Coordinator (Remote Kenya)",
+        location: "Kenya (Remote / Home-Based)",
+        salary: "KES 70,000 - 95,000/mo",
+        deadline: "27 November 2026",
+        education: "Degree in Agricultural Sciences, Communications, or Development",
+        experience: "2+ years designing SMS/IVR agricultural advisories for smallholders",
+        requirements: [
+          "Fluent in English and Swahili (ability to translate technical agronomy to lay terms)",
+          "Reliable home internet connection and high self-management",
+          "Experience conducting user interviews and surveying rural farmers",
+          "Apply online via PxD careers"
+        ],
+        benefits: "100% remote flexibility, home internet stipend, laptop provided, health cover.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      // 24. Prime HR Solutions (Recruitment Agency)
+      {
+        id: 24,
+        title: "Dispatch Motorcycle Riders & Industrial Drivers (12 Posts)",
+        location: "Industrial Area, Nairobi",
+        salary: "KES 25,000 - 32,000/mo + Overtime",
+        deadline: "20 November 2026",
+        education: "KCSE Certificate",
+        experience: "1+ year parcel dispatch or commercial route driving in Nairobi",
+        requirements: [
+          "Valid Kenyan Driving License with Class A (Motorcycle) or BCE endorsement",
+          "Good geographical knowledge of Nairobi estates and industrial zones",
+          "Clean police Certificate of Good Conduct",
+          "Submit CV via email: talent@primehrsolutions.co.ke"
+        ],
+        benefits: "Company motorbike/fuel provided, medical cover, overtime bonuses.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      // 25. CJ's Restaurants (Hospitality)
+      {
+        id: 25,
+        title: "Restaurant Waiters, Hostesses & Baristas (15 Posts)",
+        location: "Nairobi County (CJ's Branches)",
+        salary: "Competitive Hospitality Scale + Tips",
+        deadline: "28 November 2026",
+        education: "Certificate or Diploma in Food & Beverage / Hospitality",
+        experience: "1+ year high-volume restaurant or barista service experience",
+        requirements: [
+          "Warm demeanor, active listening, and high grooming standards",
+          "Valid Food Handlers medical clearance certificate",
+          "Flexibility to work morning and evening shift rosters",
+          "Apply via official job opening portal"
+        ],
+        benefits: "Duty meals provided, service charge share, statutory medical benefits.",
+        category: "Hospitality / Waiter / Barista / Chef",
+        active: true
+      },
+      // 26. Dubai, UAE (Overseas Hospitality)
+      {
+        id: 26,
+        title: "Hotel Waiters, Baristas & Food Stewards (25 Posts)",
+        location: "Dubai, UAE (Overseas / Abroad)",
+        salary: "KES 75,000 - 95,000/mo (AED 2,200 - 2,800)",
+        deadline: "30 November 2026",
+        education: "KCSE Certificate / Hospitality Training Certificate",
+        experience: "Minimum 1 year restaurant, hotel, or food counter experience",
+        requirements: [
+          "Valid Kenyan Passport with at least 18 months validity remaining",
+          "Fluent conversational English with presentable grooming",
+          "GAMCA medical fitness certificate (fit for food industry)",
+          "Clean Certificate of Good Conduct from DCI"
+        ],
+        benefits: "Free 2-year UAE work visa, round-trip flight ticket, furnished company housing, transport & daily duty meals.",
+        category: "Hospitality / Waiter / Barista / Chef",
+        active: true
+      },
+      // 27. Doha, Qatar (Overseas Security)
+      {
+        id: 27,
+        title: "Perimeter & Event Security Marshals (35 Posts)",
+        location: "Doha, Qatar (Overseas / Abroad)",
+        salary: "KES 70,000 - 88,000/mo (QAR 2,000 - 2,500)",
+        deadline: "30 November 2026",
+        education: "KCSE Certificate",
+        experience: "1+ year private security, NYS paramilitary, or crowd management background",
+        requirements: [
+          "Valid Kenyan Passport ready for visa stamping",
+          "Height: 5'9\"+ (Men), 5'5\"+ (Women); physically fit with no visible tattoos",
+          "Clean DCI Certificate of Good Conduct (issued within last 6 months)",
+          "Medically certified fit via GAMCA approved clinic"
+        ],
+        benefits: "Free Qatar employment visa, return flight tickets, air-conditioned accommodation, uniform, and medical insurance.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
+      // 28. Riyadh & NEOM, Saudi Arabia (Overseas Technical)
+      {
+        id: 28,
+        title: "Heavy Equipment Operators - Excavators & Bulldozers (15 Posts)",
+        location: "Saudi Arabia (NEOM Infrastructure)",
+        salary: "KES 85,000 - 120,000/mo (SAR 2,500 - 3,500)",
+        deadline: "05 December 2026",
+        education: "Trade Test Certificate / National Driving License with Plant Endorsement",
+        experience: "3+ years operating excavators, bulldozers, or mobile cranes on civil construction sites",
+        requirements: [
+          "Valid Kenyan Passport",
+          "GAMCA Medical Fitness Clearance",
+          "Practical trade test competence in earthmoving operations",
+          "Adaptability to desert site conditions and shift work"
+        ],
+        benefits: "Free Saudi visa, flight tickets, camp housing, three meals daily provided, overtime pay, and medical coverage.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      // 29. United Kingdom (Overseas Healthcare)
+      {
+        id: 29,
+        title: "Healthcare Support Workers & Care Assistants (10 Posts)",
+        location: "United Kingdom (England & Wales - Abroad)",
+        salary: "KES 260,000 - 340,000/mo (£1,600 - £2,100/mo)",
+        deadline: "08 December 2026",
+        education: "Certificate or Diploma in Nursing, Community Health, or Caregiving",
+        experience: "Minimum 1 year verifiable hands-on elderly or palliative care",
+        requirements: [
+          "Valid Kenyan International Passport (at least 2 years validity)",
+          "IELTS UKVI Academic or General (minimum 5.0 overall score)",
+          "Tuberculosis (TB) clearance certificate from an IOM approved clinic",
+          "Clean international police clearance certificate"
+        ],
+        benefits: "UK Health and Care Worker Visa sponsorship pathway, subsidized initial accommodation, pension.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      },
+      // 30. Canada (Overseas Caregiver)
+      {
+        id: 30,
+        title: "Certified Home Caregivers & Elderly Aides (8 Posts)",
+        location: "Ontario & Alberta, Canada (Abroad)",
+        salary: "KES 240,000 - 320,000/mo (CAD $18 - $23/hr)",
+        deadline: "10 December 2026",
+        education: "Certificate or Diploma in Nursing, Community Health, or Caregiving",
+        experience: "Minimum 2 years verifiable hands-on elderly or palliative patient care",
+        requirements: [
+          "Valid Kenyan International Passport",
+          "Recognized Caregiving credentials or Nursing registration",
+          "IELTS General Training test (minimum CLB 5 score)",
+          "Clean police certificate and panel physician medical examination"
+        ],
+        benefits: "Legal Canadian work permit sponsorship pathway, provincial healthcare coverage, paid annual vacation.",
+        category: "Healthcare / Nursing / Caregiver",
         active: true
       }
     ];
@@ -662,9 +988,15 @@
     let activeFilterTerm = "";
 
     // SEARCH & FILTER LOGIC
-    function setFilterLocation(loc) {
-      document.getElementById("jobSearchInput").value = (loc === "all" ? "" : loc);
-      filterJobsLive();
+    function setFilterLocation(term) {
+      if (term === "all") {
+        document.getElementById("jobSearchInput").value = "";
+        activeFilterTerm = "";
+      } else {
+        document.getElementById("jobSearchInput").value = term;
+        activeFilterTerm = term.toLowerCase();
+      }
+      renderJobs();
       document.getElementById("vacancies").scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -685,7 +1017,8 @@
           job.title.toLowerCase().includes(activeFilterTerm) ||
           job.location.toLowerCase().includes(activeFilterTerm) ||
           job.category.toLowerCase().includes(activeFilterTerm) ||
-          job.education.toLowerCase().includes(activeFilterTerm)
+          job.education.toLowerCase().includes(activeFilterTerm) ||
+          (job.requirements && job.requirements.some(r => r.toLowerCase().includes(activeFilterTerm)))
         );
       });
 
@@ -696,8 +1029,8 @@
           <div class="col-span-full py-12 text-center bg-white rounded-2xl border border-slate-200">
             <i class="fas fa-search text-3xl text-slate-300 mb-2"></i>
             <p class="text-sm font-bold text-slate-700">No vacancies matched "${activeFilterTerm}"</p>
-            <p class="text-xs text-slate-500 mt-1">Try searching for "Nairobi", "Driver", "UAE", or "Nurse".</p>
-            <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all jobs</button>
+            <p class="text-xs text-slate-500 mt-1">Try searching for "Government", "NGO", "Driver", "Mombasa", or "Remote".</p>
+            <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all 30 jobs</button>
           </div>
         `;
         return;
@@ -727,7 +1060,7 @@
 
             <div class="pt-2 flex flex-col gap-2">
               <button onclick="openJobDetailsModal(${originalIndex})" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 rounded-lg text-xs transition border border-slate-300 flex items-center justify-center gap-1.5">
-                <i class="fas fa-eye text-emerald-700"></i> View Requirements & Details
+                <i class="fas fa-eye text-emerald-700"></i> View Requirements & Apply
               </button>
               ${isClosed ? `
                 <div class="w-full text-center bg-slate-200 text-slate-600 font-bold py-2 rounded-lg text-xs cursor-not-allowed">
@@ -808,6 +1141,7 @@
       document.getElementById("jobDetailsModal").classList.add("hidden");
     }
 
+    // Auto-load on ready
     document.addEventListener("DOMContentLoaded", renderJobs);
     renderJobs();
 
