@@ -22,7 +22,7 @@
         <span class="inline-flex items-center justify-center w-5 h-5 bg-blue-600 rounded-full text-white text-[11px]">
           <i class="fab fa-facebook-f"></i>
         </span>
-        <span>Official Community: <strong>15,000+ Followers</strong> • Government, Parastatal, NGO & Private Jobs</span>
+        <span>Official Community: <strong>13,000+ Followers</strong> • Government, Parastatal, NGO, Corporate & Overseas Jobs</span>
       </div>
       <div class="flex items-center gap-4 text-xs">
         <span class="hidden sm:inline text-slate-300">
@@ -46,7 +46,7 @@
         </div>
       </div>
       <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-600">
-        <a href="#vacancies" class="hover:text-emerald-700 transition">Find Jobs</a>
+        <a href="#vacancies" class="hover:text-emerald-700 transition">50 Live Jobs</a>
         <a href="#employers" class="hover:text-emerald-700 transition">Verified Workers</a>
         <a href="#cv-service" class="text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 hover:bg-amber-100 transition flex items-center gap-1">
           <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
@@ -61,31 +61,31 @@
   <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4">
     <div class="max-w-4xl mx-auto text-center space-y-5">
       <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-semibold text-emerald-300">
-        <i class="fas fa-check-double"></i> 30 Fresh Openings • Government, NGO, Corporate & Overseas
+        <i class="fas fa-check-double"></i> 50 Verified Opportunities • Updated November 2026
       </div>
       <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya & Overseas</h1>
       <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto">
-        Search public sector tenders, parastatals, NGO humanitarian roles, and corporate vacancies across Kenya or international placements.
+        Search public sector commissions, parastatals, international NGOs, corporate firms, and verified overseas contracts.
       </p>
 
       <!-- Live Search Box -->
       <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row gap-2 text-slate-800">
         <div class="flex-1 flex items-center px-3 gap-2">
           <i class="fas fa-search text-slate-400"></i>
-          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by job title, company, county, or trade (e.g. Driver, NGO, Mombasa, Bank)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
+          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. TSC, KDF, NGO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
         </div>
         <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-          Search 30 Jobs
+          Search 50 Jobs
         </button>
       </div>
 
       <!-- Quick Filter Pills -->
       <div class="flex flex-wrap justify-center gap-1.5 pt-2 text-xs">
-        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All Jobs</button>
+        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 50 Jobs</button>
         <button onclick="setFilterLocation('Government')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Gov / Parastatal</button>
-        <button onclick="setFilterLocation('NGO')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">NGOs / Non-Profit</button>
+        <button onclick="setFilterLocation('NGO')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">NGOs / UN</button>
         <button onclick="setFilterLocation('Nairobi')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Nairobi</button>
-        <button onclick="setFilterLocation('Mombasa')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Mombasa</button>
+        <button onclick="setFilterLocation('Mombasa')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Mombasa / Coast</button>
         <button onclick="setFilterLocation('Remote')" class="bg-indigo-900/60 border border-indigo-500/40 px-3 py-1 rounded-full text-indigo-300 font-medium text-[11px] transition">Remote / Hybrid</button>
         <button onclick="setFilterLocation('Abroad')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Gulf & Overseas</button>
       </div>
@@ -96,11 +96,11 @@
   <section class="py-6 bg-white border-b border-slate-200 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-slate-600 font-bold text-xs">
-        <span class="flex items-center gap-1.5"><i class="fas fa-landmark text-emerald-700"></i> Public Service Commission</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-heartbeat text-blue-600"></i> Digital Health Agency</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-hands-helping text-amber-600"></i> Save the Children / World Vision</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Co-operative Bank</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-plane text-red-600"></i> Kenya Airways</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-landmark text-emerald-700"></i> TSC / KDF / PPRA / KETRACO</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-hands-helping text-amber-600"></i> Save the Children / Plan Int / IRC</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Safaricom / KCB / Equity Afia</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-plane text-red-600"></i> Kenya Airways / Jambojet</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-globe text-blue-600"></i> UAE / Qatar / Saudi / UK / Canada</span>
       </div>
     </div>
   </section>
@@ -110,12 +110,12 @@
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-2">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Verified Opportunities</span>
-        <h2 class="text-2xl font-black text-slate-900">Featured Openings (November)</h2>
+        <h2 class="text-2xl font-black text-slate-900">Featured Openings (November 2026)</h2>
       </div>
       <div class="text-xs text-slate-500" id="jobCountDisplay">Loading all vacancies...</div>
     </div>
 
-    <!-- 30 Job Cards Render Container -->
+    <!-- 50 Job Cards Render Container -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="vacanciesContainer"></div>
   </section>
 
@@ -409,577 +409,914 @@
 
   <script>
     /* =====================================================================
-       30 CURATED JOBS FOR NOVEMBER 2026:
-       Government • Parastatals • NGOs • Private • Remote/Hybrid • Overseas
+       50 VERIFIED OPPORTUNITIES (NOVEMBER 2026):
+       Government • Parastatals • NGOs • Private Sector • Remote • Overseas
        ===================================================================== */
     const MY_JOBS = [
-      // 1. Digital Health Agency (Government)
+      // --- GOVERNMENT & PARASTATALS (1-11) ---
       {
         id: 1,
-        title: "Senior Drivers & Transport Logistics Officers (4 Posts)",
-        location: "Nairobi (Digital Health Agency - DHA)",
-        salary: "Civil Service Scale / KES 45,000 - 65,000/mo",
-        deadline: "01 December 2026",
-        education: "KCSE Certificate & NTSA Driving License (Class BCE)",
-        experience: "Minimum 4 years continuous government or corporate fleet operations",
+        title: "Secondary & Primary School Teachers (7,720 Posts Nationwide)",
+        location: "All 47 Counties (Teachers Service Commission - TSC)",
+        salary: "TSC Permanent & Pensionable Scale",
+        deadline: "23 November 2026",
+        education: "P1 Certificate / Diploma in Education / B.Ed Degree",
+        experience: "Registered teacher with valid TSC registration number",
         requirements: [
-          "Valid PSV endorsement and clean occupational driving record",
-          "Certificate of Good Conduct from DCI (valid)",
-          "Chapter Six compliance clearance certificates",
-          "Apply directly via official DHA portal: dha.go.ke/careers"
+          "Kenyan citizen with valid TSC Certificate of Registration",
+          "5,609 Primary, 25 Junior School, and 2,086 Secondary posts available",
+          "Apply strictly online via official portal: teachersonline.tsc.go.ke",
+          "Multiple submissions lead to automatic disqualification"
         ],
-        benefits: "Comprehensive civil service medical cover, government pension scheme, commuter allowance.",
-        category: "Driver / Logistics / Heavy Equipment",
-        active: true
-      },
-      // 2. Digital Health Agency (Government)
-      {
-        id: 2,
-        title: "ICT Officers & Digital Health Assistants (6 Posts)",
-        location: "Nairobi (Digital Health Agency - DHA)",
-        salary: "Government CSG Grade / KES 65,000 - 95,000/mo",
-        deadline: "01 December 2026",
-        education: "Bachelor's Degree in Computer Science, IT, BBIT or Health Informatics",
-        experience: "2+ years implementing digital health databases or enterprise software",
-        requirements: [
-          "Demonstrated proficiency in database administration and web APIs",
-          "Compliance with Chapter Six leadership integrity guidelines",
-          "Credit Reference Bureau (CRB) clearance report",
-          "Online application via dha.go.ke/careers"
-        ],
-        benefits: "Government statutory pension, inpatient/outpatient cover, hardship and commuter stipends.",
+        benefits: "Permanent & pensionable terms, comprehensive teacher medical scheme, commuter & house allowances.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 3. Insurance Regulatory Authority (Parastatal)
+      {
+        id: 2,
+        title: "Cadets, General Service Recruits & Tradesmen (2026 Intake)",
+        location: "Nationwide Recruitment Centers (Kenya Defence Forces - KDF)",
+        salary: "KDF Military Pay Scale",
+        deadline: "12 December 2026",
+        education: "KCSE Mean Grade D (Plain) for Recruits; B (Plain) for Cadets; Diploma/Degree for Specialists",
+        experience: "Entry level / Tradesmen & Artisans with NITA / TVET certifications",
+        requirements: [
+          "Kenyan citizen aged 18–26 years (up to 30 years for specialists/tradesmen)",
+          "Physically and medically fit; minimum height 5'3\" (Men), 5'0\" (Women)",
+          "Original National ID, KCSE certificates, and clean conduct record",
+          "Verify official sub-county recruitment schedule dates via mod.go.ke"
+        ],
+        benefits: "Full military healthcare, housing, subsidized mess facilities, pension, and career progression.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
       {
         id: 3,
-        title: "Customer Care & Public Relations Assistants (3 Posts)",
-        location: "Nairobi (Insurance Regulatory Authority - IRA)",
-        salary: "KES 60,000 - 85,000/mo",
-        deadline: "24 November 2026",
-        education: "Diploma in Customer Care, Public Relations, or Communication Studies",
-        experience: "Minimum 2 years front-office customer handling in financial or corporate sector",
+        title: "Compliance Officers, Legal Counsel & ICT Officers (35 Posts)",
+        location: "Nairobi (Public Procurement Regulatory Authority - PPRA)",
+        salary: "Parastatal Grade PPRA 5 to PPRA 12",
+        deadline: "10 December 2026",
+        education: "Diploma or Bachelor's Degree in Law, Procurement, ICT, Accounting, or HR",
+        experience: "1–6 years depending on grade (includes Driver III & Office Assistant III)",
         requirements: [
-          "Excellent verbal and written English and Swahili communication",
-          "Computer packages proficiency with CRM experience",
-          "High integrity with clean police certificate",
-          "Apply online via IRA careers portal"
+          "21 job cadres open across Compliance, Legal, ICT, Audit, Accounts, and Driving",
+          "Chapter Six compliance documents (EACC, DCI Good Conduct, KRA, CRB)",
+          "Apply online before 5:00 PM EAT via: erp.ppra.go.ke",
+          "Incomplete online applications will not be considered"
+        ],
+        benefits: "Permanent and pensionable public service terms, medical cover, commuter allowance.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 4,
+        title: "Power Transmission Engineers, Technicians & Corporate Staff",
+        location: "Nairobi & Regional Grids (KETRACO - Government)",
+        salary: "Parastatal Scale",
+        deadline: "04 December 2026",
+        education: "Diploma or BSc in Electrical Engineering, Wayleaves, Finance, or ICT",
+        experience: "2–5 years in high-voltage power transmission, grid maintenance, or public administration",
+        requirements: [
+          "Engineers/Technicians registered with EBK or KETRB",
+          "Full Chapter Six constitutional integrity clearances",
+          "Submit applications directly via official KETRACO careers portal",
+          "Willingness to deploy across national transmission substations"
+        ],
+        benefits: "Parastatal medical scheme, pension, field and hardship allowances.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      {
+        id: 5,
+        title: "Business Development, Credit & Regional Officers (KIE)",
+        location: "Nairobi & Regional Branches (Kenya Industrial Estates)",
+        salary: "Government Parastatal Scale",
+        deadline: "09 December 2026",
+        education: "Diploma or Degree in Business, Industrial Engineering, Finance, or Economics",
+        experience: "2+ years supporting SME enterprise development or industrial incubation",
+        requirements: [
+          "Chapter Six clearance certificates (DCI, KRA, EACC, HELB, CRB)",
+          "Strong analytical skills for SME project appraisal",
+          "Completed application documents must reach KIE offices by 5:00 PM Dec 9",
+          "Detailed job descriptions available at kie.co.ke"
+        ],
+        benefits: "Comprehensive medical cover, pension, industrial travel allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 6,
+        title: "Senior Drivers & Transport Logistics Officers (4 Posts)",
+        location: "Nairobi (Digital Health Agency - DHA Government)",
+        salary: "Civil Service Scale / KES 45,000 - 65,000/mo",
+        deadline: "01 December 2026",
+        education: "KCSE Certificate & Valid NTSA Driving License (Class BCE)",
+        experience: "4+ years accident-free institutional or government fleet driving",
+        requirements: [
+          "Valid PSV badge and defensive driving certificate",
+          "Clean Certificate of Good Conduct from DCI",
+          "Chapter Six constitutional clearance documents",
+          "Apply online via official DHA portal: dha.go.ke/careers"
+        ],
+        benefits: "Civil service inpatient/outpatient medical cover, pension scheme, commuter allowance.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 7,
+        title: "ICT Officers & Digital Health Assistants (6 Posts)",
+        location: "Nairobi (Digital Health Agency - DHA Government)",
+        salary: "KES 65,000 - 95,000/mo",
+        deadline: "01 December 2026",
+        education: "Bachelor's Degree in Computer Science, IT, BBIT, or Health Informatics",
+        experience: "2+ years managing enterprise health databases, APIs, or technical support",
+        requirements: [
+          "Proficiency in SQL databases, network security, and user support",
+          "Valid CRB clearance and Chapter Six compliance certificates",
+          "Submit online application via dha.go.ke/careers",
+          "Ready for nationwide health facility rollouts"
+        ],
+        benefits: "Government pension scheme, medical cover, field per diems.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 8,
+        title: "Manager, Construction Information Management Systems",
+        location: "Nairobi (National Construction Authority - NCA Government)",
+        salary: "KES 140,000 - 200,000/mo",
+        deadline: "23 November 2026",
+        education: "Bachelor's Degree in Computer Science, Software Engineering, or Civil Informatics",
+        experience: "5+ years managing national databases, contractor portals, or enterprise ERPs",
+        requirements: [
+          "Proven leadership in database security, compliance audits, and software lifecycle",
+          "Full Chapter Six constitutional clearances (KRA, DCI, EACC)",
+          "Apply online via official NCA recruitment portal: nca.go.ke",
+          "High analytical and project management acumen"
+        ],
+        benefits: "Parastatal executive medical cover, car allowance, gratuity/pension.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 9,
+        title: "Customer Care & Supply Chain Officers (IRA Parastatal)",
+        location: "Nairobi (Insurance Regulatory Authority - IRA)",
+        salary: "KES 60,000 - 120,000/mo",
+        deadline: "25 November 2026",
+        education: "Diploma or Bachelor's Degree in Public Relations, Customer Care, or Procurement",
+        experience: "2–3 years in public sector procurement (IFMIS) or corporate customer service",
+        requirements: [
+          "Procurement applicants must be registered members of KISM",
+          "Valid Certificate of Good Conduct and tax compliance",
+          "Apply via official IRA careers portal: ira.go.ke",
+          "Strong written and oral communication skills"
         ],
         benefits: "Full medical cover, pension, leave allowances.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 4. Insurance Regulatory Authority (Parastatal)
       {
-        id: 4,
-        title: "Supply Chain & Procurement Officer",
-        location: "Nairobi (Insurance Regulatory Authority - IRA)",
-        salary: "KES 85,000 - 120,000/mo",
-        deadline: "25 November 2026",
-        education: "Bachelor's Degree in Procurement, Supply Chain Management or Commerce",
-        experience: "3+ years public procurement experience adhering to PPDA Act",
-        requirements: [
-          "Active registered member of KISM in good standing",
-          "Proven experience with IFMIS and e-procurement portals",
-          "Chapter Six clearance certificates from EACC and DCI",
-          "Apply via official IRA portal"
-        ],
-        benefits: "Competitive public sector allowances, comprehensive healthcare, retirement benefits.",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-      // 5. National Construction Authority (Government Parastatal)
-      {
-        id: 5,
-        title: "Manager, Construction Information Management Systems",
-        location: "Nairobi (National Construction Authority - NCA)",
-        salary: "Parastatal Grade Scale / KES 140,000 - 200,000/mo",
-        deadline: "23 November 2026",
-        education: "Degree in Computer Science, Software Engineering or Civil Engineering Informatics",
-        experience: "5+ years managing construction sector digital databases or project ERPs",
-        requirements: [
-          "Proven management of national databases and contractor licensing workflows",
-          "Leadership in compliance audits and system security",
-          "Valid tax compliance and Chapter Six clearances",
-          "Apply online via NCA official recruitment system"
-        ],
-        benefits: "Generous medical cover, car allowance, gratuity/pension.",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-      // 6. Food For Education (NGO / Non-Profit)
-      {
-        id: 6,
-        title: "Driver - Field Logistics & Operations (5 Posts)",
-        location: "Nairobi & Kiambu (Food For Education)",
-        salary: "KES 38,000 - 48,000/mo",
-        deadline: "21 November 2026",
-        education: "KCSE Certificate",
-        experience: "3+ years commercial driving supplying schools or cold-chain goods",
-        requirements: [
-          "Valid Class BCE driving license with clean record",
-          "Punctual, safety-conscious, and compassionate around school children",
-          "Clean DCI Certificate of Good Conduct",
-          "Basic mechanical inspection skills"
-        ],
-        benefits: "Duty meals, health insurance, overtime compensation.",
-        category: "Driver / Logistics / Heavy Equipment",
-        active: true
-      },
-      // 7. Save the Children International (NGO)
-      {
-        id: 7,
-        title: "Lead, IT Systems Change & Field Interventions",
-        location: "Nairobi (Save the Children - Hybrid)",
-        salary: "NGO Scale / KES 150,000 - 220,000/mo",
+        id: 10,
+        title: "UN Communication & Social Media Intern",
+        location: "Nairobi (United Nations Office at Nairobi - UNON)",
+        salary: "UN Internship Stipend Scale",
         deadline: "22 November 2026",
-        education: "BSc in Information Technology, Software Engineering or Computer Science",
-        experience: "4+ years driving digital transformation across humanitarian field hubs",
+        education: "Enrolled in final year or recent graduate in Journalism, Media, or Communications",
+        experience: "Portfolio in digital storytelling, graphic design, or social media management",
         requirements: [
-          "Hands-on experience in enterprise change management and cloud IT infrastructure",
-          "Strong understanding of NGO safeguarding and child data privacy",
-          "Comfortable supporting remote country operations",
-          "Apply via Save the Children Careers online"
+          "Fluency in English (knowledge of another UN official language is an advantage)",
+          "Proficiency in Adobe Creative Suite / Canva and video editing",
+          "Apply online via UN Careers Inspira portal before Nov 22",
+          "Strong organizational and multicultural teamwork skills"
         ],
-        benefits: "International medical cover, hybrid work flexibility, life insurance, pension.",
+        benefits: "International diplomatic environment experience at UN Gigiri complex, monthly stipend.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 8. World Vision Kenya (NGO)
       {
-        id: 8,
-        title: "Project Field Monitor - Community Relief Operations (8 Posts)",
-        location: "Turkana & Marsabit Counties (World Vision Kenya)",
-        salary: "KES 45,000 - 60,000/mo",
-        deadline: "20 November 2026",
-        education: "Diploma in Community Development, Social Work, or Agriculture",
-        experience: "2+ years community mobilization and food advisory committee supervision",
+        id: 11,
+        title: "County Technical & Agricultural Officers (Kwale CPSB)",
+        location: "Kwale County (County Government of Kwale)",
+        salary: "County Public Service Job Group H & K",
+        deadline: "25 November 2026",
+        education: "Diploma or Degree in Agriculture, Irrigation Engineering, or Vocational Trades",
+        experience: "Entry level to 2 years in field extension or TVET vocational instruction",
         requirements: [
-          "Resident of or familiar with ASAL counties local languages and terrain",
-          "Experience in electronic beneficiary registration and food distribution",
-          "Strong physical fitness and field stamina",
-          "Clean police clearance certificate"
+          "Roles include Assistant Agriculture Officer, Irrigation Technologist & TVET Instructors",
+          "Valid Chapter Six clearances and academic transcripts",
+          "Apply via Kwale County Public Service Board portal: kwale.go.ke",
+          "Permanent and pensionable county terms"
         ],
-        benefits: "Field hardship allowances, comprehensive medical cover, emergency medical evacuation.",
+        benefits: "County medical scheme, pension, house and commuter allowances.",
         category: "General Work / Factory",
         active: true
       },
-      // 9. Aga Khan Foundation (NGO / Foundation)
+
+      // --- NGOs & HUMANITARIAN AGENCIES (12-23) ---
       {
-        id: 9,
-        title: "Programme Coordinator - Government Relations & Systems Change",
-        location: "Mombasa County (Aga Khan Foundation)",
-        salary: "Competitive NGO Remuneration",
-        deadline: "19 November 2026",
-        education: "Bachelor's Degree in Social Sciences, Public Policy, or Development Studies",
-        experience: "3+ years coordinating government initiatives and community stakeholders in Coast Region",
+        id: 12,
+        title: "Program Support Assistant (Procurement & Logistics)",
+        location: "Nairobi (Save the Children International - NGO)",
+        salary: "NGO Scale / KES 75,000 - 105,000/mo",
+        deadline: "28 November 2026",
+        education: "Diploma or Bachelor's Degree in Supply Chain, Procurement, or Business Admin",
+        experience: "2+ years supporting NGO field office procurement, fleet, and asset management",
         requirements: [
-          "Strong background working with coastal county governments and early education programs",
-          "Superior stakeholder reporting and presentation skills",
-          "Fluency in English and Swahili",
-          "Immediate availability"
+          "Experience in donor-compliant purchasing (USAID/ECHO/UN rules)",
+          "Commitment to Save the Children Child Safeguarding Policy",
+          "Clean police Certificate of Good Conduct",
+          "Apply online via Save the Children Careers portal"
         ],
-        benefits: "Aga Khan Health services medical insurance, retirement plan, travel per diems.",
+        benefits: "International medical insurance, pension, life cover, annual leave.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 10. International Rescue Committee - IRC (NGO)
       {
-        id: 10,
-        title: "Health Supply Chain & Pharmaceutical Specialist",
-        location: "Nairobi & Garissa (IRC Kenya)",
-        salary: "KES 110,000 - 160,000/mo",
-        deadline: "25 November 2026",
-        education: "Degree in Pharmacy, Supply Chain, or Health Logistics",
-        experience: "3+ years managing medical logistics in humanitarian emergency response",
+        id: 13,
+        title: "MERL & AAP Specialist / Strategic Finance Lead",
+        location: "Nairobi (Plan International - NGO)",
+        salary: "Competitive INGO Scale",
+        deadline: "30 November 2026",
+        education: "Bachelor's or Master's Degree in Monitoring & Evaluation, Statistics, or Finance (CPA/ACCA)",
+        experience: "4+ years leading humanitarian M&E frameworks or multi-donor financial grants",
         requirements: [
-          "Knowledge of cold-chain monitoring and pharmacy dispensing protocols",
-          "Experience tracking donor-funded commodities (USAID/UNHCR)",
-          "Clean police certificate and professional licenses",
-          "Apply via IRC careers website"
+          "Expertise in Accountability to Affected Populations (AAP) and quantitative data tools",
+          "Strong financial grant compliance and donor reporting background",
+          "Apply via Plan International global recruitment portal",
+          "Willingness to travel to field project sites"
         ],
-        benefits: "International medical coverage, hardship allowances, global career mobility.",
+        benefits: "Comprehensive international healthcare, pension, hybrid work options.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 14,
+        title: "Technology & Human Rights Campaign Officer / Intern",
+        location: "Nairobi (Amnesty International Kenya - NGO)",
+        salary: "NGO Remuneration / Paid Internship",
+        deadline: "29 November 2026",
+        education: "Degree in Law, Digital Policy, Communications, or Social Sciences",
+        experience: "2+ years in digital rights advocacy, policy research, or civic campaigning",
+        requirements: [
+          "Passion for human rights, data privacy, and digital governance in Kenya",
+          "Strong research, policy brief writing, and coalition-building skills",
+          "Apply online via Amnesty International Kenya portal",
+          "Available for full-time engagement in Nairobi"
+        ],
+        benefits: "Medical cover, pension, global human rights training network.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 15,
+        title: "Field Administrative Officer (Humanitarian Operations)",
+        location: "Kakuma, Turkana County (Center for Victims of Torture - NGO)",
+        salary: "NGO Field Scale + Hardship Allowance",
+        deadline: "02 December 2026",
+        education: "Diploma or Degree in Business Administration, Finance, or Operations",
+        experience: "3+ years managing field office logistics, petty cash, fleet, and procurement",
+        requirements: [
+          "Experience working in refugee camp or donor-funded humanitarian environments",
+          "High proficiency in Excel, inventory registers, and vehicle logbook audits",
+          "Submit CV and motivation letter combined into one PDF via ReliefWeb",
+          "Kenyan citizen with clean police clearance"
+        ],
+        benefits: "Rest & Recuperation (R&R) cycles, field accommodation/allowance, medical evacuation cover.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 16,
+        title: "Field Driver & Nutrition Officer (2 Posts)",
+        location: "Kakuma / Turkana (IsraAID Kenya - NGO)",
+        salary: "NGO Scale / KES 45,000 - 85,000/mo",
+        deadline: "22 November 2026",
+        education: "Driver: KCSE + Class BCE License; Nutrition: Diploma/BSc in Nutrition & Dietetics",
+        experience: "2+ years humanitarian field driving (4x4 off-road) or community nutrition programs",
+        requirements: [
+          "Nutrition Officer must be registered with KNDI",
+          "Driver must have clean 4x4 off-road experience and defensive driving certificate",
+          "Clean DCI Certificate of Good Conduct",
+          "Apply via IsraAID Kenya recruitment email before Nov 22"
+        ],
+        benefits: "Comprehensive medical cover, hardship stipend, life insurance.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 17,
+        title: "Head of Logistics & Supply Chain",
+        location: "Nairobi (Médecins Sans Frontières - MSF NGO)",
+        salary: "Competitive INGO Scale",
+        deadline: "27 November 2026",
+        education: "Degree in Supply Chain, Logistics, Engineering, or Humanitarian Operations",
+        experience: "4+ years leading emergency medical supply chains, fleet, and cold-chain warehousing",
+        requirements: [
+          "Experience managing multi-site humanitarian logistics and customs clearance",
+          "Strong leadership over warehouse, transport, and biomedical maintenance teams",
+          "Apply directly via MSF East Africa recruitment portal",
+          "Fluent in English and Swahili"
+        ],
+        benefits: "International medical insurance, pension, emergency response training.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 18,
+        title: "Procurement Officer (Global Multi-Category Generalist)",
+        location: "Nairobi (International Rescue Committee - IRC NGO)",
+        salary: "KES 115,000 - 165,000/mo",
+        deadline: "31 January 2027",
+        education: "Bachelor's Degree in Procurement, Supply Chain, or Business Management",
+        experience: "3+ years managing donor-compliant procurement (USAID/FCDO/UN)",
+        requirements: [
+          "CIPS certification or KISM active membership",
+          "Experience in strategic vendor sourcing, tender evaluation, and ERP systems",
+          "Apply online via IRC Careers portal",
+          "High ethical standards and zero tolerance for fraud"
+        ],
+        benefits: "Comprehensive medical insurance, pension, hybrid work flexibility.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 19,
+        title: "Temporary Administrative Assistant",
+        location: "Nairobi (CBM Christian Blind Mission - NGO)",
+        salary: "KES 55,000 - 75,000/mo",
+        deadline: "30 November 2026",
+        education: "Diploma or Degree in Business Administration or Office Management",
+        experience: "2–5 years providing administrative, correspondence, and event support in an NGO",
+        requirements: [
+          "Proficiency in MS Office Suite, record management, and meeting coordination",
+          "Commitment to disability inclusion and safeguarding standards",
+          "Full-time on-site role in Nairobi",
+          "Apply via Corporate Staffing / CBM portal before Nov 30"
+        ],
+        benefits: "Medical cover, statutory benefits, inclusive workplace environment.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 20,
+        title: "Tupande Zone Field Supervisors (Agriculture)",
+        location: "Ntimaru & Oldanyati / Western & Rift (One Acre Fund - NGO)",
+        salary: "KES 42,000 - 58,000/mo",
+        deadline: "03 February 2027",
+        education: "Diploma or Degree in Agriculture, Agribusiness, or Community Development",
+        experience: "2+ years managing field officer teams and smallholder farmer input distribution",
+        requirements: [
+          "Strong leadership to coach 10–15 field officers and track loan repayment",
+          "Willingness to ride a motorbike and live within the assigned rural zone",
+          "Fluency in English, Swahili, and local dialect",
+          "Apply online via One Acre Fund careers page"
+        ],
+        benefits: "Motorbike and fuel provided, health insurance, performance bonuses.",
+        category: "General Work / Factory",
+        active: true
+      },
+      {
+        id: 21,
+        title: "Monitoring, Evaluation & Learning (MEL) Lead - AI Health",
+        location: "Nairobi (African Population & Health Research Center - APHRC)",
+        salary: "Competitive Research Scale",
+        deadline: "02 December 2026",
+        education: "Master's Degree in Public Health, Biostatistics, Epidemiology, or M&E",
+        experience: "4+ years leading MEL frameworks in public health or digital AI health projects",
+        requirements: [
+          "Strong quantitative and qualitative research design skills (R, Stata, or Python)",
+          "Experience coordinating multi-country research deliverables",
+          "Apply via APHRC careers portal",
+          "Published peer-reviewed research is an added advantage"
+        ],
+        benefits: "Comprehensive medical scheme, pension, research conference travel.",
         category: "Healthcare / Nursing / Caregiver",
         active: true
       },
-      // 11. Co-operative Bank of Kenya (Corporate / Banking)
       {
-        id: 11,
-        title: "AI, Data & Analytics Specialists (8 Tracks)",
-        location: "Nairobi County (Co-op Bank HQ)",
-        salary: "Competitive Bank Scale / Executive Package",
-        deadline: "18 November 2026",
-        education: "BSc in Computer Science, Data Science, Software Engineering or related discipline",
-        experience: "Enterprise banking, machine learning integration, or cloud data architecture background",
+        id: 22,
+        title: "Human Resource & Legal Interns (Paid Graduate Program)",
+        location: "Nairobi (Kituo Cha Sheria - NGO)",
+        salary: "NGO Graduate Internship Stipend",
+        deadline: "27 November 2026",
+        education: "Degree in HRM / Communications or LLB Law Degree (for Pupilage/Holding Over)",
+        experience: "Fresh graduates seeking practical legal aid or HR administration experience",
         requirements: [
-          "Tracks: AI App Engineer, AIQA Automation, Data Architect, Data Scientist, Risk Specialist",
-          "Experience building scalable machine learning data pipelines and secure APIs",
-          "Clean credit history (CRB clearance certificate)",
-          "Apply strictly via official Co-op Bank portal"
+          "Passion for social justice, legal aid, and human rights advocacy",
+          "Strong drafting, research, and record-keeping skills",
+          "Apply via Kituo Cha Sheria recruitment email",
+          "Available immediately in Nairobi"
         ],
-        benefits: "Comprehensive bank health scheme, staff preferential loans, pension.",
+        benefits: "Monthly stipend, mentorship from senior advocates and HR practitioners.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 12. Kenya Airways (Aviation / Corporate)
       {
-        id: 12,
-        title: "Financial Accountant & Multi-Currency Auditor",
-        location: "Nairobi (Kenya Airways Pride Centre)",
+        id: 23,
+        title: "Senior Manager, Early Childhood Development & Education",
+        location: "Nairobi (BRAC International - NGO)",
+        salary: "Competitive INGO Scale",
+        deadline: "28 November 2026",
+        education: "Bachelor's or Master's Degree in Education, Early Childhood Development, or Social Work",
+        experience: "5+ years managing large-scale community education and ECD programs",
+        requirements: [
+          "Proven track record in curriculum adaptation and donor grant management",
+          "Strong partnership skills with Ministry of Education officials",
+          "Apply via BRAC International careers portal before Nov 28",
+          "Willingness to travel across project counties"
+        ],
+        benefits: "Comprehensive medical insurance, pension, leadership development.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+
+      // --- PRIVATE COMPANIES, BANKS & INDUSTRIES (24-44) ---
+      {
+        id: 24,
+        title: "Judicial Liaison Officer (Legal & Regulatory)",
+        location: "Nairobi (Safaricom PLC)",
+        salary: "Corporate Executive Scale",
+        deadline: "20 November 2026",
+        education: "Bachelor of Laws (LLB) + Postgraduate Diploma from Kenya School of Law",
+        experience: "2+ years handling court orders, law enforcement compliance, and legal notices",
+        requirements: [
+          "Admitted as an Advocate of the High Court of Kenya with active practicing certificate",
+          "High integrity, confidentiality, and rapid turnaround on judicial requests",
+          "Apply strictly online via Safaricom Careers portal before Nov 20",
+          "Strong stakeholder management with judiciary and security agencies"
+        ],
+        benefits: "Comprehensive medical scheme, staff airtime/data, performance bonus, pension.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 25,
+        title: "Head of Employee Relations & Head of Fleet Development",
+        location: "Nairobi (Kenya Airways PLC)",
+        salary: "Airline Executive Scale",
+        deadline: "24 November 2026",
+        education: "Degree in HR Management (with IHRM) or Aviation/Engineering Management",
+        experience: "6+ years leading unionized industrial relations or commercial aircraft fleet planning",
+        requirements: [
+          "Employee Relations: Mastery of Kenyan Labour Laws, CBA negotiations, and IHRM membership",
+          "Fleet Development: Experience in aircraft leasing, route economics, and fleet optimization",
+          "Apply online via Kenya Airways Careers portal by Nov 24",
+          "Uncompromising integrity and aviation security clearance"
+        ],
+        benefits: "Concessional global flight tickets, comprehensive medical cover, executive pension.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 26,
+        title: "Sim Instructor, Captain & Route Development Analyst",
+        location: "Nairobi JKIA (Jambojet)",
         salary: "Airline Industry Scale",
-        deadline: "17 November 2026",
-        education: "Bachelor's Degree in Finance/Accounting + CPA(K) or ACCA",
-        experience: "3+ years financial reporting in aviation, multinational logistics, or Big 4 audit",
+        deadline: "04 December 2026",
+        education: "ATPL License (for Pilots) or Degree in Economics/Aviation Analytics (for Analyst)",
+        experience: "Type-rated Dash 8-Q400 hours (for Captains/Instructors) or 2+ yrs airline route analytics",
         requirements: [
-          "Active registered member of ICPAK in good standing",
-          "Proficiency in Oracle ERP, SAP, and advanced financial modeling",
-          "Clear understanding of IFRS standards and airline clearing houses",
-          "High level of integrity and background check clearance"
+          "Pilots: Valid KCAA ATPL, Class 1 Medical, and simulator instruction endorsement",
+          "Route Analyst: Strong financial modeling and airline network demand forecasting",
+          "Apply online via Jambojet Careers portal",
+          "Clean safety and regulatory record"
         ],
-        benefits: "Concessional flight ticket privileges for employee & dependents, pension, outpatient/inpatient cover.",
-        category: "Administration / Reception / Cashier",
+        benefits: "Flight benefits, comprehensive health insurance, loss-of-license cover (pilots).",
+        category: "Driver / Logistics / Heavy Equipment",
         active: true
       },
-      // 13. AutoXpress Kenya (Private Automotive)
       {
-        id: 13,
-        title: "Automotive Technicians & Wheel Alignment Specialists (6 Posts)",
-        location: "Nairobi, Mombasa & Kisumu (AutoXpress Kenya)",
-        salary: "KES 40,000 - 58,000/mo",
-        deadline: "02 December 2026",
-        education: "Certificate or Diploma in Automotive Engineering (NITA Grade I/II)",
-        experience: "2+ years hands-on commercial vehicle suspension, brake repair, and 3D wheel balancing",
+        id: 27,
+        title: "Business Development Officer, Dentist & Pharmaceutical Technologist",
+        location: "Voi (Taita Taveta) & Nairobi (Equity Afia)",
+        salary: "Competitive Healthcare Corporate Scale",
+        deadline: "27 November 2026",
+        education: "BDS Dental Surgery, Diploma in Pharmacy, or Degree in Business/Marketing",
+        experience: "2+ years clinical practice or healthcare facility business development",
         requirements: [
-          "Demonstrated technical skills in passenger and 4x4 vehicles",
-          "Clean driving license with accident-free track record",
-          "Polite customer handling and diagnostic reporting",
+          "Clinicians must hold valid KMPDC or Pharmacy & Poisons Board practicing licenses",
+          "Business Development Officer based in Voi to drive corporate and insurance clinic partnerships",
+          "Apply via Equity Group / Equity Afia careers portal by Nov 27",
+          "Patient-centered care and high ethical standards"
+        ],
+        benefits: "Comprehensive medical cover, staff pension, continuous medical education support.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      },
+      {
+        id: 28,
+        title: "Technical Training Officer & Employee Relations Officer",
+        location: "Nairobi (Automobile Association of Kenya - AA Kenya)",
+        salary: "KES 65,000 - 95,000/mo",
+        deadline: "20 November 2026",
+        education: "Diploma/Degree in Automotive Engineering or Human Resource Management",
+        experience: "3+ years in defensive driving/automotive instruction or HR industrial relations",
+        requirements: [
+          "Technical Officer: NTSA certified driving instructor with deep mechanical diagnostics",
+          "HR Officer: Active IHRM member with experience in disciplinary & welfare management",
+          "Apply via AA Kenya recruitment portal by Nov 20",
           "Valid Certificate of Good Conduct"
         ],
-        benefits: "Tool kit allowances, technical certification sponsorships, healthcare cover.",
-        category: "Construction / Electrical / Plumbing",
+        benefits: "AA membership privileges, medical insurance, pension scheme.",
+        category: "Driver / Logistics / Heavy Equipment",
         active: true
       },
-      // 14. Twyford Tile Kenya (Manufacturing / Industry)
       {
-        id: 14,
-        title: "Industrial Electrical Technicians & Overhead Crane Operators",
-        location: "Kajiado / Nairobi (Twyford Tile)",
-        salary: "KES 45,000 - 68,000/mo",
-        deadline: "20 November 2026",
-        education: "Certificate/Diploma in Electrical Installation or Certified Crane Operator Permit",
-        experience: "2+ years in manufacturing factory line maintenance or heavy crane yard operations",
+        id: 29,
+        title: "Administrative Officer & Logistics Supervisor",
+        location: "Nairobi (Kilimall Kenya)",
+        salary: "KES 45,000 - 65,000/mo",
+        deadline: "21 November 2026",
+        education: "Diploma or Degree in Logistics, Supply Chain, or Business Administration",
+        experience: "2+ years managing e-commerce warehouse sorting, rider dispatch, or office admin",
         requirements: [
-          "Electrical: Troubleshooting 3-phase high voltage motors, sensors, and PLCs",
-          "Crane: Valid operator license with zero site safety infractions",
-          "Readiness for 8-hour day/night shift rotations",
-          "Valid DCI Certificate of Good Conduct"
+          "Experience with warehouse management systems (WMS) and last-mile delivery KPIs",
+          "Strong Excel reporting and team supervision skills",
+          "Clean police Certificate of Good Conduct",
+          "Apply before Nov 21 via Kilimall HR portal"
         ],
-        benefits: "Safety gear supplied, production bonuses, medical cover, overtime pay.",
-        category: "Construction / Electrical / Plumbing",
+        benefits: "Performance bonuses, medical cover, e-commerce career growth.",
+        category: "Driver / Logistics / Heavy Equipment",
         active: true
       },
-      // 15. Githunguri Dairy Farmers Co-op (Agribusiness)
       {
-        id: 15,
-        title: "Dairy Extension Officers & Animal Health Technicians (4 Posts)",
-        location: "Kiambu County (Githunguri)",
-        salary: "KES 38,000 - 50,000/mo",
-        deadline: "24 November 2026",
-        education: "Certificate or Diploma in Animal Health, Food Science, or Dairy Technology",
-        experience: "3+ years technical field support and training for dairy farmers",
+        id: 30,
+        title: "Alarm Response, Logistics & Field Security Officers",
+        location: "Nairobi & Mombasa (BM Security)",
+        salary: "KES 32,000 - 48,000/mo",
+        deadline: "22 November 2026",
+        education: "KCSE Certificate (Mean Grade D+ and above)",
+        experience: "2+ years in rapid alarm response, patrol supervision, or commercial security",
         requirements: [
-          "Registered with Kenya Veterinary Board (KVB) or relevant body",
-          "Valid motorcycle riding license (Class A) with off-road experience",
-          "Experience in artificial insemination (AI) and milk quality testing",
-          "Fluency in Kikuyu and Swahili is an added advantage"
+          "Valid Class BCE/A driving license (for Alarm Response drivers)",
+          "Clean Certificate of Good Conduct from DCI (issued within 6 months)",
+          "Physically fit with strong incident reporting discipline",
+          "Apply via BM Security recruitment desk before Nov 22"
         ],
-        benefits: "Motorbike fuel allowance, field per diems, comprehensive cooperative healthcare.",
-        category: "General Work / Factory",
+        benefits: "Full uniform, medical cover, night shift allowances, statutory NSSF/SHIF.",
+        category: "Security Guard / Watchman",
         active: true
       },
-      // 16. Teleperformance Kenya (BPO / Remote Hybrid)
       {
-        id: 16,
-        title: "Customer Support & Technical Agents (Rotational Shifts)",
-        location: "Nairobi County (Teleperformance Kenya - Hybrid)",
-        salary: "KES 45,000 - 62,000/mo",
-        deadline: "24 November 2026",
-        education: "KCSE Certificate / College Diploma",
-        experience: "Entry level welcome or 6+ months customer service experience",
+        id: 31,
+        title: "Talent Acquisition Lead (Healthcare Recruitment)",
+        location: "Nairobi (Penda Health)",
+        salary: "KES 90,000 - 130,000/mo",
+        deadline: "27 November 2026",
+        education: "Bachelor's Degree in Human Resource Management or Business",
+        experience: "3+ years high-volume clinical and corporate recruitment",
         requirements: [
-          "Excellent spoken and written English communication (neutral accent)",
-          "Typing speed of 35+ words per minute",
-          "Comfortable with 24/7 rotational night shifts",
-          "Quiet home environment for hybrid days"
+          "Active member of IHRM in good standing",
+          "Proven track record hiring clinical officers, nurses, and branch managers",
+          "Data-driven recruitment funnel tracking",
+          "Apply online via Penda Health careers page by Nov 27"
         ],
-        benefits: "Free company night shuttle transport, medical scheme, performance incentives.",
+        benefits: "Comprehensive medical care at Penda clinics, pension, performance bonus.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 17. Rentalle PropTech (Private Tech / Field)
       {
-        id: 17,
-        title: "Field Sales and Customer Onboarding Agent (10 Posts)",
+        id: 32,
+        title: "Brand & Hospitality Interns (Paid 2026 Cohort)",
+        location: "Nairobi, Mombasa & Kisumu (Java House Africa)",
+        salary: "Paid Internship Stipend + Duty Meals",
+        deadline: "11 December 2026",
+        education: "Diploma or Degree in Marketing, Hospitality, or Business",
+        experience: "Fresh graduates with high energy and customer obsession",
+        requirements: [
+          "Passion for food & beverage brand activation and guest experience",
+          "Valid Food Handlers medical certificate (or willingness to obtain)",
+          "Apply online via Java House Africa careers portal before Dec 11",
+          "Flexible to work branch rotational hours"
+        ],
+        benefits: "Daily duty meals, structured management trainee pathway, stipend.",
+        category: "Hospitality / Waiter / Barista / Chef",
+        active: true
+      },
+      {
+        id: 33,
+        title: "Trade Marketing Manager (Solar Energy)",
+        location: "Nairobi (Sun King - Greenlight Planet)",
+        salary: "Competitive Corporate Scale",
+        deadline: "20 November 2026",
+        education: "Bachelor's Degree in Marketing, Business, or Commerce",
+        experience: "4+ years leading below-the-line trade activations and retail merchandising across Kenya",
+        requirements: [
+          "Experience driving rural & peri-urban agent activations in FMCG or solar",
+          "Strong analytical skills to measure campaign ROI",
+          "Apply via Sun King careers portal before Nov 20",
+          "Willingness to travel upcountry"
+        ],
+        benefits: "Medical cover, pension, performance incentives, travel allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 34,
+        title: "Regional Operations Manager & Zonal Monitoring Officers",
+        location: "Nairobi (Oya Microcredit)",
+        salary: "KES 55,000 - 120,000/mo",
+        deadline: "28 November 2026",
+        education: "Bachelor's Degree in Finance, Economics, Accounting, or Business",
+        experience: "1–3+ years in microfinance credit monitoring or regional branch operations",
+        requirements: [
+          "Strong portfolio-at-risk (PAR) tracking and field loan officer supervision",
+          "High analytical proficiency in Excel and core banking systems",
+          "Clean CRB and DCI Certificate of Good Conduct",
+          "Apply via Corporate Staffing Services portal"
+        ],
+        benefits: "Performance bonuses, airtime & field transport allowance, medical insurance.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 35,
+        title: "Business Applications Developer",
+        location: "Nakuru County (Valley Hospital)",
+        salary: "KES 70,000 - 100,000/mo",
+        deadline: "20 November 2026",
+        education: "BSc in Computer Science, Software Engineering, or Information Technology",
+        experience: "2+ years developing and integrating Hospital Management Information Systems (HMIS)",
+        requirements: [
+          "Proficiency in SQL databases, API integrations (SHA/insurance claims), and web apps",
+          "Ability to train doctors, nurses, and billing clerks on hospital software",
+          "Based full-time in Nakuru",
+          "Apply before Nov 20"
+        ],
+        benefits: "Hospital medical cover, pension, professional IT certifications.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 36,
+        title: "Front Office Supervisor",
+        location: "Nanyuki / Nyeri (Naro Moru River Lodge)",
+        salary: "KES 40,000 - 55,000/mo",
+        deadline: "21 November 2026",
+        education: "Diploma or Degree in Hotel & Hospitality Management",
+        experience: "3+ years supervising front desk, reservations, and guest relations in a safari lodge",
+        requirements: [
+          "Proficiency in hotel PMS reservation software and OTA channel managers",
+          "Warm hospitality leadership and guest complaint resolution skills",
+          "Valid Certificate of Good Conduct",
+          "Apply before Nov 21"
+        ],
+        benefits: "Staff accommodation on-site, duty meals, service charge share.",
+        category: "Hospitality / Waiter / Barista / Chef",
+        active: true
+      },
+      {
+        id: 37,
+        title: "Senior Property Advisor (Real Estate Sales)",
+        location: "Nairobi (Corporate Staffing Client)",
+        salary: "KES 80,000/mo + Sales Commissions",
+        deadline: "29 November 2026",
+        education: "Bachelor's Degree in Marketing, Real Estate, Business, or Commerce",
+        experience: "3+ years closing high-value residential or commercial property sales/leases",
+        requirements: [
+          "Proven network of property investors and corporate tenants in Nairobi",
+          "Strong negotiation, valuation advisory, and client relationship skills",
+          "Apply via Corporate Staffing Services portal",
+          "Valid driving license is an added advantage"
+        ],
+        benefits: "Attractive base salary of KES 80K plus lucrative closing commissions.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 38,
+        title: "Automotive Technicians & Wheel Mechanics (6 Posts)",
+        location: "Nairobi & Mombasa (AutoXpress Kenya)",
+        salary: "KES 40,000 - 55,000/mo",
+        deadline: "02 December 2026",
+        education: "Certificate or Diploma in Automotive Engineering (NITA Grade I/II)",
+        experience: "2+ years servicing passenger & 4x4 suspension, brakes, and 3D wheel alignment",
+        requirements: [
+          "Valid Kenyan Driving License with clean accident-free record",
+          "Strong technical diagnostic and customer explanation etiquette",
+          "Valid Certificate of Good Conduct from DCI",
+          "Apply via AutoXpress Kenya careers portal"
+        ],
+        benefits: "Medical insurance, tool allowances, technical training, annual leave bonus.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      {
+        id: 39,
+        title: "Industrial Electrical Technicians & Overhead Crane Operators",
+        location: "Kajiado / Nairobi (Twyford Tile)",
+        salary: "KES 45,000 - 65,000/mo",
+        deadline: "25 November 2026",
+        education: "Certificate/Diploma in Electrical Engineering or Certified Crane Operator License",
+        experience: "2+ years in manufacturing factory line maintenance or heavy crane operations",
+        requirements: [
+          "Electrical: Troubleshooting 3-phase industrial motors, sensors, and PLCs",
+          "Crane: Valid operator permit compliant with Kenyan safety regulations",
+          "Willingness to work 8-hour day/night shift rotations",
+          "Valid police Certificate of Good Conduct"
+        ],
+        benefits: "Safety gear provided, production bonuses, medical insurance, overtime pay.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      {
+        id: 40,
+        title: "Field Sales & Customer Onboarding Agents (10 Posts)",
         location: "Nairobi, Mombasa & Nakuru (Rentalle PropTech)",
         salary: "Commission + Performance Incentives (KES 35,000 - 65,000 potential)",
         deadline: "30 November 2026",
-        education: "Certificate, Diploma or Degree in Sales, Marketing, ICT or Business",
-        experience: "Entry level / Field sales, real estate, or app onboarding experience preferred",
+        education: "Certificate, Diploma or Degree in Sales, Marketing, ICT, or Business",
+        experience: "Entry level / Field sales, real estate, or digital app onboarding experience",
         requirements: [
-          "Identify and onboard landlords and estate managers to digital rental platform",
-          "Demonstrate mobile portal, register properties, and verify units",
-          "Strong communication, hunger to close deals, and self-drive",
+          "Identify and onboard landlords and property managers to Rentalle platform",
+          "Demonstrate mobile software and register rental units",
+          "Self-motivated, confident communicator able to work independently",
           "Send CV & brief cover letter to: adminrentalle@gmail.com"
         ],
-        benefits: "High uncapped commissions, tech sales mentorship, career progression to Territory Lead.",
+        benefits: "Uncapped performance commissions, proptech sales training, growth to Territory Lead.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 18. Buysimu Technologies (FinTech / Credit)
       {
-        id: 18,
-        title: "Portfolio Management & Credit Recovery Officers",
-        location: "Nairobi County (Buysimu Tech)",
-        salary: "KES 35,000 - 50,000/mo + Collections Bonus",
-        deadline: "22 November 2026",
-        education: "Degree or Diploma in Business, Finance, Credit Management or Marketing",
-        experience: "1–2 years handling customer debt resolution or phone portfolio management",
+        id: 41,
+        title: "Customer Service Centre Agents (Hybrid Remote)",
+        location: "Nairobi (Ideon Limited - Hybrid)",
+        salary: "KES 35,000 - 48,000/mo",
+        deadline: "24 November 2026",
+        education: "KCSE Certificate / College Diploma",
+        experience: "1+ year call center, tele-sales, or customer support experience",
         requirements: [
-          "Proficiency in CRM platforms and professional telephone etiquette",
-          "Negotiation skills with ethical debt resolution approach",
-          "Clear police clearance certificate",
-          "High emotional intelligence and stress tolerance"
+          "Articulate English and Swahili phone etiquette",
+          "Fast typing and CRM ticket logging skills",
+          "Reliable home internet connection for hybrid work days",
+          "Apply before Nov 24"
         ],
-        benefits: "Monthly performance bonuses, medical insurance, airtime and lunch subsidy.",
+        benefits: "Hybrid work flexibility, monthly airtime/data stipend, performance bonuses.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 19. Fresh Produce Packhouse (Agribusiness / Manufacturing)
       {
-        id: 19,
-        title: "Fresh Produce Packhouse & Sorting Supervisors",
-        location: "Thika, Kiambu County (Bollard Consulting)",
-        salary: "KES 38,000 - 52,000/mo",
-        deadline: "18 November 2026",
-        education: "Certificate or Diploma in Food Science, Horticulture, or Production",
-        experience: "2+ years supervising avocado, mango, or fresh vegetable cold packhouses",
-        requirements: [
-          "Knowledge of KEPHIS export guidelines and Global GAP hygiene protocols",
-          "Experience monitoring weighing, fruit ripening chambers, and loading manifests",
-          "Supervisory ability over 30+ packhouse casual workers",
-          "Valid Food Handlers medical clearance"
-        ],
-        benefits: "Performance bonuses, subsidized farm produce, overtime allowances.",
-        category: "General Work / Factory",
-        active: true
-      },
-      // 20. Coastal Logistics Fleet (Transport / Port)
-      {
-        id: 20,
-        title: "Heavy Commercial Articulated Truck Drivers (8 Posts)",
-        location: "Mombasa County (Port & Transit Route)",
-        salary: "KES 45,000 - 62,000/mo",
-        deadline: "25 November 2026",
-        education: "KCSE Certificate",
-        experience: "4+ years driving articulated semi-trailers along Northern Corridor (Mombasa-Uganda)",
-        requirements: [
-          "Valid NTSA Driving License (Class BCE / Articulated endorsement)",
-          "Clean driving record with no fatal accident record",
-          "Valid PSV badge and valid Certificate of Good Conduct from DCI",
-          "Experience with transit container seal security and port gate-passes"
-        ],
-        benefits: "Trip per diems, transit meal allowances, NHIF/NSSF statutory cover.",
-        category: "Driver / Logistics / Heavy Equipment",
-        active: true
-      },
-      // 21. Private Junior Academy (Education)
-      {
-        id: 21,
-        title: "Deputy Headteacher & Junior School Curriculum Lead",
-        location: "Nakuru County",
-        salary: "KES 40,000 - 55,000/mo",
-        deadline: "20 November 2026",
-        education: "Bachelor's Degree or Diploma in Education (CBC Certified)",
-        experience: "Minimum 5 years active teaching experience with 2+ years in school leadership",
-        requirements: [
-          "Registered with Teachers Service Commission (TSC)",
-          "Thorough mastery of CBC assessment rubrics and learner portfolio management",
-          "Demonstrated record of pupil discipline and co-curricular leadership",
-          "Valid police clearance certificate"
-        ],
-        benefits: "Staff housing allowance, school meals, fee concession for children.",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-      // 22. Commercial Farm (Rift Valley)
-      {
-        id: 22,
-        title: "Assistant Farm Operations Manager (Horticulture & Crops)",
-        location: "Naivasha, Nakuru County",
-        salary: "KES 60,000 - 80,000/mo",
-        deadline: "26 November 2026",
-        education: "Degree or Diploma in Agriculture, Agribusiness, or Horticulture",
-        experience: "4+ years managing greenhouse irrigation, crop protection, and labor teams",
-        requirements: [
-          "Expertise in drip irrigation scheduling, fertigation, and chemical scouting",
-          "Supervision of 50+ field laborers and compliance with export audits",
-          "Clean driving license and valid police clearance",
-          "Willingness to live on farm premises"
-        ],
-        benefits: "Free furnished farm cottage, utility allowances, farm produce.",
-        category: "General Work / Factory",
-        active: true
-      },
-      // 23. Precision Development - PxD (Remote / Tech NGO)
-      {
-        id: 23,
-        title: "Mobile Agronomy Content Coordinator (Remote Kenya)",
-        location: "Kenya (Remote / Home-Based)",
+        id: 42,
+        title: "Mobile Agronomy Content Coordinator (100% Remote)",
+        location: "Kenya (Precision Development - PxD Remote)",
         salary: "KES 70,000 - 95,000/mo",
         deadline: "27 November 2026",
-        education: "Degree in Agricultural Sciences, Communications, or Development",
-        experience: "2+ years designing SMS/IVR agricultural advisories for smallholders",
+        education: "Bachelor's Degree in Agriculture, Communications, or Development Studies",
+        experience: "2+ years developing digital/SMS agricultural advisories for smallholder farmers",
         requirements: [
-          "Fluent in English and Swahili (ability to translate technical agronomy to lay terms)",
-          "Reliable home internet connection and high self-management",
-          "Experience conducting user interviews and surveying rural farmers",
-          "Apply online via PxD careers"
+          "Fluent in English and Swahili with ability to simplify technical agronomy",
+          "Strong self-management for 100% remote work from home",
+          "Experience conducting user testing with rural farmers",
+          "Apply via PxD online portal"
         ],
-        benefits: "100% remote flexibility, home internet stipend, laptop provided, health cover.",
+        benefits: "100% remote flexibility, home internet stipend, company laptop, medical cover.",
         category: "Administration / Reception / Cashier",
         active: true
       },
-      // 24. Prime HR Solutions (Recruitment Agency)
       {
-        id: 24,
-        title: "Dispatch Motorcycle Riders & Industrial Drivers (12 Posts)",
-        location: "Industrial Area, Nairobi",
-        salary: "KES 25,000 - 32,000/mo + Overtime",
-        deadline: "20 November 2026",
+        id: 43,
+        title: "Heavy Commercial Articulated Truck Drivers (8 Posts)",
+        location: "Mombasa County (Port & Northern Corridor)",
+        salary: "KES 45,000 - 62,000/mo",
+        deadline: "28 November 2026",
         education: "KCSE Certificate",
-        experience: "1+ year parcel dispatch or commercial route driving in Nairobi",
+        experience: "4+ years driving articulated semi-trailers (Mombasa–Malaba/Kampala route)",
         requirements: [
-          "Valid Kenyan Driving License with Class A (Motorcycle) or BCE endorsement",
-          "Good geographical knowledge of Nairobi estates and industrial zones",
-          "Clean police Certificate of Good Conduct",
-          "Submit CV via email: talent@primehrsolutions.co.ke"
+          "Valid NTSA Driving License (Class BCE / Articulated Endorsement)",
+          "Valid PSV badge and clean Certificate of Good Conduct from DCI",
+          "Experience with port container gate-passes and transit cargo security",
+          "Clean accident-free driving record"
         ],
-        benefits: "Company motorbike/fuel provided, medical cover, overtime bonuses.",
+        benefits: "Trip per diems, transit meal allowances, NHIF/SHIF & NSSF cover.",
         category: "Driver / Logistics / Heavy Equipment",
         active: true
       },
-      // 25. CJ's Restaurants (Hospitality)
       {
-        id: 25,
-        title: "Restaurant Waiters, Hostesses & Baristas (15 Posts)",
-        location: "Nairobi County (CJ's Branches)",
-        salary: "Competitive Hospitality Scale + Tips",
-        deadline: "28 November 2026",
-        education: "Certificate or Diploma in Food & Beverage / Hospitality",
-        experience: "1+ year high-volume restaurant or barista service experience",
+        id: 44,
+        title: "Fresh Produce Packhouse & Sorting Supervisors",
+        location: "Thika, Kiambu County",
+        salary: "KES 38,000 - 52,000/mo",
+        deadline: "26 November 2026",
+        education: "Certificate or Diploma in Food Science, Horticulture, or Production",
+        experience: "2+ years supervising export avocado/mango packhouses or cold rooms",
         requirements: [
-          "Warm demeanor, active listening, and high grooming standards",
-          "Valid Food Handlers medical clearance certificate",
-          "Flexibility to work morning and evening shift rosters",
-          "Apply via official job opening portal"
+          "Knowledge of KEPHIS export standards and Global GAP hygiene protocols",
+          "Experience supervising 30+ packhouse sorting and grading casual staff",
+          "Valid Food Handlers medical certificate",
+          "Strong inventory and dispatch manifest accuracy"
         ],
-        benefits: "Duty meals provided, service charge share, statutory medical benefits.",
-        category: "Hospitality / Waiter / Barista / Chef",
+        benefits: "Performance incentives, overtime pay, statutory medical cover.",
+        category: "General Work / Factory",
         active: true
       },
-      // 26. Dubai, UAE (Overseas Hospitality)
+
+      // --- OVERSEAS / ABROAD OPPORTUNITIES (45-50) ---
       {
-        id: 26,
-        title: "Hotel Waiters, Baristas & Food Stewards (25 Posts)",
-        location: "Dubai, UAE (Overseas / Abroad)",
-        salary: "KES 75,000 - 95,000/mo (AED 2,200 - 2,800)",
-        deadline: "30 November 2026",
-        education: "KCSE Certificate / Hospitality Training Certificate",
-        experience: "Minimum 1 year restaurant, hotel, or food counter experience",
+        id: 45,
+        title: "Hospitality Waiters, Baristas & F&B Experts (25 Posts)",
+        location: "Dubai, UAE (Rotana / Marriott / Westin Hotels - Abroad)",
+        salary: "KES 75,000 - 98,000/mo (AED 2,200 - 2,800 + Tips)",
+        deadline: "27 November 2026",
+        education: "KCSE Certificate / Hospitality Certificate",
+        experience: "1+ year restaurant, barista, or hotel F&B customer service",
         requirements: [
-          "Valid Kenyan Passport with at least 18 months validity remaining",
-          "Fluent conversational English with presentable grooming",
-          "GAMCA medical fitness certificate (fit for food industry)",
+          "Valid Kenyan Passport (minimum 18 months validity remaining)",
+          "Fluent spoken English etiquette with neat personal grooming",
+          "GAMCA medical fitness clearance (food industry standard)",
           "Clean Certificate of Good Conduct from DCI"
         ],
-        benefits: "Free 2-year UAE work visa, round-trip flight ticket, furnished company housing, transport & daily duty meals.",
+        benefits: "2-year UAE employment visa, flight ticket, shared hotel accommodation, transport & duty meals.",
         category: "Hospitality / Waiter / Barista / Chef",
         active: true
       },
-      // 27. Doha, Qatar (Overseas Security)
       {
-        id: 27,
-        title: "Perimeter & Event Security Marshals (35 Posts)",
+        id: 46,
+        title: "Registered Nurses & Clinical Care Specialists (12 Posts)",
+        location: "Al Ain & Abu Dhabi, UAE (Mediclinic - Abroad)",
+        salary: "KES 220,000 - 310,000/mo (AED 6,500 - 9,000)",
+        deadline: "24 November 2026",
+        education: "BSc Nursing or KRCHN Diploma + Valid NCK Practicing License",
+        experience: "Minimum 2 years acute hospital bedside nursing experience",
+        requirements: [
+          "Valid Kenyan International Passport",
+          "DOH / HAAD exam eligibility or DataFlow verification readiness",
+          "Valid BLS / ACLS certifications",
+          "Clean police clearance and medical fitness"
+        ],
+        benefits: "Tax-free salary, UAE residency visa, flight tickets, housing allowance, medical insurance.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      },
+      {
+        id: 47,
+        title: "Perimeter & Facility Security Marshals (35 Posts)",
         location: "Doha, Qatar (Overseas / Abroad)",
         salary: "KES 70,000 - 88,000/mo (QAR 2,000 - 2,500)",
         deadline: "30 November 2026",
         education: "KCSE Certificate",
-        experience: "1+ year private security, NYS paramilitary, or crowd management background",
+        experience: "1+ year private security, NYS paramilitary, or crowd control background",
         requirements: [
           "Valid Kenyan Passport ready for visa stamping",
           "Height: 5'9\"+ (Men), 5'5\"+ (Women); physically fit with no visible tattoos",
           "Clean DCI Certificate of Good Conduct (issued within last 6 months)",
           "Medically certified fit via GAMCA approved clinic"
         ],
-        benefits: "Free Qatar employment visa, return flight tickets, air-conditioned accommodation, uniform, and medical insurance.",
+        benefits: "Free Qatar employment visa, return air tickets, air-conditioned housing, uniform & medical cover.",
         category: "Security Guard / Watchman",
         active: true
       },
-      // 28. Riyadh & NEOM, Saudi Arabia (Overseas Technical)
       {
-        id: 28,
-        title: "Heavy Equipment Operators - Excavators & Bulldozers (15 Posts)",
-        location: "Saudi Arabia (NEOM Infrastructure)",
-        salary: "KES 85,000 - 120,000/mo (SAR 2,500 - 3,500)",
+        id: 48,
+        title: "Heavy Equipment Operators & Construction Technicians (20 Posts)",
+        location: "Riyadh & NEOM, Saudi Arabia (Overseas / Abroad)",
+        salary: "KES 85,000 - 125,000/mo (SAR 2,500 - 3,600)",
         deadline: "05 December 2026",
-        education: "Trade Test Certificate / National Driving License with Plant Endorsement",
-        experience: "3+ years operating excavators, bulldozers, or mobile cranes on civil construction sites",
+        education: "NITA Trade Test Certificate / NTSA License with Heavy Plant Endorsement",
+        experience: "3+ years operating excavators, bulldozers, cranes, or industrial electrical/plumbing",
         requirements: [
           "Valid Kenyan Passport",
           "GAMCA Medical Fitness Clearance",
-          "Practical trade test competence in earthmoving operations",
-          "Adaptability to desert site conditions and shift work"
+          "Practical trade test competence in heavy machinery or MEP trades",
+          "Adaptability to desert project site conditions"
         ],
-        benefits: "Free Saudi visa, flight tickets, camp housing, three meals daily provided, overtime pay, and medical coverage.",
+        benefits: "Free Saudi work visa, flight tickets, camp accommodation, 3 daily meals provided, overtime pay.",
         category: "Driver / Logistics / Heavy Equipment",
         active: true
       },
-      // 29. United Kingdom (Overseas Healthcare)
       {
-        id: 29,
-        title: "Healthcare Support Workers & Care Assistants (10 Posts)",
-        location: "United Kingdom (England & Wales - Abroad)",
-        salary: "KES 260,000 - 340,000/mo (£1,600 - £2,100/mo)",
-        deadline: "08 December 2026",
-        education: "Certificate or Diploma in Nursing, Community Health, or Caregiving",
-        experience: "Minimum 1 year verifiable hands-on elderly or palliative care",
+        id: 49,
+        title: "Skilled Joiners, Bricklayers & Groundworkers (Visa Sponsored)",
+        location: "United Kingdom & Isle of Man (Dandara Construction - Abroad)",
+        salary: "KES 280,000 - 380,000/mo (£1,800 - £2,400/mo)",
+        deadline: "24 December 2026",
+        education: "NITA / TVET Trade Certificate in Carpentry, Masonry, or Civil Construction",
+        experience: "3+ years verifiable residential or commercial construction experience",
         requirements: [
-          "Valid Kenyan International Passport (at least 2 years validity)",
-          "IELTS UKVI Academic or General (minimum 5.0 overall score)",
-          "Tuberculosis (TB) clearance certificate from an IOM approved clinic",
-          "Clean international police clearance certificate"
+          "Valid Kenyan International Passport (2+ years validity)",
+          "UKVI English language proficiency (IELTS B1 level)",
+          "IOM Tuberculosis (TB) clearance and clean international police record",
+          "Employer offers UK Skilled Worker Visa sponsorship on eligibility"
         ],
-        benefits: "UK Health and Care Worker Visa sponsorship pathway, subsidized initial accommodation, pension.",
-        category: "Healthcare / Nursing / Caregiver",
+        benefits: "UK Visa sponsorship pathway, pension scheme, paid annual leave, UK statutory protections.",
+        category: "Construction / Electrical / Plumbing",
         active: true
       },
-      // 30. Canada (Overseas Caregiver)
       {
-        id: 30,
-        title: "Certified Home Caregivers & Elderly Aides (8 Posts)",
-        location: "Ontario & Alberta, Canada (Abroad)",
+        id: 50,
+        title: "Certified Home Caregivers & Elderly Aides (10 Posts)",
+        location: "Ontario & Alberta, Canada (Overseas / Abroad)",
         salary: "KES 240,000 - 320,000/mo (CAD $18 - $23/hr)",
         deadline: "10 December 2026",
         education: "Certificate or Diploma in Nursing, Community Health, or Caregiving",
         experience: "Minimum 2 years verifiable hands-on elderly or palliative patient care",
         requirements: [
           "Valid Kenyan International Passport",
-          "Recognized Caregiving credentials or Nursing registration",
+          "Recognized Caregiving credentials or Nursing Council registration",
           "IELTS General Training test (minimum CLB 5 score)",
           "Clean police certificate and panel physician medical examination"
         ],
-        benefits: "Legal Canadian work permit sponsorship pathway, provincial healthcare coverage, paid annual vacation.",
+        benefits: "Legal Canadian work permit sponsorship pathway, provincial healthcare coverage, paid vacation.",
         category: "Healthcare / Nursing / Caregiver",
         active: true
       }
@@ -1029,8 +1366,8 @@
           <div class="col-span-full py-12 text-center bg-white rounded-2xl border border-slate-200">
             <i class="fas fa-search text-3xl text-slate-300 mb-2"></i>
             <p class="text-sm font-bold text-slate-700">No vacancies matched "${activeFilterTerm}"</p>
-            <p class="text-xs text-slate-500 mt-1">Try searching for "Government", "NGO", "Driver", "Mombasa", or "Remote".</p>
-            <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all 30 jobs</button>
+            <p class="text-xs text-slate-500 mt-1">Try searching for "Government", "NGO", "Driver", "Mombasa", "Remote", or "Abroad".</p>
+            <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all ${MY_JOBS.length} jobs</button>
           </div>
         `;
         return;
@@ -1046,7 +1383,7 @@
                 <span class="${isClosed ? 'bg-slate-200 text-slate-600' : 'bg-emerald-100 text-emerald-800'} text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
                   ${job.location}
                 </span>
-                <span class="${isClosed ? 'text-slate-500 line-through' : 'text-emerald-700'} font-bold text-xs">
+                <span class="${isClosed ? 'text-slate-500 line-through' : 'text-emerald-700'} font-bold text-xs text-right">
                   ${job.salary}
                 </span>
               </div>
@@ -1114,7 +1451,7 @@
               <p class="text-slate-700 font-medium">${job.experience}</p>
             </div>
             <div>
-              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-400 mb-1">Key Requirements</span>
+              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-400 mb-1">Key Requirements & How to Apply</span>
               <ul class="space-y-1.5">${reqListHtml}</ul>
             </div>
             <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
