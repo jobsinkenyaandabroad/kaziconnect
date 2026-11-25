@@ -50,31 +50,43 @@
         <a href="#cv-service" class="hidden lg:flex text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 hover:bg-amber-100 transition items-center gap-1">
           <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
         </a>
-        <!-- Member Unlock Status Button -->
-        <button id="navMemberBtn" onclick="openMemberUnlockModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1.5 shadow text-xs">
-          <i class="fas fa-key text-amber-400"></i> <span id="navMemberBtnText">Member Login</span>
+        <!-- Bright Header Member Login Button -->
+        <button id="navMemberBtn" onclick="openMemberUnlockModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-3.5 py-2 rounded-lg font-black transition flex items-center gap-1.5 shadow text-xs">
+          <i class="fas fa-key"></i> <span id="navMemberBtnText">Member Login</span>
         </button>
-        <a href="#register" class="hidden sm:inline bg-emerald-600 text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-emerald-700 transition shadow text-xs">Get Pass (KES 199)</a>
+        <a href="#register" class="hidden sm:inline bg-emerald-600 text-white px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition shadow text-xs">Get Pass (KES 199)</a>
         <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 text-xs flex items-center gap-1"><i class="fas fa-lock"></i></button>
       </nav>
     </div>
   </header>
 
   <!-- Active Member Banner (Visible only after entering Member Passcode) -->
-  <div id="memberActiveBanner" class="hidden bg-emerald-700 text-white text-xs py-2 px-4 text-center font-semibold">
+  <div id="memberActiveBanner" class="hidden bg-emerald-700 text-white text-xs py-2.5 px-4 text-center font-semibold shadow-inner">
     <i class="fas fa-unlock-alt mr-1.5 text-amber-300"></i> <strong>6-Month Member Pass Active!</strong> All direct employer emails, application portals, and procedures are unlocked below.
   </div>
 
-  <!-- Hero Section with Live Search -->
+  <!-- Hero Section with Prominent Member Unlock Button & Live Search -->
   <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4">
-    <div class="max-w-4xl mx-auto text-center space-y-5">
-      <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-semibold text-emerald-300">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-300">
         <i class="fas fa-check-double"></i> 50 Verified Opportunities • Direct Employer Portals & Emails
       </div>
       <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya & Overseas</h1>
-      <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto">
-        Browse public sector commissions, parastatals, international NGOs, corporate firms, and overseas contracts. Unlock direct application links and emails with your 6-Month Member Pass.
+      <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+        Browse public sector commissions, parastatals, international NGOs, corporate firms, and overseas contracts. Unlock direct application links and HR emails with your 6-Month Member Pass.
       </p>
+
+      <!-- BIG & BRIGHT HERO CALL-TO-ACTION BUTTONS -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-1">
+        <button id="heroMemberUnlockBtn" onclick="openMemberUnlockModal()" class="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-7 py-4 rounded-2xl shadow-xl shadow-amber-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 text-sm sm:text-base border-2 border-amber-200">
+          <i class="fas fa-key text-lg"></i>
+          <span id="heroMemberBtnText">Already Paid? Unlock Jobs (Enter Passcode)</span>
+        </button>
+        <a href="#register" class="w-full sm:w-auto bg-safaricom hover:bg-emerald-500 text-white font-black px-7 py-4 rounded-2xl shadow-xl shadow-emerald-600/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-sm sm:text-base">
+          <i class="fas fa-user-plus"></i>
+          <span>Get 6-Month Pass (KES 199)</span>
+        </a>
+      </div>
 
       <!-- Live Search Box -->
       <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row gap-2 text-slate-800">
@@ -82,13 +94,13 @@
           <i class="fas fa-search text-slate-400"></i>
           <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. TSC, KDF, NGO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
         </div>
-        <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+        <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
           Search 50 Jobs
         </button>
       </div>
 
       <!-- Quick Filter Pills -->
-      <div class="flex flex-wrap justify-center gap-1.5 pt-2 text-xs">
+      <div class="flex flex-wrap justify-center gap-1.5 pt-1 text-xs">
         <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 50 Jobs</button>
         <button onclick="setFilterLocation('Government')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Gov / Parastatal</button>
         <button onclick="setFilterLocation('NGO')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">NGOs / UN</button>
@@ -119,7 +131,7 @@
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Verified Opportunities</span>
         <h2 class="text-2xl font-black text-slate-900">Featured Openings (November 2026)</h2>
-        <p class="text-xs text-slate-500 mt-1">Click <strong>"View Requirements & How to Apply"</strong> on any job to view qualifications and direct application links.</p>
+        <p class="text-xs text-slate-500 mt-1">Click <strong>"View Details & How to Apply"</strong> on any job to view qualifications and direct application links.</p>
       </div>
       <div class="flex items-center gap-3">
         <span class="text-xs text-slate-500" id="jobCountDisplay">Loading all vacancies...</span>
@@ -358,7 +370,7 @@
       <button onclick="closeMemberUnlockModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
         <i class="fas fa-times"></i>
       </button>
-      <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl">
+      <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mx-auto text-xl">
         <i class="fas fa-key"></i>
       </div>
       <div>
@@ -366,9 +378,9 @@
         <p class="text-xs text-slate-500 mt-1">Enter the Member Passcode sent to your WhatsApp after paying KES 199/200 to unlock all direct employer emails, links, and application procedures.</p>
       </div>
       <form onsubmit="verifyMemberCode(event)" class="space-y-3">
-        <input type="text" id="memberCodeInput" required placeholder="Enter Passcode (e.g. KAZI2026)" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-center text-base font-mono uppercase tracking-widest outline-none focus:ring-2 focus:ring-emerald-600">
+        <input type="text" id="memberCodeInput" required placeholder="Enter Passcode (e.g. KAZI2026)" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-center text-base font-mono uppercase tracking-widest outline-none focus:ring-2 focus:ring-amber-500">
         <p id="memberCodeError" class="text-xs text-red-600 font-bold hidden">Invalid passcode. Check WhatsApp or register below.</p>
-        <button type="submit" class="w-full bg-safaricom hover:bg-emerald-600 text-white font-black py-2.5 rounded-xl text-xs transition shadow">
+        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 rounded-xl text-xs transition shadow">
           Unlock All 50 Direct Application Links
         </button>
       </form>
@@ -453,26 +465,38 @@
     let isMemberUnlocked = (localStorage.getItem("kazi_member_unlocked") === "true");
 
     function updateMemberUIState() {
-      const btn = document.getElementById("navMemberBtn");
-      const btnText = document.getElementById("navMemberBtnText");
+      const navBtn = document.getElementById("navMemberBtn");
+      const navBtnText = document.getElementById("navMemberBtnText");
+      const heroBtn = document.getElementById("heroMemberUnlockBtn");
+      const heroBtnText = document.getElementById("heroMemberBtnText");
       const banner = document.getElementById("memberActiveBanner");
 
       if (isMemberUnlocked) {
-        btn.classList.remove("bg-slate-900", "hover:bg-slate-800");
-        btn.classList.add("bg-emerald-700", "hover:bg-emerald-800");
-        btnText.innerText = "Pass Active";
+        navBtn.classList.remove("bg-amber-500", "hover:bg-amber-400", "text-slate-950");
+        navBtn.classList.add("bg-emerald-700", "hover:bg-emerald-800", "text-white");
+        navBtnText.innerText = "Pass Active";
+
+        heroBtn.classList.remove("bg-amber-400", "hover:bg-amber-300", "text-slate-950", "border-amber-200");
+        heroBtn.classList.add("bg-emerald-700", "hover:bg-emerald-600", "text-white", "border-emerald-400");
+        heroBtnText.innerText = "Member Pass Active — All 50 Links Unlocked";
+
         banner.classList.remove("hidden");
       } else {
-        btn.classList.add("bg-slate-900", "hover:bg-slate-800");
-        btn.classList.remove("bg-emerald-700", "hover:bg-emerald-800");
-        btnText.innerText = "Member Login";
+        navBtn.classList.add("bg-amber-500", "hover:bg-amber-400", "text-slate-950");
+        navBtn.classList.remove("bg-emerald-700", "hover:bg-emerald-800", "text-white");
+        navBtnText.innerText = "Member Login";
+
+        heroBtn.classList.add("bg-amber-400", "hover:bg-amber-300", "text-slate-950", "border-amber-200");
+        heroBtn.classList.remove("bg-emerald-700", "hover:bg-emerald-600", "text-white", "border-emerald-400");
+        heroBtnText.innerText = "Already Paid? Unlock Jobs (Enter Passcode)";
+
         banner.classList.add("hidden");
       }
     }
 
     function openMemberUnlockModal() {
       if (isMemberUnlocked) {
-        alert("Your 6-Month Member Pass is ALREADY ACTIVE! Click 'View Requirements & Apply' on any job card to access direct employer emails, links, and application procedures.");
+        document.getElementById("vacancies").scrollIntoView({ behavior: "smooth" });
         return;
       }
       document.getElementById("memberCodeError").classList.add("hidden");
@@ -1616,7 +1640,6 @@
         </li>
       `).join('');
 
-      // Build Direct Application Section based on Member Unlock status
       let directApplySectionHtml = "";
       if (isMemberUnlocked) {
         const emailSubject = encodeURIComponent(`Application for ${job.title}`);
@@ -1659,7 +1682,7 @@
               </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-2 pt-1">
-              <button onclick="closeJobDetailsModal(); openMemberUnlockModal();" class="flex-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-2.5 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5">
+              <button onclick="closeJobDetailsModal(); openMemberUnlockModal();" class="flex-1 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black py-2.5 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5">
                 <i class="fas fa-key"></i> Already Paid? Enter Passcode
               </button>
               <button onclick="closeJobDetailsModal(); applyForRole('${job.category}');" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5">
