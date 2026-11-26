@@ -2057,3 +2057,138 @@
       const name = document.getElementById("regName").value;
       const phone = document.getElementById("regPhone").value;
       const dest = document.getElementById("regDest").value;
+      const passport = document.getElementById("regPassport").value;
+      const field = document.getElementById("regField").value;
+      const cvInput = document.getElementById("regCV");
+      const cvRevamp = document.getElementById("cvUpsellCheckbox").checked;
+      const mpesaCode = document.getElementById("regMpesaCode").value.trim().toUpperCase() || "PENDING";
+      const cvFileName = cvInput.files[0] ? cvInput.files[0].name : "cv_document.pdf";
+
+      const candidateRecord = {
+        id: "CAN-" + Date.now().toString().slice(-6),
+        name, phone, dest, passport, field, cvFileName, cvRevamp, mpesaCode,
+        amount: currentPayable,
+        status: mpesaCode !== "PENDING" ? "Submitted (Pending Check)" : "Payment Pending",
+        date: new Date().toLocaleDateString("en-GB")
+      };
+
+      const existing = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
+      existing.unshift(candidateRecord);
+      localStorage.setItem("kazi_candidates", JSON.stringify(existing));
+
+      alert("REGISTRATION RECEIVED!\n\nAmount: KES " + currentPayable + "\n1. Send to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to open WhatsApp Desk (" + WHATSAPP_DESK_NUMBER + ") to receive your 6-Month Member Passcode.");
+
+      const waText = encodeURIComponent(
+        "Hello Admin, I submitted my 6-Month Member registration.\n\n" +
+        "• Name: " + name + "\n• Phone: " + phone + "\n• Target: " + field + " (" + dest + ")\n" +
+        "• Total Due: KES " + currentPayable + " (Payable to " + MPESA_PAYMENT_LINE + ")\n" +
+        "• CV Revamp: " + (cvRevamp ? "YES (KES 300 included)" : "NO") + "\n" +
+        "• M-Pesa Code: " + mpesaCode + "\n\nPlease verify my payment and share my Member Passcode."
+      );
+      window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + waText, "_blank");
+      document.getElementById("candidateForm").reset();
+      updateTotalPayable();
+    }
+
+    function filterCandidateBank() {
+      const fieldFilter = document.getElementById("empFilterField").value;
+      const passportFilter = document.getElementById("empFilterPassport").value;
+      const cards = document.querySelectorAll(".candidate-card");
+      cards.forEach(card => {
+        const matchesField = (fieldFilter === "all" || card.getAttribute("data-field") === fieldFilter);
+        const matchesPassport = (passportFilter === "all" || card.getAttribute("data-passport") === passportFilter);
+        card.classList.toggle("hidden", !(matchesField && matchesPassport));
+      });
+    }
+
+    function orderCVRevampOnly() {
+      if (confirm("ORDER PROFESSIONAL CV REVAMP (KES 300):\n\n1. Send KES 300 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to send CV via WhatsApp.")) {
+        const text = encodeURIComponent("Hello Admin, I want to order the KES 300 ATS CV Revamp.\nPayment sent to " + MPESA_PAYMENT_LINE + ". Attached is my CV.");
+        window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + text, "_blank");
+      }
+    }
+
+    function orderEmployerPass() {
+      if (confirm("EMPLOYER 20-CV UNLOCK PASS (KES 1,000):\n\n1. Send KES 1,000 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to request unlock on WhatsApp.")) {
+        const text = encodeURIComponent("Hello Admin, I am an agency/employer unlocking 20 candidate CVs for KES 1,000.\nPayment sent to " + MPESA_PAYMENT_LINE + ".");
+        window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + text, "_blank");
+      }
+    }
+
+    function toggleAdminModal() {
+      document.getElementById("pinErrorMsg").classList.add("hidden");
+      document.getElementById("adminModal").classList.toggle("hidden");
+    }
+
+    async function verifyAdminPIN() {
+      const pin = document.getElementById("adminPinInput").value.trim();
+      const pinHash = await sha256(pin);
+      if (pinHash === ADMIN_PIN_HASH) {
+        document.getElementById("adminLoginView").classList.add("hidden");
+        document.getElementById("adminPanelView").classList.remove("hidden");
+        loadAdminRecords();
+      } else {
+        document.getElementById("pinErrorMsg").classList.remove("hidden");
+      }
+    }
+
+    function loadAdminRecords() {
+      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
+      const tbody = document.getElementById("adminTableBody");
+      let totalRev = 0, paidCount = 0, revampCount = 0;
+      candidates.forEach(c => {
+        if (c.status === "Verified Paid") { paidCount++; totalRev += Number(c.amount) || 199; }
+        if (c.cvRevamp) revampCount++;
+      });
+      document.getElementById("adminTotalLeads").innerText = candidates.length;
+      document.getElementById("adminPaidLeads").innerText = paidCount;
+      document.getElementById("adminRevampLeads").innerText = revampCount;
+      document.getElementById("adminTotalRev").innerText = "KES " + totalRev.toLocaleString();
+
+      if (candidates.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-slate-400">No candidate submissions yet.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = candidates.map((c, index) => `
+        <tr class="hover:bg-slate-50 transition">
+          <td class="p-3"><div class="font-bold text-slate-900">${c.name}</div><div class="text-[10px] text-slate-500">${c.phone} • ${c.date}</div></td>
+          <td class="p-3"><div class="font-medium text-slate-800">${c.field}</div><div class="text-[10px] text-slate-500">${c.dest} • ${c.passport}</div></td>
+          <td class="p-3 font-bold text-slate-900">KES ${c.amount}${c.cvRevamp ? ' <span class="block text-[9px] text-amber-700 font-black">+ CV REVAMP</span>' : ''}</td>
+          <td class="p-3"><span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold ${c.status === 'Verified Paid' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">${c.status}</span>${c.mpesaCode ? `<div class="font-mono text-[9px] text-slate-500 mt-0.5 font-bold">${c.mpesaCode}</div>` : ''}</td>
+          <td class="p-3 text-right space-x-1">
+            <a href="https://wa.me/254${c.phone.replace(/[^0-9]/g, '').slice(-9)}" target="_blank" class="inline-block bg-emerald-600 text-white px-2 py-1 rounded text-[10px] font-bold">Chat</a>
+            ${c.status !== 'Verified Paid' ? `<button onclick="markCandidatePaid(${index})" class="bg-slate-900 text-white px-2 py-1 rounded text-[10px] font-bold">Verify</button>` : ''}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function markCandidatePaid(index) {
+      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
+      if (candidates[index]) {
+        candidates[index].status = "Verified Paid";
+        localStorage.setItem("kazi_candidates", JSON.stringify(candidates));
+        loadAdminRecords();
+      }
+    }
+
+    function exportCandidatesCSV() {
+      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
+      if (candidates.length === 0) { alert("No candidate data to export."); return; }
+      let csv = "ID,Name,Phone,Target,Passport,Field,Amount,Status,M-Pesa Code,CV Revamp,Date\n";
+      candidates.forEach(c => {
+        csv += `"${c.id}","${c.name}","${c.phone}","${c.dest}","${c.passport}","${c.field}","${c.amount}","${c.status}","${c.mpesaCode || ''}","${c.cvRevamp ? 'Yes' : 'No'}","${c.date}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.setAttribute('hidden', '');
+      a.setAttribute('href', url);
+      a.setAttribute('download', 'kazi_candidates_' + new Date().toISOString().slice(0,10) + '.csv');
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>
