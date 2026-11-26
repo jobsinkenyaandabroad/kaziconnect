@@ -1,223 +1,2158 @@
-const API_BASE = "https://your-backend-domain.com"; // Update to your deployed API URL
-const MPESA_NUMBER = "0708 743 931";
-const WHATSAPP_NUMBER = "254739658520";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs in Kenya & Abroad | Official Recruitment & Verified Workers Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .bg-safaricom { background-color: #00A859; }
+    .text-safaricom { color: #00A859; }
+    .border-safaricom { border-color: #00A859; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
-let unlockedDetailsCache = {};
-
-function getMemberToken() {
-  return localStorage.getItem("kaziMemberToken") || "";
-}
-
-function getAdminToken() {
-  return sessionStorage.getItem("kaziAdminToken") || "";
-}
-
-function isMemberUnlocked() {
-  return Boolean(getMemberToken());
-}
-
-function updateMemberUI() {
-  const unlocked = isMemberUnlocked();
-  document.getElementById("memberActiveBanner").classList.toggle("hidden", !unlocked);
-  document.getElementById("navMemberBtnText").textContent = unlocked ? "Member Unlocked" : "Member Login";
-  document.getElementById("heroMemberBtnText").textContent = unlocked
-    ? "Passcode Active — View All Unlocked Jobs"
-    : "Already Paid? Unlock Jobs (Enter Passcode)";
-}
-
-async function verifyMemberCode(e) {
-  e.preventDefault();
-  const errorEl = document.getElementById("memberCodeError");
-  const passcode = (document.getElementById("memberCodeInput").value || "").trim().toUpperCase();
-  errorEl.classList.add("hidden");
-
-  try {
-    const res = await fetch(`${API_BASE}/api/verify-passcode`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ passcode })
-    });
-    const data = await res.json();
-    if (!res.ok || !data.valid || !data.memberToken) {
-      errorEl.textContent = data.message || "Invalid passcode.";
-      errorEl.classList.remove("hidden");
-      return;
-    }
-    localStorage.setItem("kaziMemberToken", data.memberToken);
-    if (data.jobDetails) unlockedDetailsCache = data.jobDetails;
-    updateMemberUI();
-    closeMemberUnlockModal();
-  } catch {
-    errorEl.textContent = "Could not reach verification server. Try again.";
-    errorEl.classList.remove("hidden");
-  }
-}
-
-async function openJobDetailsModal(jobId) {
-  const job = jobsData.find((j) => j.id === jobId);
-  if (!job) return;
-
-  let details = unlockedDetailsCache[jobId];
-  if (!details && isMemberUnlocked()) {
-    try {
-      const res = await fetch(`${API_BASE}/api/job-details/${jobId}`, {
-        headers: { Authorization: `Bearer ${getMemberToken()}` }
-      });
-      if (res.ok) {
-        const json = await res.json();
-        details = json.details;
-        unlockedDetailsCache[jobId] = details;
-      } else if (res.status === 403) {
-        localStorage.removeItem("kaziMemberToken");
-        updateMemberUI();
-      }
-    } catch {
-      // Fall back to locked view if network fails
-    }
-  }
-
-  const applicationBlock = details
-    ? `
-      <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 space-y-2 text-xs">
-        <div class="font-black text-emerald-900 uppercase tracking-wider">Direct Application Details (Unlocked)</div>
-        <p class="text-slate-700 leading-relaxed">${details.procedure}</p>
-        <div class="pt-1 text-slate-800"><strong>HR Email:</strong> <span class="font-mono">${details.email}</span></div>
-        <div><strong>Portal:</strong> <a href="${details.portal}" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-semibold">${details.portal}</a></div>
+  <!-- Top Announcement Bar -->
+  <div class="bg-slate-900 text-white text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-5 h-5 bg-blue-600 rounded-full text-white text-[11px]">
+          <i class="fab fa-facebook-f"></i>
+        </span>
+        <span>Official Community: <strong>16,000+ Followers</strong> • Government, Parastatal, NGO, Remote & Overseas Jobs</span>
       </div>
-    `
-    : `
-      <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 space-y-3 text-xs">
-        <div class="font-black text-amber-950 flex items-center gap-1.5"><i class="fas fa-lock"></i> Application Link & HR Email Locked</div>
-        <p class="text-slate-700">Unlock direct employer emails, portals, and application steps with your 6-Month Member Pass (KES 199).</p>
-        <div class="flex flex-wrap gap-2">
-          <button onclick="closeJobDetailsModal(); openMemberUnlockModal();" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-3.5 py-2 rounded-lg transition">Enter Passcode</button>
-          <a href="#register" onclick="closeJobDetailsModal()" class="bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-3.5 py-2 rounded-lg transition">Get Pass (KES 199)</a>
+      <div class="flex items-center gap-3 text-xs">
+        <span class="hidden sm:inline text-slate-300">
+          <i class="fas fa-money-bill-wave text-emerald-400 mr-1"></i> M-Pesa: <strong>0708 743 931</strong>
+        </span>
+        <a href="https://wa.me/254739658520?text=Hello%20Admin,%20inquiry%20from%20Jobs%20Kenya%20website" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded font-semibold transition flex items-center gap-1.5 shadow-sm">
+          <i class="fab fa-whatsapp"></i> WhatsApp Desk: <strong>0739 658 520</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-black text-xl shadow">K</div>
+        <div>
+          <span class="text-lg font-black tracking-tight text-slate-900 block leading-tight">KaziKenya<span class="text-emerald-600">&Abroad</span></span>
+          <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Verified Jobs & Workers Platform</span>
         </div>
       </div>
-    `;
-
-  document.getElementById("modalJobContent").innerHTML = `
-    <div class="space-y-4">
-      <div>
-        <span class="text-[10px] font-black uppercase bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">${job.category} • ${job.type}</span>
-        <h3 class="text-xl font-black text-slate-900 mt-2">${job.title}</h3>
-        <p class="text-xs font-semibold text-slate-600">${job.org} • ${job.location}</p>
-      </div>
-      <div class="grid grid-cols-2 gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
-        <div><span class="text-slate-400 block">Compensation</span><strong class="text-slate-800">${job.salary}</strong></div>
-        <div><span class="text-slate-400 block">Application Deadline</span><strong class="text-slate-800">${job.deadline}</strong></div>
-      </div>
-      <div class="text-xs space-y-1">
-        <div class="font-bold text-slate-800 uppercase tracking-wider">Key Requirements</div>
-        <p class="text-slate-600 leading-relaxed">${job.reqs}</p>
-      </div>
-      ${applicationBlock}
+      <nav class="flex items-center gap-3 sm:gap-5 text-xs sm:text-sm font-semibold text-slate-600">
+        <a href="#vacancies" class="hidden md:inline hover:text-emerald-700 transition">62 Live Jobs</a>
+        <a href="#cv-service" class="hidden lg:flex text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 hover:bg-amber-100 transition items-center gap-1">
+          <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
+        </a>
+        <!-- Bright Header Member Login Button -->
+        <button id="navMemberBtn" onclick="openMemberUnlockModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-3.5 py-2 rounded-lg font-black transition flex items-center gap-1.5 shadow text-xs">
+          <i class="fas fa-key"></i> <span id="navMemberBtnText">Member Login</span>
+        </button>
+        <a href="#register" class="hidden sm:inline bg-emerald-600 text-white px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition shadow text-xs">Get Pass (KES 199)</a>
+        <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 text-xs flex items-center gap-1"><i class="fas fa-lock"></i></button>
+      </nav>
     </div>
-  `;
-  document.getElementById("jobDetailsModal").classList.remove("hidden");
-}
+  </header>
 
-async function verifyAdminPIN() {
-  const errEl = document.getElementById("pinErrorMsg");
-  const pin = (document.getElementById("adminPinInput").value || "").trim();
-  errEl.classList.add("hidden");
+  <!-- Active Member Banner (Visible only after entering Member Passcode) -->
+  <div id="memberActiveBanner" class="hidden bg-emerald-700 text-white text-xs py-2.5 px-4 text-center font-semibold shadow-inner">
+    <i class="fas fa-unlock-alt mr-1.5 text-amber-300"></i> <strong>6-Month Member Pass Active!</strong> All 62 direct employer emails, remote platforms, application portals, and procedures are unlocked below.
+  </div>
 
-  try {
-    const res = await fetch(`${API_BASE}/api/admin/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ pin })
-    });
-    const data = await res.json();
-    if (!res.ok || !data.valid || !data.adminToken) {
-      errEl.textContent = data.message || "Invalid PIN.";
-      errEl.classList.remove("hidden");
-      return;
+  <!-- Hero Section with Prominent Member Unlock Button & Live Search -->
+  <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-300">
+        <i class="fas fa-check-double"></i> 62 Verified Opportunities • Kenya, Remote AI & Overseas
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya, Remote & Overseas</h1>
+      <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+        Browse public sector commissions, parastatals, international NGOs, global remote AI platforms, and overseas contracts. Unlock direct application links and HR emails with your 6-Month Member Pass.
+      </p>
+
+      <!-- BIG & BRIGHT HERO CALL-TO-ACTION BUTTONS -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-1">
+        <button id="heroMemberUnlockBtn" onclick="openMemberUnlockModal()" class="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-7 py-4 rounded-2xl shadow-xl shadow-amber-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 text-sm sm:text-base border-2 border-amber-200">
+          <i class="fas fa-key text-lg"></i>
+          <span id="heroMemberBtnText">Already Paid? Unlock Jobs (Enter Passcode)</span>
+        </button>
+        <a href="#register" class="w-full sm:w-auto bg-safaricom hover:bg-emerald-500 text-white font-black px-7 py-4 rounded-2xl shadow-xl shadow-emerald-600/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-sm sm:text-base">
+          <i class="fas fa-user-plus"></i>
+          <span>Get 6-Month Pass (KES 199)</span>
+        </a>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row gap-2 text-slate-800">
+        <div class="flex-1 flex items-center px-3 gap-2">
+          <i class="fas fa-search text-slate-400"></i>
+          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. Clickworker, Toloka, SHOFCO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
+        </div>
+        <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+          Search 62 Jobs
+        </button>
+      </div>
+
+      <!-- Quick Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-1.5 pt-1 text-xs">
+        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 62 Jobs</button>
+        <button onclick="setFilterLocation('Remote')" class="bg-indigo-900/60 border border-indigo-500/40 px-3 py-1 rounded-full text-indigo-300 font-medium text-[11px] transition">Remote / Work From Home</button>
+        <button onclick="setFilterLocation('Government')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Gov / Parastatal</button>
+        <button onclick="setFilterLocation('NGO')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">NGOs / UN</button>
+        <button onclick="setFilterLocation('Nairobi')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Nairobi</button>
+        <button onclick="setFilterLocation('Mombasa')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Mombasa / Coast</button>
+        <button onclick="setFilterLocation('Abroad')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Gulf & Overseas</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hiring Partners & Parastatals Ribbon -->
+  <section class="py-6 bg-white border-b border-slate-200 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-slate-600 font-bold text-xs">
+        <span class="flex items-center gap-1.5"><i class="fas fa-laptop-house text-indigo-600"></i> Clickworker / Toloka / Outlier / TELUS</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-landmark text-emerald-700"></i> KIE / KDF / PPRA / KETRACO / DHA</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-hands-helping text-amber-600"></i> SHOFCO / Aga Khan / ILO / Save the Children</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Safaricom / Kenya Airways / Equity Afia</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-globe text-blue-600"></i> UAE / Qatar / Saudi / UK / Canada</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vacancies Grid with Filter Counter -->
+  <section id="vacancies" class="py-12 px-4 max-w-6xl mx-auto">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-2">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Verified Opportunities</span>
+        <h2 class="text-2xl font-black text-slate-900">Featured Openings (Latest Updates)</h2>
+        <p class="text-xs text-slate-500 mt-1">Click <strong>"View Details & How to Apply"</strong> on any job to view qualifications and direct application links.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-slate-500" id="jobCountDisplay">Loading all vacancies...</span>
+      </div>
+    </div>
+
+    <!-- 62 Job Cards Render Container -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="vacanciesContainer"></div>
+  </section>
+
+  <!-- Verified Workers Section -->
+  <section id="employers" class="py-14 bg-slate-100 px-4 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto space-y-6">
+      <div class="text-center max-w-xl mx-auto">
+        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">For Recruiters & Contractors</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Browse Verified Workers in Kenya</h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">Pre-vetted workers with police clearance and validated identification. Unlock 20 verified profiles for KES 1,000.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-wrap gap-3 items-center justify-between">
+        <div class="flex flex-wrap gap-2 w-full sm:w-auto">
+          <select id="empFilterField" onchange="filterCandidateBank()" class="text-xs border border-slate-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-600 bg-white font-medium">
+            <option value="all">All Trades & Skills</option>
+            <option value="Security">Security Guard</option>
+            <option value="Driver">Driver / Logistics</option>
+            <option value="Healthcare">Healthcare / Nurse</option>
+            <option value="Hospitality">Hospitality / Chef</option>
+            <option value="Construction">Construction / Technical</option>
+          </select>
+          <select id="empFilterPassport" onchange="filterCandidateBank()" class="text-xs border border-slate-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-600 bg-white font-medium">
+            <option value="all">All Locations / Statuses</option>
+            <option value="Ready">Passport Ready (Gulf / Abroad)</option>
+            <option value="Kenya">Kenya Local Ready</option>
+          </select>
+        </div>
+        <button onclick="orderEmployerPass()" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-4 py-2 rounded-lg text-xs transition shadow flex items-center justify-center gap-1.5">
+          <i class="fas fa-key"></i> Unlock 20 Verified Contacts (KES 1,000)
+        </button>
+      </div>
+
+      <!-- Verified Worker Badged Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="candidateCardsContainer">
+        <!-- Worker 1 -->
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Security" data-passport="Ready">
+          <div class="flex justify-between items-start">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">JM</div>
+              <div>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">John M. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
+                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Nairobi • Security Guard</span>
+              </div>
+            </div>
+            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-600 pt-1">
+            <div><strong class="text-slate-800">Experience:</strong> 4 Years Commercial Security</div>
+            <div><strong class="text-slate-800">Expected Salary:</strong> KES 30,000 – 40,000/mo</div>
+            <div><strong class="text-slate-800">Status:</strong> Passport Ready • Clean DCI Certificate</div>
+          </div>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 712 345 *** | M-Pesa ID: Verified</div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
+        </div>
+
+        <!-- Worker 2 -->
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Healthcare" data-passport="Ready">
+          <div class="flex justify-between items-start">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-sm">FW</div>
+              <div>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">Faith W. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
+                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Mombasa • Caregiver / Nurse</span>
+              </div>
+            </div>
+            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-600 pt-1">
+            <div><strong class="text-slate-800">Experience:</strong> 3 Years Bedside & Homecare</div>
+            <div><strong class="text-slate-800">Expected Salary:</strong> KES 50,000 – 70,000/mo</div>
+            <div><strong class="text-slate-800">Status:</strong> UK / Gulf Ready • BLS Certified</div>
+          </div>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 722 890 *** | Nursing Lic: Verified</div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
+        </div>
+
+        <!-- Worker 3 -->
+        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Driver" data-passport="Kenya">
+          <div class="flex justify-between items-start">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-sm">DK</div>
+              <div>
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">David K. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
+                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Nakuru • Commercial Driver</span>
+              </div>
+            </div>
+            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-600 pt-1">
+            <div><strong class="text-slate-800">Experience:</strong> 7 Years Transit & BCE Heavy Truck</div>
+            <div><strong class="text-slate-800">Expected Salary:</strong> KES 45,000 – 60,000/mo</div>
+            <div><strong class="text-slate-800">Status:</strong> Clean NTSA Record • PSV Badge</div>
+          </div>
+          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 733 456 *** | License: Verified</div>
+          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Revamp Section -->
+  <section id="cv-service" class="py-12 px-4 bg-amber-50/60 border-y border-amber-200">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-white rounded-2xl shadow border border-amber-200 p-6 sm:p-8 flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-2/3 space-y-3">
+          <div class="inline-block bg-amber-100 text-amber-900 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Delivered to WhatsApp in 24-48 Hours</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Professional ATS CV Revamp (KES 300 Only)</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kenyan public boards, parastatals, NGOs, and Gulf recruitment agencies use Applicant Tracking Systems (ATS) that auto-reject unstructured resumes. We reformat your CV to international ATS standards in Word and PDF formats.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-700 pt-2">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Public Sector & NGO ATS formats</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Gulf & European standard ready</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> DCI & professional clearance badges</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Word (.docx) & PDF copy</div>
+          </div>
+        </div>
+        <div class="md:w-1/3 w-full bg-slate-900 text-white rounded-xl p-6 text-center space-y-4 shadow-xl">
+          <span class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Standard Fee</span>
+          <div class="text-3xl font-black text-amber-400">KES 300</div>
+          <p class="text-[11px] text-slate-300">Send KES 300 to M-Pesa: <br><strong class="text-emerald-400 text-sm">0708 743 931</strong></p>
+          <button onclick="orderCVRevampOnly()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg transition text-xs flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp text-sm"></i> Order via WhatsApp Desk
+          </button>
+          <div class="text-[10px] text-slate-400">Desk Line: 0739 658 520</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <section id="register" class="py-14 px-4">
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-10">
+      <div class="text-center pb-6 border-b border-slate-100">
+        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Get Your 6-Month Access Pass</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">6-Month Member Registration</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Register once to receive your Member Passcode (unlocks all 62+ direct employer emails & portals) plus 6 months in our verified recruiter directory.</p>
+      </div>
+
+      <form id="candidateForm" onsubmit="handleRegistrationSubmit(event)" class="mt-6 space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Full Official Name</label>
+          <input type="text" id="regName" required placeholder="e.g. Brian Otieno Kamau" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">WhatsApp / Phone Number</label>
+            <input type="tel" id="regPhone" required placeholder="07XX XXX XXX" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Target Destination</label>
+            <select id="regDest" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
+              <option>Both Kenya & Abroad</option>
+              <option>Kenya Local Jobs Only</option>
+              <option>Remote / Online Work Only</option>
+              <option>Gulf Countries (UAE, Qatar, Saudi)</option>
+              <option>Europe / UK / Canada (Caregiving & Hospitality)</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Passport Status</label>
+            <select id="regPassport" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
+              <option>Valid Kenyan Passport (Ready)</option>
+              <option>Application in Progress</option>
+              <option>No Passport (Kenya Local / Remote Only)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Main Job Specialization</label>
+            <select id="regField" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
+              <option>Driver / Logistics / Heavy Equipment</option>
+              <option>Administration / Reception / Cashier</option>
+              <option>General Work / Factory</option>
+              <option>Healthcare / Nursing / Caregiver</option>
+              <option>Security Guard / Watchman</option>
+              <option>Construction / Electrical / Plumbing</option>
+              <option>Hospitality / Waiter / Barista / Chef</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Upload Current CV (PDF or Word)</label>
+          <input type="file" id="regCV" accept=".pdf,.doc,.docx" required class="w-full border border-slate-300 border-dashed rounded-lg p-3 text-xs text-slate-600 bg-slate-50 cursor-pointer">
+        </div>
+        <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 transition">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" id="cvUpsellCheckbox" onchange="updateTotalPayable()" class="mt-1 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+            <div>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2">
+                Add Professional CV Revamp (+ KES 300)
+                <span class="bg-amber-200 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded">RECOMMENDED</span>
+              </span>
+              <p class="text-xs text-slate-600 mt-0.5">Format and restructure your resume to ATS compliance standards before applying.</p>
+            </div>
+          </label>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">M-Pesa Transaction Code (Optional if paying after submission)</label>
+          <input type="text" id="regMpesaCode" placeholder="e.g. SK82KL90PQ" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm uppercase tracking-wider font-mono focus:ring-2 focus:ring-emerald-600 outline-none">
+          <p class="text-[10px] text-slate-400 mt-1">Send to M-Pesa: <strong>0708 743 931</strong> then paste confirmation code here.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs space-y-1.5">
+          <div class="flex justify-between text-slate-600"><span>6-Month Member Pass & Listing:</span><span class="font-bold text-slate-800">KES 199</span></div>
+          <div id="upsellSummaryRow" class="flex justify-between text-amber-700 hidden"><span>ATS CV Revamp Service:</span><span class="font-bold">KES 300</span></div>
+          <div class="border-t border-slate-200 pt-2 flex justify-between text-sm font-black text-slate-900"><span>Total Payable via M-Pesa:</span><span id="totalPayableText" class="text-emerald-700 text-base">KES 199</span></div>
+        </div>
+        <button type="submit" id="submitBtn" class="w-full bg-safaricom text-white font-black py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-lock"></i> Submit & Receive Passcode via WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- In-Depth Job Criteria & Direct Application Modal -->
+  <div id="jobDetailsModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 max-h-[90vh] overflow-y-auto shadow-2xl relative">
+      <button onclick="closeJobDetailsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="modalJobContent"></div>
+    </div>
+  </div>
+
+  <!-- Member Passcode Unlock Modal -->
+  <div id="memberUnlockModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative text-center space-y-4">
+      <button onclick="closeMemberUnlockModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mx-auto text-xl">
+        <i class="fas fa-key"></i>
+      </div>
+      <div>
+        <h3 class="text-lg font-black text-slate-900">6-Month Member Access</h3>
+        <p class="text-xs text-slate-500 mt-1">Enter the Member Passcode sent to your WhatsApp after paying KES 199/200 to unlock all 62 direct employer emails, remote platforms, and application procedures.</p>
+      </div>
+      <form onsubmit="verifyMemberCode(event)" class="space-y-3">
+        <input type="text" id="memberCodeInput" required placeholder="Enter Passcode (e.g. KAZI2026)" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-center text-base font-mono uppercase tracking-widest outline-none focus:ring-2 focus:ring-amber-500">
+        <p id="memberCodeError" class="text-xs text-red-600 font-bold hidden">Invalid passcode. Check WhatsApp or register below.</p>
+        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 rounded-xl text-xs transition shadow">
+          Unlock All 62 Direct Application Links
+        </button>
+      </form>
+      <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500">
+        Don't have a passcode yet? <a href="#register" onclick="closeMemberUnlockModal()" class="text-emerald-700 font-bold underline">Register here (KES 199)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Modal -->
+  <div id="adminModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+    <div class="bg-white rounded-2xl max-w-4xl w-full p-6 max-h-[90vh] overflow-y-auto shadow-2xl space-y-5">
+      <div id="adminLoginView" class="max-w-sm mx-auto text-center space-y-4 py-6">
+        <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl"><i class="fas fa-user-shield"></i></div>
+        <h3 class="text-lg font-black text-slate-900">Admin Authentication</h3>
+        <input type="password" id="adminPinInput" placeholder="Enter PIN (Default: 7439)" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-center text-lg tracking-widest outline-none focus:ring-2 focus:ring-emerald-600">
+        <div class="flex gap-2">
+          <button onclick="verifyAdminPIN()" class="flex-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2 rounded-lg text-xs transition">Unlock</button>
+          <button onclick="toggleAdminModal()" class="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 rounded-lg text-xs transition">Cancel</button>
+        </div>
+        <p id="pinErrorMsg" class="text-xs text-red-500 font-bold hidden">Invalid PIN. Try again.</p>
+      </div>
+
+      <div id="adminPanelView" class="hidden space-y-5">
+        <div class="flex flex-wrap justify-between items-center border-b border-slate-200 pb-3 gap-2">
+          <div>
+            <h3 class="font-extrabold text-slate-900 text-lg">Candidate Registrations & Revenue</h3>
+            <p class="text-xs text-slate-500">Current Member Passcode: <strong class="text-emerald-700 font-mono">KAZI2026</strong> • M-Pesa: 0708 743 931</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="exportCandidatesCSV()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-300 transition flex items-center gap-1.5">
+              <i class="fas fa-file-csv text-emerald-700"></i> Export CSV
+            </button>
+            <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 text-lg ml-2"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200"><div class="text-[10px] uppercase font-bold text-slate-500">Total Leads</div><div class="text-xl font-black text-slate-900" id="adminTotalLeads">0</div></div>
+          <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200"><div class="text-[10px] uppercase font-bold text-emerald-700">Verified Paid</div><div class="text-xl font-black text-emerald-700" id="adminPaidLeads">0</div></div>
+          <div class="bg-amber-50 p-3 rounded-lg border border-amber-200"><div class="text-[10px] uppercase font-bold text-amber-700">CV Revamps</div><div class="text-xl font-black text-amber-700" id="adminRevampLeads">0</div></div>
+          <div class="bg-slate-900 text-white p-3 rounded-lg"><div class="text-[10px] uppercase font-bold text-slate-400">Total Revenue</div><div class="text-xl font-black text-emerald-400" id="adminTotalRev">KES 0</div></div>
+        </div>
+        <div class="overflow-x-auto border border-slate-200 rounded-lg">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead class="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 uppercase text-[10px]">
+              <tr><th class="p-3">Candidate</th><th class="p-3">Field & Destination</th><th class="p-3">Total Due</th><th class="p-3">Status / Receipt</th><th class="p-3 text-right">Actions</th></tr>
+            </thead>
+            <tbody id="adminTableBody" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-10 px-4 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+      <div>
+        <p class="text-white font-bold text-sm">Jobs in Kenya & Abroad Portal</p>
+        <p class="mt-1 text-slate-400">Official Community: 16,000+ Facebook Followers • M-Pesa: <strong class="text-white">0708 743 931</strong> • Desk: <strong class="text-white">0739 658 520</strong></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/254739658520" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition">
+          <i class="fab fa-whatsapp"></i> Chat Support Desk
+        </a>
+        <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-white underline">Admin Portal</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Desk Button -->
+  <a href="https://wa.me/254739658520?text=Hello%20Admin,%20inquiry%20regarding%20Jobs%20Kenya%20portal" target="_blank" class="fixed bottom-5 right-5 bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition z-50">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <script>
+    /* =====================================================================
+       MEMBER ACCESS CONFIGURATION
+       Share this passcode with clients once they pay KES 199 / 200
+       ===================================================================== */
+    const MEMBER_ACCESS_PASSCODE = "KAZI2026";
+    let isMemberUnlocked = (localStorage.getItem("kazi_member_unlocked") === "true");
+
+    function updateMemberUIState() {
+      const navBtn = document.getElementById("navMemberBtn");
+      const navBtnText = document.getElementById("navMemberBtnText");
+      const heroBtn = document.getElementById("heroMemberUnlockBtn");
+      const heroBtnText = document.getElementById("heroMemberBtnText");
+      const banner = document.getElementById("memberActiveBanner");
+
+      if (isMemberUnlocked) {
+        navBtn.classList.remove("bg-amber-500", "hover:bg-amber-400", "text-slate-950");
+        navBtn.classList.add("bg-emerald-700", "hover:bg-emerald-800", "text-white");
+        navBtnText.innerText = "Pass Active";
+
+        heroBtn.classList.remove("bg-amber-400", "hover:bg-amber-300", "text-slate-950", "border-amber-200");
+        heroBtn.classList.add("bg-emerald-700", "hover:bg-emerald-600", "text-white", "border-emerald-400");
+        heroBtnText.innerText = "Member Pass Active — All 62 Links Unlocked";
+
+        banner.classList.remove("hidden");
+      } else {
+        navBtn.classList.add("bg-amber-500", "hover:bg-amber-400", "text-slate-950");
+        navBtn.classList.remove("bg-emerald-700", "hover:bg-emerald-800", "text-white");
+        navBtnText.innerText = "Member Login";
+
+        heroBtn.classList.add("bg-amber-400", "hover:bg-amber-300", "text-slate-950", "border-amber-200");
+        heroBtn.classList.remove("bg-emerald-700", "hover:bg-emerald-600", "text-white", "border-emerald-400");
+        heroBtnText.innerText = "Already Paid? Unlock Jobs (Enter Passcode)";
+
+        banner.classList.add("hidden");
+      }
     }
-    sessionStorage.setItem("kaziAdminToken", data.adminToken);
-    document.getElementById("adminLoginView").classList.add("hidden");
-    document.getElementById("adminPanelView").classList.remove("hidden");
-    await renderAdminLeads();
-  } catch {
-    errEl.textContent = "Server error while verifying PIN.";
-    errEl.classList.remove("hidden");
-  }
-}
 
-async function renderAdminLeads() {
-  const tbody = document.getElementById("adminLeadsTableBody");
-  let leads = [];
-  try {
-    const res = await fetch(`${API_BASE}/api/admin/leads`, {
-      headers: { Authorization: `Bearer ${getAdminToken()}` }
-    });
-    if (res.ok) {
-      const data = await res.json();
-      leads = data.leads || [];
+    function openMemberUnlockModal() {
+      if (isMemberUnlocked) {
+        document.getElementById("vacancies").scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+      document.getElementById("memberCodeError").classList.add("hidden");
+      document.getElementById("memberUnlockModal").classList.remove("hidden");
     }
-  } catch {
-    leads = [];
-  }
 
-  const paidLeads = leads.filter((l) => l.mpesaCode && l.mpesaCode.length >= 6);
-  const cvCount = leads.filter((l) => l.cvUpsell).length;
-  const estRevenue = leads.reduce((sum, l) => sum + Number(l.total || 0), 0);
+    function closeMemberUnlockModal() {
+      document.getElementById("memberUnlockModal").classList.add("hidden");
+    }
 
-  document.getElementById("adminTotalLeads").textContent = leads.length;
-  document.getElementById("adminPaidCount").textContent = paidLeads.length;
-  document.getElementById("adminCvCount").textContent = cvCount;
-  document.getElementById("adminRevenue").textContent = estRevenue.toLocaleString();
+    function verifyMemberCode(e) {
+      e.preventDefault();
+      const entered = document.getElementById("memberCodeInput").value.trim().toUpperCase();
+      if (entered === MEMBER_ACCESS_PASSCODE) {
+        isMemberUnlocked = true;
+        localStorage.setItem("kazi_member_unlocked", "true");
+        closeMemberUnlockModal();
+        updateMemberUIState();
+        renderJobs();
+        alert("ACCESS UNLOCKED!\n\nWelcome! You can now open any of the 62 jobs and apply directly via the employer's official email, remote platform, or portal link.");
+      } else {
+        document.getElementById("memberCodeError").classList.remove("hidden");
+      }
+    }
 
-  if (!leads.length) {
-    tbody.innerHTML = `<tr><td colspan="8" class="p-4 text-center text-slate-400">No registrations recorded yet.</td></tr>`;
-    return;
-  }
+    /* =====================================================================
+       62 VERIFIED OPPORTUNITIES (REMOTE AI + KENYA + GULF + OVERSEAS)
+       ===================================================================== */
+    const MY_JOBS = [
+      // --- GLOBAL REMOTE & AI MICROTASK PLATFORMS (IDs 57-62) ---
+      {
+        id: 57,
+        title: "Remote Microtasker & AI Data Contributor (Clickworker)",
+        location: "Kenya (100% Remote / Work From Home)",
+        salary: "KES 650 - 1,900/hr ($5 - $15/hr)",
+        deadline: "Rolling / Open Enrollment",
+        education: "No formal degree required (Basic English & PC/Smartphone literacy)",
+        experience: "Entry level — ideal for students, freelancers, and side-income earners",
+        requirements: [
+          "Reliable internet connection with a laptop, desktop, or smartphone",
+          "Pass free platform onboarding & UHRS (Universal Human Relevance System) assessments",
+          "Verified PayPal or Payoneer account for weekly payouts (minimum payout €5)"
+        ],
+        applyUrl: "https://www.clickworker.com/clickworker/",
+        applyEmail: "",
+        applyProcedure: "1. Register a free freelancer account at clickworker.com. 2. Complete your profile and language assessments to unlock UHRS AI training, web research, and survey tasks. 3. Withdraw earnings weekly via PayPal or Payoneer.",
+        benefits: "Flexible self-paced schedule, no minimum hours, weekly international USD/EUR payouts.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 58,
+        title: "Remote AI Tutor & Data Annotator (Toloka / Mindrift)",
+        location: "Kenya (100% Remote / Flexible Schedule)",
+        salary: "Task & Project-Based USD Rates",
+        deadline: "Rolling / Open Enrollment",
+        education: "KCSE Certificate / College or University Diploma/Degree (for AI Tutor tracks)",
+        experience: "Entry level for microtasks; strong English writing for AI Tutor roles",
+        requirements: [
+          "Strong reading comprehension and attention to detail in English (or Swahili localization)",
+          "Pass free task qualification tests inside the Toloka dashboard",
+          "Valid Payoneer or supported digital wallet for withdrawals"
+        ],
+        applyUrl: "https://toloka.ai/careers",
+        applyEmail: "",
+        applyProcedure: "1. Sign up as a contributor on Toloka or Mindrift (Toloka's AI Tutor platform). 2. Complete the free training modules and pass the qualification test. 3. Select available image labeling, search evaluation, or LLM text-rating tasks.",
+        benefits: "Work anytime from anywhere in Kenya, instant task balance tracking, global AI project experience.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 59,
+        title: "Remote AI Writing Evaluator & Domain Expert (Outlier AI)",
+        location: "Kenya (100% Remote / Independent Contractor)",
+        salary: "KES 1,900 - 5,000/hr ($15 - $40+/hr)",
+        deadline: "Rolling / Open Enrollment",
+        education: "Associate Degree, Bachelor's, or Master's in English, Coding, Math, Law, or Science",
+        experience: "Strong analytical writing, fact-checking, or subject-matter expertise",
+        requirements: [
+          "Valid Kenyan National ID or Passport for identity verification",
+          "Pass the online English reasoning or specialist domain assessment (no AI assistance allowed)",
+          "PayPal or AirTM account for weekly Tuesday payouts"
+        ],
+        applyUrl: "https://outlier.ai",
+        applyEmail: "",
+        applyProcedure: "1. Create an account on outlier.ai using your real details and LinkedIn/CV. 2. Select your specialty (Generalist Writing, Coding, Math, or Kiswahili). 3. Complete the onboarding assessment to get matched to active LLM training projects.",
+        benefits: "Top-tier USD hourly rates paid weekly, flexible remote hours, work on frontier AI models.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 60,
+        title: "Online Search Quality Rater & Internet Assessor (TELUS Digital)",
+        location: "Kenya (Remote / Part-Time 10-20 Hrs/Week)",
+        salary: "KES 1,500 - 1,950/hr ($12 - $15/hr)",
+        deadline: "18 December 2026",
+        education: "KCSE Certificate / Diploma / University Degree",
+        experience: "Active daily internet user familiar with Kenyan & global search trends",
+        requirements: [
+          "Residing in Kenya with strong written English and Swahili cultural awareness",
+          "Pass the open-book Search Quality Rater guidelines exam",
+          "Commitment of 10–20 flexible hours per week via PayPal or bank transfer"
+        ],
+        applyUrl: "https://www.telusdigital.com/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit TELUS Digital AI Community careers portal. 2. Filter Location: 'Kenya' and select 'Online Data Analyst / Internet Assessor'. 3. Study the provided PDF guidelines and pass the qualification exam.",
+        benefits: "Consistent long-term part-time USD income, flexible schedule around studies or day job.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 61,
+        title: "Remote AI Data Annotator & Transcription Contributor (Appen)",
+        location: "Kenya (100% Remote / Freelance)",
+        salary: "KES 1,000 - 1,900/hr ($8 - $15/hr)",
+        deadline: "Rolling / Open Enrollment",
+        education: "KCSE Certificate / Diploma / Degree",
+        experience: "Entry level — audio transcription, social media evaluation, or data collection",
+        requirements: [
+          "Laptop/PC with updated browser and quiet workspace for audio tasks",
+          "Payoneer account for monthly/bi-weekly USD payouts",
+          "Ability to follow strict project annotation guidelines"
+        ],
+        applyUrl: "https://crowdgen.com",
+        applyEmail: "",
+        applyProcedure: "1. Register on CrowdGen by Appen (crowdgen.com) and select 'Kenya' as your country. 2. Complete your profile and apply to open Swahili/English transcription, search evaluation, and AI data projects.",
+        benefits: "Multi-week and multi-month projects, reliable Payoneer bank transfers to Kenyan banks (Equity/KCB/Co-op).",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 62,
+        title: "Remote AI Conversational Trainer & Coder (DataAnnotation.tech)",
+        location: "Kenya (100% Remote / Flexible)",
+        salary: "KES 2,500 - 5,000/hr ($20 - $40/hr)",
+        deadline: "Rolling / Open Enrollment",
+        education: "Strong analytical English writing or Programming background (Python, JS, SQL)",
+        experience: "Entry level (if you pass the starter assessment) or software engineering background",
+        requirements: [
+          "Exceptional critical thinking, logic, and clear analytical writing in English",
+          "Pass the rigorous starter assessment without using ChatGPT/AI tools",
+          "Verified PayPal account for fast payouts"
+        ],
+        applyUrl: "https://www.dataannotation.tech",
+        applyEmail: "",
+        applyProcedure: "1. Sign up at dataannotation.tech and take the Starter Assessment carefully in a quiet room. 2. Once approved, access unlimited conversational AI evaluation, creative writing, and coding tasks on your dashboard.",
+        benefits: "High USD hourly pay starting at $20/hr, zero fixed shifts, fast PayPal withdrawals.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
 
-  tbody.innerHTML = leads
-    .map(
-      (l) => `
-      <tr>
-        <td class="p-3 font-semibold text-slate-800">${l.name}</td>
-        <td class="p-3">${l.phone}</td>
-        <td class="p-3">${l.destination}</td>
-        <td class="p-3">${l.field}</td>
-        <td class="p-3 font-mono">${l.mpesaCode || "—"}</td>
-        <td class="p-3">${l.cvFile || "—"}</td>
-        <td class="p-3 font-bold">KES ${l.total}</td>
-        <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${l.mpesaCode ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"}">${l.mpesaCode ? "Code Submitted" : "Pending Pay"}</span></td>
-      </tr>
-    `
-    )
-    .join("");
-}
+      // --- LATEST KENYAN NGO, PARASTATAL & CORPORATE OPENINGS (IDs 51-56) ---
+      {
+        id: 51,
+        title: "General Manager - SHOFCO SACCO",
+        location: "Nairobi (Shining Hope for Communities - NGO / SACCO)",
+        salary: "Executive SACCO Scale + Benefits",
+        deadline: "11 December 2026",
+        education: "Bachelor's Degree in Business, Finance or Economics + CPA(K) / ACCA / CPS",
+        experience: "Minimum 10 years financial/cooperative experience with 5+ years in senior management",
+        requirements: [
+          "Active member in good standing of ICPAK, IHRM, or ICPSK",
+          "Deep knowledge of SASRA / Kenyan SACCO regulatory and banking systems",
+          "Proven track record in cooperative growth, board governance, and digital transformation"
+        ],
+        applyUrl: "https://www.shofco.org/careers",
+        applyEmail: "recruitment@shofco.org",
+        applyProcedure: "1. Email your CV and a detailed cover letter (max 2 pages) to recruitment@shofco.org with 'SACCO General Manager' in the subject line before 11 December 2026.",
+        benefits: "Comprehensive medical scheme, executive pension, leadership allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 52,
+        title: "Analytics Manager (Data & Organizational Intelligence)",
+        location: "Nairobi (SHOFCO - NGO)",
+        salary: "NGO Management Remuneration",
+        deadline: "08 December 2026",
+        education: "Bachelor's or Master's Degree in Statistics, Data Science, Computer Science, or Economics",
+        experience: "4+ years owning enterprise data pipelines, BI dashboards, and decision analytics",
+        requirements: [
+          "Proficiency in SQL, Python/R, PowerBI/Tableau, and modern data warehousing",
+          "Ability to translate large community program datasets into executive insights",
+          "Clean police Certificate of Good Conduct"
+        ],
+        applyUrl: "https://www.shofco.org/careers",
+        applyEmail: "recruitment@shofco.org",
+        applyProcedure: "1. Send your CV and cover letter to recruitment@shofco.org quoting 'Analytics Manager' in the email subject line before 8 December 2026.",
+        benefits: "Comprehensive medical cover, pension, professional development stipend.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 53,
+        title: "Regional Security Risk Analyst (East Africa)",
+        location: "Nairobi (Aga Khan Foundation - NGO)",
+        salary: "Competitive INGO Scale",
+        deadline: "11 December 2026",
+        education: "Bachelor's Degree in Security Studies, International Relations, Criminology, Law, or Data Analysis",
+        experience: "3–5 years in regional security risk monitoring, geopolitical intelligence, and reporting",
+        requirements: [
+          "Strong analytical skills covering East African security and humanitarian operating dynamics",
+          "Proficiency in GIS mapping, OSINT tools, and concise executive risk briefings",
+          "Fluency in English and Swahili"
+        ],
+        applyUrl: "https://krb-xjobs.brassring.com/TGnewUI/Search/Home/Home?partnerid=30025&siteid=5750",
+        applyEmail: "",
+        applyProcedure: "1. Visit the Aga Khan Development Network (AKDN) Career Centre portal above. 2. Search 'Regional Risk Analyst - Nairobi' and submit your online application before 11 December 2026.",
+        benefits: "Aga Khan Health Services medical insurance, pension, regional travel cover.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
+      {
+        id: 54,
+        title: "National Project Coordinator - NOA (UN Agency)",
+        location: "Nairobi (International Labour Organization - ILO / UN)",
+        salary: "UN NOA Scale (Approx. KES 490,000/mo Net)",
+        deadline: "09 December 2026",
+        education: "First-level University Degree in Economics, Social Sciences, Law, or Project Management",
+        experience: "2+ years managing donor-funded labour, youth employment, or development projects",
+        requirements: [
+          "Kenyan national eligible for UN National Officer (NOA) recruitment",
+          "Strong coordination skills with government ministries, employers, and workers' unions",
+          "Excellent drafting and reporting skills in English"
+        ],
+        applyUrl: "https://jobs.ilo.org",
+        applyEmail: "",
+        applyProcedure: "1. Log on to ILO Jobs portal (jobs.ilo.org). 2. Search Vacancy ID 13947 ('National Project Coordinator - Nairobi'). 3. Complete your online UN profile before 9 December 2026.",
+        benefits: "UN Joint Staff Pension Fund, comprehensive UN medical insurance, dependency & leave benefits.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 55,
+        title: "25 Public Sector Vacancies: Credit, Accounts, Admin & Drivers",
+        location: "Nairobi & Regional Branches (Kenya Industrial Estates - KIE Government)",
+        salary: "Parastatal Grade Scale",
+        deadline: "09 December 2026",
+        education: "KCSE (for Drivers) / Diploma / Bachelor's Degree in Business, Finance, Audit, Law, or HR",
+        experience: "Entry level to 5+ years across 25 open positions (including Driver III & Customer Care)",
+        requirements: [
+          "Mandatory: Download and fill the official KIE Bio-Data Form from their website",
+          "Chapter Six compliance documents (KRA, DCI Good Conduct, EACC, HELB, CRB)",
+          "Submit before 5:00 PM EAT on 9 December 2026"
+        ],
+        applyUrl: "https://kenyaindustrialestates.go.ke/careers/",
+        applyEmail: "",
+        applyProcedure: "1. Visit kenyaindustrialestates.go.ke/careers/. 2. Download the KIE Bio-Data Form, complete it, and upload alongside your CV and academic certificates on the portal.",
+        benefits: "Comprehensive parastatal medical cover, pension scheme, commuter and house allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 56,
+        title: "Youth Mental Health & School Fellows (T1 2027 Cohort)",
+        location: "Nairobi, Kiambu, Nakuru, Kisumu, Kilifi & Murang'a (Shamiri Institute - NGO)",
+        salary: "Monthly Fellow Stipend + Transport",
+        deadline: "15 December 2026",
+        education: "KCSE Certificate / College or University Student / Recent Graduate",
+        experience: "Entry level — passionate youth aged 18–24 with strong leadership and facilitation skills",
+        requirements: [
+          "Must reside near the selected county hub (Thika, Kikuyu, Nairobi, Nakuru, Kisumu, Kilifi, or Murang'a)",
+          "Fluent in English and Swahili with ability to mentor high school students",
+          "Clean Certificate of Good Conduct"
+        ],
+        applyUrl: "https://www.shamiri.institute/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit Shamiri Institute Careers page. 2. Select your county hub ('T1 2027 Fellow Application') and complete the online assessment.",
+        benefits: "Paid training, monthly stipend, leadership certification, networking with global researchers.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
 
-async function handleRegistrationSubmit(e) {
-  e.preventDefault();
-  const payload = {
-    name: document.getElementById("regName").value.trim(),
-    phone: document.getElementById("regPhone").value.trim(),
-    destination: document.getElementById("regDest").value,
-    passport: document.getElementById("regPassport").value,
-    field: document.getElementById("regField").value,
-    cvFile: document.getElementById("regCV").files[0]?.name || "Uploaded CV",
-    cvUpsell: document.getElementById("cvUpsellCheckbox").checked,
-    mpesaCode: document.getElementById("regMpesaCode").value.trim().toUpperCase()
-  };
-  const total = payload.cvUpsell ? 499 : 199;
+      // --- PREVIOUS 50 VERIFIED OPPORTUNITIES ---
+      {
+        id: 1,
+        title: "Secondary & Primary School Teachers (7,720 Posts Nationwide)",
+        location: "All 47 Counties (Teachers Service Commission - TSC)",
+        salary: "TSC Permanent & Pensionable Scale",
+        deadline: "23 November 2026",
+        education: "P1 Certificate / Diploma in Education / B.Ed Degree",
+        experience: "Registered teacher with valid TSC registration number",
+        requirements: [
+          "Kenyan citizen with valid TSC Certificate of Registration",
+          "5,609 Primary, 25 Junior School, and 2,086 Secondary posts available",
+          "Original academic & professional certificates ready for county verification",
+          "Multiple submissions lead to automatic disqualification"
+        ],
+        applyUrl: "https://teachersonline.tsc.go.ke",
+        applyEmail: "",
+        applyProcedure: "1. Visit the official TSC online recruitment portal above. 2. Log in with your ID & TSC number. 3. Select your preferred county/sub-county station and upload scanned certificates before midnight.",
+        benefits: "Permanent & pensionable terms, comprehensive teacher medical scheme, commuter & house allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 2,
+        title: "Cadets, General Service Recruits & Tradesmen (2026 Intake)",
+        location: "Nationwide Recruitment Centers (Kenya Defence Forces - KDF)",
+        salary: "KDF Military Pay Scale",
+        deadline: "12 December 2026",
+        education: "KCSE Mean Grade D (Plain) for Recruits; B (Plain) for Cadets; Diploma/Degree for Specialists",
+        experience: "Entry level / Tradesmen & Artisans with NITA / TVET certifications",
+        requirements: [
+          "Kenyan citizen aged 18–26 years (up to 30 years for specialists/tradesmen)",
+          "Physically and medically fit; minimum height 5'3\" (Men), 5'0\" (Women)",
+          "Original National ID, KCSE certificates, and clean conduct record"
+        ],
+        applyUrl: "https://mod.go.ke",
+        applyEmail: "",
+        applyProcedure: "1. Check your sub-county recruitment date on the Ministry of Defence website. 2. Report to the designated sub-county recruitment center by 8:00 AM with original National ID, academic certificates, and sports attire.",
+        benefits: "Full military healthcare, housing, subsidized mess facilities, pension, and career progression.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
+      {
+        id: 3,
+        title: "Compliance Officers, Legal Counsel & ICT Officers (35 Posts)",
+        location: "Nairobi (Public Procurement Regulatory Authority - PPRA)",
+        salary: "Parastatal Grade PPRA 5 to PPRA 12",
+        deadline: "10 December 2026",
+        education: "Diploma or Bachelor's Degree in Law, Procurement, ICT, Accounting, or HR",
+        experience: "1–6 years depending on grade (includes Driver III & Office Assistant III)",
+        requirements: [
+          "21 job cadres open across Compliance, Legal, ICT, Audit, Accounts, and Driving",
+          "Chapter Six compliance documents (EACC, DCI Good Conduct, KRA, CRB)",
+          "Incomplete online applications will not be considered"
+        ],
+        applyUrl: "https://erp.ppra.go.ke",
+        applyEmail: "",
+        applyProcedure: "1. Create an applicant profile on the PPRA ERP portal. 2. Fill in academic, employment, and Chapter Six details. 3. Submit online before 5:00 PM EAT on the deadline date.",
+        benefits: "Permanent and pensionable public service terms, medical cover, commuter allowance.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 4,
+        title: "Power Transmission Engineers, Technicians & Corporate Staff",
+        location: "Nairobi & Regional Grids (KETRACO - Government)",
+        salary: "Parastatal Scale",
+        deadline: "04 December 2026",
+        education: "Diploma or BSc in Electrical Engineering, Wayleaves, Finance, or ICT",
+        experience: "2–5 years in high-voltage power transmission, grid maintenance, or public administration",
+        requirements: [
+          "Engineers/Technicians registered with EBK or KETRB",
+          "Full Chapter Six constitutional integrity clearances",
+          "Willingness to deploy across national transmission substations"
+        ],
+        applyUrl: "https://www.ketraco.co.ke/careers",
+        applyEmail: "",
+        applyProcedure: "1. Open KETRACO Careers portal. 2. Download the detailed job specification PDF. 3. Upload your CV, cover letter, and scanned academic/practicing certificates online.",
+        benefits: "Parastatal medical scheme, pension, field and hardship allowances.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      {
+        id: 5,
+        title: "Business Development, Credit & Regional Officers (KIE)",
+        location: "Nairobi & Regional Branches (Kenya Industrial Estates)",
+        salary: "Government Parastatal Scale",
+        deadline: "09 December 2026",
+        education: "Diploma or Degree in Business, Industrial Engineering, Finance, or Economics",
+        experience: "2+ years supporting SME enterprise development or industrial incubation",
+        requirements: [
+          "Chapter Six clearance certificates (DCI, KRA, EACC, HELB, CRB)",
+          "Strong analytical skills for SME project appraisal",
+          "Completed application documents must reach KIE offices by 5:00 PM Dec 9"
+        ],
+        applyUrl: "https://www.kie.co.ke",
+        applyEmail: "hr@kie.co.ke",
+        applyProcedure: "1. Download the KIE Job Application Form from kie.co.ke. 2. Attach CV, cover letter, and academic certificates. 3. Submit via email or hand-deliver to KIE Head Office, Likoni Road, Industrial Area.",
+        benefits: "Comprehensive medical cover, pension, industrial travel allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 6,
+        title: "Senior Drivers & Transport Logistics Officers (4 Posts)",
+        location: "Nairobi (Digital Health Agency - DHA Government)",
+        salary: "Civil Service Scale / KES 45,000 - 65,000/mo",
+        deadline: "01 December 2026",
+        education: "KCSE Certificate & Valid NTSA Driving License (Class BCE)",
+        experience: "4+ years accident-free institutional or government fleet driving",
+        requirements: [
+          "Valid PSV badge and defensive driving certificate",
+          "Clean Certificate of Good Conduct from DCI",
+          "Chapter Six constitutional clearance documents"
+        ],
+        applyUrl: "https://dha.go.ke/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit dha.go.ke/careers. 2. Select 'Senior Driver / Transport Officer'. 3. Upload your NTSA license copy, Good Conduct, CV, and KCSE certificate.",
+        benefits: "Civil service inpatient/outpatient medical cover, pension scheme, commuter allowance.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 7,
+        title: "ICT Officers & Digital Health Assistants (6 Posts)",
+        location: "Nairobi (Digital Health Agency - DHA Government)",
+        salary: "KES 65,000 - 95,000/mo",
+        deadline: "01 December 2026",
+        education: "Bachelor's Degree in Computer Science, IT, BBIT, or Health Informatics",
+        experience: "2+ years managing enterprise health databases, APIs, or technical support",
+        requirements: [
+          "Proficiency in SQL databases, network security, and user support",
+          "Valid CRB clearance and Chapter Six compliance certificates",
+          "Ready for nationwide health facility rollouts"
+        ],
+        applyUrl: "https://dha.go.ke/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit dha.go.ke/careers. 2. Complete the online civil service application form and attach your BSc degree, CV, and ID.",
+        benefits: "Government pension scheme, medical cover, field per diems.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 8,
+        title: "Manager, Construction Information Management Systems",
+        location: "Nairobi (National Construction Authority - NCA Government)",
+        salary: "KES 140,000 - 200,000/mo",
+        deadline: "23 November 2026",
+        education: "Bachelor's Degree in Computer Science, Software Engineering, or Civil Informatics",
+        experience: "5+ years managing national databases, contractor portals, or enterprise ERPs",
+        requirements: [
+          "Proven leadership in database security, compliance audits, and software lifecycle",
+          "Full Chapter Six constitutional clearances (KRA, DCI, EACC)",
+          "High analytical and project management acumen"
+        ],
+        applyUrl: "https://nca.go.ke/careers",
+        applyEmail: "",
+        applyProcedure: "1. Log onto the NCA online recruitment portal. 2. Submit your detailed CV, academic transcripts, and Chapter Six compliance documents.",
+        benefits: "Parastatal executive medical cover, car allowance, gratuity/pension.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 9,
+        title: "Customer Care & Supply Chain Officers (IRA Parastatal)",
+        location: "Nairobi (Insurance Regulatory Authority - IRA)",
+        salary: "KES 60,000 - 120,000/mo",
+        deadline: "25 November 2026",
+        education: "Diploma or Bachelor's Degree in Public Relations, Customer Care, or Procurement",
+        experience: "2–3 years in public sector procurement (IFMIS) or corporate customer service",
+        requirements: [
+          "Procurement applicants must be registered members of KISM",
+          "Valid Certificate of Good Conduct and tax compliance",
+          "Strong written and oral communication skills"
+        ],
+        applyUrl: "https://www.ira.go.ke/careers",
+        applyEmail: "",
+        applyProcedure: "1. Access the IRA Recruitment Portal via ira.go.ke. 2. Register an account and submit your application before 5:00 PM.",
+        benefits: "Full medical cover, pension, leave allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 10,
+        title: "UN Communication & Social Media Intern",
+        location: "Nairobi (United Nations Office at Nairobi - UNON)",
+        salary: "UN Internship Stipend Scale",
+        deadline: "22 November 2026",
+        education: "Enrolled in final year or recent graduate in Journalism, Media, or Communications",
+        experience: "Portfolio in digital storytelling, graphic design, or social media management",
+        requirements: [
+          "Fluency in English (knowledge of another UN official language is an advantage)",
+          "Proficiency in Adobe Creative Suite / Canva and video editing",
+          "Strong organizational and multicultural teamwork skills"
+        ],
+        applyUrl: "https://careers.un.org",
+        applyEmail: "",
+        applyProcedure: "1. Visit UN Careers (Inspira) at careers.un.org. 2. Search Duty Station: 'Nairobi'. 3. Complete your PHP (Personal History Profile) and apply.",
+        benefits: "International diplomatic environment experience at UN Gigiri complex, monthly stipend.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 11,
+        title: "County Technical & Agricultural Officers (Kwale CPSB)",
+        location: "Kwale County (County Government of Kwale)",
+        salary: "County Public Service Job Group H & K",
+        deadline: "25 November 2026",
+        education: "Diploma or Degree in Agriculture, Irrigation Engineering, or Vocational Trades",
+        experience: "Entry level to 2 years in field extension or TVET vocational instruction",
+        requirements: [
+          "Roles include Assistant Agriculture Officer, Irrigation Technologist & TVET Instructors",
+          "Valid Chapter Six clearances and academic transcripts",
+          "Permanent and pensionable county terms"
+        ],
+        applyUrl: "https://kwalecountygov.com",
+        applyEmail: "",
+        applyProcedure: "1. Download the Kwale County Public Service Board application form. 2. Attach copies of ID, academic certificates, and clearances. 3. Submit via the county portal or Kwale CPSB offices.",
+        benefits: "County medical scheme, pension, house and commuter allowances.",
+        category: "General Work / Factory",
+        active: true
+      },
+      {
+        id: 12,
+        title: "Program Support Assistant (Procurement & Logistics)",
+        location: "Nairobi (Save the Children International - NGO)",
+        salary: "NGO Scale / KES 75,000 - 105,000/mo",
+        deadline: "28 November 2026",
+        education: "Diploma or Bachelor's Degree in Supply Chain, Procurement, or Business Admin",
+        experience: "2+ years supporting NGO field office procurement, fleet, and asset management",
+        requirements: [
+          "Experience in donor-compliant purchasing (USAID/ECHO/UN rules)",
+          "Commitment to Save the Children Child Safeguarding Policy",
+          "Clean police Certificate of Good Conduct"
+        ],
+        applyUrl: "https://www.savethechildren.net/careers",
+        applyEmail: "",
+        applyProcedure: "1. Go to Save the Children Global Careers portal. 2. Filter location by 'Kenya'. 3. Upload your tailored NGO CV and cover letter.",
+        benefits: "International medical insurance, pension, life cover, annual leave.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 13,
+        title: "MERL & AAP Specialist / Strategic Finance Lead",
+        location: "Nairobi (Plan International - NGO)",
+        salary: "Competitive INGO Scale",
+        deadline: "30 November 2026",
+        education: "Bachelor's or Master's Degree in Monitoring & Evaluation, Statistics, or Finance (CPA/ACCA)",
+        experience: "4+ years leading humanitarian M&E frameworks or multi-donor financial grants",
+        requirements: [
+          "Expertise in Accountability to Affected Populations (AAP) and quantitative data tools",
+          "Strong financial grant compliance and donor reporting background",
+          "Willingness to travel to field project sites"
+        ],
+        applyUrl: "https://jobs.plan-international.org",
+        applyEmail: "",
+        applyProcedure: "1. Open Plan International Jobs portal. 2. Search 'Kenya' and select the role. 3. Submit your online profile and CV.",
+        benefits: "Comprehensive international healthcare, pension, hybrid work options.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 14,
+        title: "Technology & Human Rights Campaign Officer / Intern",
+        location: "Nairobi (Amnesty International Kenya - NGO)",
+        salary: "NGO Remuneration / Paid Internship",
+        deadline: "29 November 2026",
+        education: "Degree in Law, Digital Policy, Communications, or Social Sciences",
+        experience: "2+ years in digital rights advocacy, policy research, or civic campaigning",
+        requirements: [
+          "Passion for human rights, data privacy, and digital governance in Kenya",
+          "Strong research, policy brief writing, and coalition-building skills",
+          "Available for full-time engagement in Nairobi"
+        ],
+        applyUrl: "https://www.amnestykenya.org/careers",
+        applyEmail: "recruitment@amnestykenya.org",
+        applyProcedure: "1. Send your CV (max 3 pages) and a 1-page cover letter explaining your human rights advocacy experience to the recruitment email above.",
+        benefits: "Medical cover, pension, global human rights training network.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 15,
+        title: "Field Administrative Officer (Humanitarian Operations)",
+        location: "Kakuma, Turkana County (Center for Victims of Torture - NGO)",
+        salary: "NGO Field Scale + Hardship Allowance",
+        deadline: "03 December 2026",
+        education: "Diploma or Degree in Business Administration, Finance, or Operations",
+        experience: "3+ years managing field office logistics, petty cash, fleet, and procurement",
+        requirements: [
+          "Experience working in refugee camp or donor-funded humanitarian environments",
+          "High proficiency in Excel, inventory registers, and vehicle logbook audits",
+          "Kenyan citizen with clean police clearance"
+        ],
+        applyUrl: "https://www.cvt.org/careers",
+        applyEmail: "",
+        applyProcedure: "1. Combine your cover letter and CV into a SINGLE PDF file. 2. Apply via the CVT Careers portal / ReliefWeb listing.",
+        benefits: "Rest & Recuperation (R&R) cycles, field accommodation/allowance, medical evacuation cover.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 16,
+        title: "Field Driver & Nutrition Officer (2 Posts)",
+        location: "Kakuma / Turkana (IsraAID Kenya - NGO)",
+        salary: "NGO Scale / KES 45,000 - 85,000/mo",
+        deadline: "30 November 2026",
+        education: "Driver: KCSE + Class BCE License; Nutrition: Diploma/BSc in Nutrition & Dietetics",
+        experience: "2+ years humanitarian field driving (4x4 off-road) or community nutrition programs",
+        requirements: [
+          "Nutrition Officer must be registered with KNDI",
+          "Driver must have clean 4x4 off-road experience and defensive driving certificate",
+          "Clean DCI Certificate of Good Conduct"
+        ],
+        applyUrl: "",
+        applyEmail: "kenyahr@israaid.org",
+        applyProcedure: "1. Email your CV, cover letter, and relevant license (NTSA or KNDI) to kenyahr@israaid.org with the job title as the email subject.",
+        benefits: "Comprehensive medical cover, hardship stipend, life insurance.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 17,
+        title: "Head of Logistics & Supply Chain",
+        location: "Nairobi (Médecins Sans Frontières - MSF NGO)",
+        salary: "Competitive INGO Scale",
+        deadline: "27 November 2026",
+        education: "Degree in Supply Chain, Logistics, Engineering, or Humanitarian Operations",
+        experience: "4+ years leading emergency medical supply chains, fleet, and cold-chain warehousing",
+        requirements: [
+          "Experience managing multi-site humanitarian logistics and customs clearance",
+          "Strong leadership over warehouse, transport, and biomedical maintenance teams",
+          "Fluent in English and Swahili"
+        ],
+        applyUrl: "https://www.msf.or.ke/work-with-us",
+        applyEmail: "",
+        applyProcedure: "1. Visit MSF East Africa recruitment page. 2. Select 'Head of Logistics' and complete the online application form.",
+        benefits: "International medical insurance, pension, emergency response training.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 18,
+        title: "Procurement Officer (Global Multi-Category Generalist)",
+        location: "Nairobi (International Rescue Committee - IRC NGO)",
+        salary: "KES 115,000 - 165,000/mo",
+        deadline: "31 January 2027",
+        education: "Bachelor's Degree in Procurement, Supply Chain, or Business Management",
+        experience: "3+ years managing donor-compliant procurement (USAID/FCDO/UN)",
+        requirements: [
+          "CIPS certification or KISM active membership",
+          "Experience in strategic vendor sourcing, tender evaluation, and ERP systems",
+          "High ethical standards and zero tolerance for fraud"
+        ],
+        applyUrl: "https://careers.rescue.org",
+        applyEmail: "",
+        applyProcedure: "1. Open IRC Careers portal at careers.rescue.org. 2. Search Location: 'Nairobi, Kenya'. 3. Upload your resume and apply.",
+        benefits: "Comprehensive medical insurance, pension, hybrid work flexibility.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 19,
+        title: "Temporary Administrative Assistant",
+        location: "Nairobi (CBM Christian Blind Mission - NGO)",
+        salary: "KES 55,000 - 75,000/mo",
+        deadline: "30 November 2026",
+        education: "Diploma or Degree in Business Administration or Office Management",
+        experience: "2–5 years providing administrative, correspondence, and event support in an NGO",
+        requirements: [
+          "Proficiency in MS Office Suite, record management, and meeting coordination",
+          "Commitment to disability inclusion and safeguarding standards",
+          "Full-time on-site role in Nairobi"
+        ],
+        applyUrl: "https://www.cbm.org/careers",
+        applyEmail: "recruit.nairobi@cbm.org",
+        applyProcedure: "1. Submit your CV and motivation letter quoting 'Administrative Assistant' in the subject line to recruit.nairobi@cbm.org.",
+        benefits: "Medical cover, statutory benefits, inclusive workplace environment.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 20,
+        title: "Tupande Zone Field Supervisors (Agriculture)",
+        location: "Ntimaru & Oldanyati / Western & Rift (One Acre Fund - NGO)",
+        salary: "KES 42,000 - 58,000/mo",
+        deadline: "04 February 2027",
+        education: "Diploma or Degree in Agriculture, Agribusiness, or Community Development",
+        experience: "2+ years managing field officer teams and smallholder farmer input distribution",
+        requirements: [
+          "Strong leadership to coach 10–15 field officers and track loan repayment",
+          "Willingness to ride a motorbike and live within the assigned rural zone",
+          "Fluency in English, Swahili, and local dialect"
+        ],
+        applyUrl: "https://oneacrefund.org/work-with-us/job-openings",
+        applyEmail: "",
+        applyProcedure: "1. Visit One Acre Fund Job Openings page. 2. Filter Country: 'Kenya'. 3. Complete the online application and short numeracy/field assessment.",
+        benefits: "Motorbike and fuel provided, health insurance, performance bonuses.",
+        category: "General Work / Factory",
+        active: true
+      },
+      {
+        id: 21,
+        title: "Monitoring, Evaluation & Learning (MEL) Lead - AI Health",
+        location: "Nairobi (African Population & Health Research Center - APHRC)",
+        salary: "Competitive Research Scale",
+        deadline: "02 December 2026",
+        education: "Master's Degree in Public Health, Biostatistics, Epidemiology, or M&E",
+        experience: "4+ years leading MEL frameworks in public health or digital AI health projects",
+        requirements: [
+          "Strong quantitative and qualitative research design skills (R, Stata, or Python)",
+          "Experience coordinating multi-country research deliverables",
+          "Published peer-reviewed research is an added advantage"
+        ],
+        applyUrl: "https://aphrc.org/vacancies",
+        applyEmail: "jobs@aphrc.org",
+        applyProcedure: "1. Email your cover letter and CV with 3 referees to jobs@aphrc.org quoting 'MEL Lead - AI Health' in the subject line.",
+        benefits: "Comprehensive medical scheme, pension, research conference travel.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      },
+      {
+        id: 22,
+        title: "Human Resource & Legal Interns (Paid Graduate Program)",
+        location: "Nairobi (Kituo Cha Sheria - NGO)",
+        salary: "NGO Graduate Internship Stipend",
+        deadline: "27 November 2026",
+        education: "Degree in HRM / Communications or LLB Law Degree (for Pupilage/Holding Over)",
+        experience: "Fresh graduates seeking practical legal aid or HR administration experience",
+        requirements: [
+          "Passion for social justice, legal aid, and human rights advocacy",
+          "Strong drafting, research, and record-keeping skills",
+          "Available immediately in Nairobi"
+        ],
+        applyUrl: "https://kituochasheria.or.ke",
+        applyEmail: "hr@kituochasheria.or.ke",
+        applyProcedure: "1. Send your CV, cover letter, and copies of academic transcripts to hr@kituochasheria.or.ke.",
+        benefits: "Monthly stipend, mentorship from senior advocates and HR practitioners.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 23,
+        title: "Senior Manager, Early Childhood Development & Education",
+        location: "Nairobi (BRAC International - NGO)",
+        salary: "Competitive INGO Scale",
+        deadline: "28 November 2026",
+        education: "Bachelor's or Master's Degree in Education, Early Childhood Development, or Social Work",
+        experience: "5+ years managing large-scale community education and ECD programs",
+        requirements: [
+          "Proven track record in curriculum adaptation and donor grant management",
+          "Strong partnership skills with Ministry of Education officials",
+          "Willingness to travel across project counties"
+        ],
+        applyUrl: "https://careers.bracinternational.org",
+        applyEmail: "",
+        applyProcedure: "1. Visit BRAC International careers portal. 2. Select Kenya openings and upload your CV and cover letter.",
+        benefits: "Comprehensive medical insurance, pension, leadership development.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 24,
+        title: "Judicial Liaison Officer (Legal & Regulatory)",
+        location: "Nairobi (Safaricom PLC)",
+        salary: "Corporate Executive Scale",
+        deadline: "30 November 2026",
+        education: "Bachelor of Laws (LLB) + Postgraduate Diploma from Kenya School of Law",
+        experience: "2+ years handling court orders, law enforcement compliance, and legal notices",
+        requirements: [
+          "Admitted as an Advocate of the High Court of Kenya with active practicing certificate",
+          "High integrity, confidentiality, and rapid turnaround on judicial requests",
+          "Strong stakeholder management with judiciary and security agencies"
+        ],
+        applyUrl: "https://www.safaricom.co.ke/careers",
+        applyEmail: "",
+        applyProcedure: "1. Log in to Safaricom Careers portal (Oracle Cloud). 2. Search 'Judicial Liaison Officer' and submit your profile.",
+        benefits: "Comprehensive medical scheme, staff airtime/data, performance bonus, pension.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 25,
+        title: "Head of Employee Relations & Head of Fleet Development",
+        location: "Nairobi (Kenya Airways PLC)",
+        salary: "Airline Executive Scale",
+        deadline: "30 November 2026",
+        education: "Degree in HR Management (with IHRM) or Aviation/Engineering Management",
+        experience: "6+ years leading unionized industrial relations or commercial aircraft fleet planning",
+        requirements: [
+          "Employee Relations: Mastery of Kenyan Labour Laws, CBA negotiations, and IHRM membership",
+          "Fleet Development: Experience in aircraft leasing, route economics, and fleet optimization",
+          "Uncompromising integrity and aviation security clearance"
+        ],
+        applyUrl: "https://www.kenya-airways.com/en/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit the Kenya Airways official recruitment portal. 2. Create a candidate profile and upload your CV and certificates.",
+        benefits: "Concessional global flight tickets, comprehensive medical cover, executive pension.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 26,
+        title: "Sim Instructor, Captain & Route Development Analyst",
+        location: "Nairobi JKIA (Jambojet)",
+        salary: "Airline Industry Scale",
+        deadline: "04 December 2026",
+        education: "ATPL License (for Pilots) or Degree in Economics/Aviation Analytics (for Analyst)",
+        experience: "Type-rated Dash 8-Q400 hours (for Captains/Instructors) or 2+ yrs airline route analytics",
+        requirements: [
+          "Pilots: Valid KCAA ATPL, Class 1 Medical, and simulator instruction endorsement",
+          "Route Analyst: Strong financial modeling and airline network demand forecasting",
+          "Clean safety and regulatory record"
+        ],
+        applyUrl: "https://www.jambojet.com/careers",
+        applyEmail: "",
+        applyProcedure: "1. Open Jambojet Careers page. 2. Select the vacancy and submit your aviation credentials/CV online.",
+        benefits: "Flight benefits, comprehensive health insurance, loss-of-license cover (pilots).",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 27,
+        title: "Business Development Officer, Dentist & Pharmaceutical Technologist",
+        location: "Voi (Taita Taveta) & Nairobi (Equity Afia)",
+        salary: "Competitive Healthcare Corporate Scale",
+        deadline: "27 November 2026",
+        education: "BDS Dental Surgery, Diploma in Pharmacy, or Degree in Business/Marketing",
+        experience: "2+ years clinical practice or healthcare facility business development",
+        requirements: [
+          "Clinicians must hold valid KMPDC or Pharmacy & Poisons Board practicing licenses",
+          "Business Development Officer based in Voi to drive corporate and insurance clinic partnerships",
+          "Patient-centered care and high ethical standards"
+        ],
+        applyUrl: "https://equitygroupholdings.com/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit Equity Group Holdings Careers portal. 2. Filter by 'Equity Afia' and apply online.",
+        benefits: "Comprehensive medical cover, staff pension, continuous medical education support.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      },
+      {
+        id: 28,
+        title: "Technical Training Officer & Employee Relations Officer",
+        location: "Nairobi (Automobile Association of Kenya - AA Kenya)",
+        salary: "KES 65,000 - 95,000/mo",
+        deadline: "30 November 2026",
+        education: "Diploma/Degree in Automotive Engineering or Human Resource Management",
+        experience: "3+ years in defensive driving/automotive instruction or HR industrial relations",
+        requirements: [
+          "Technical Officer: NTSA certified driving instructor with deep mechanical diagnostics",
+          "HR Officer: Active IHRM member with experience in disciplinary & welfare management",
+          "Valid Certificate of Good Conduct"
+        ],
+        applyUrl: "https://www.aakenya.co.ke/careers",
+        applyEmail: "jobs@aakenya.co.ke",
+        applyProcedure: "1. Send your CV and cover letter to jobs@aakenya.co.ke stating the position title in the subject line.",
+        benefits: "AA membership privileges, medical insurance, pension scheme.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 29,
+        title: "Administrative Officer & Logistics Supervisor",
+        location: "Nairobi (Kilimall Kenya)",
+        salary: "KES 45,000 - 65,000/mo",
+        deadline: "02 December 2026",
+        education: "Diploma or Degree in Logistics, Supply Chain, or Business Administration",
+        experience: "2+ years managing e-commerce warehouse sorting, rider dispatch, or office admin",
+        requirements: [
+          "Experience with warehouse management systems (WMS) and last-mile delivery KPIs",
+          "Strong Excel reporting and team supervision skills",
+          "Clean police Certificate of Good Conduct"
+        ],
+        applyUrl: "https://www.kilimall.co.ke",
+        applyEmail: "hr@kilimall.com",
+        applyProcedure: "1. Email your CV and expected salary to hr@kilimall.com with the role title as subject.",
+        benefits: "Performance bonuses, medical cover, e-commerce career growth.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 30,
+        title: "Alarm Response, Logistics & Field Security Officers",
+        location: "Nairobi & Mombasa (BM Security)",
+        salary: "KES 32,000 - 48,000/mo",
+        deadline: "05 December 2026",
+        education: "KCSE Certificate (Mean Grade D+ and above)",
+        experience: "2+ years in rapid alarm response, patrol supervision, or commercial security",
+        requirements: [
+          "Valid Class BCE/A driving license (for Alarm Response drivers)",
+          "Clean Certificate of Good Conduct from DCI (issued within 6 months)",
+          "Physically fit with strong incident reporting discipline"
+        ],
+        applyUrl: "https://www.bmsecurity.com/careers",
+        applyEmail: "recruitment@bmsecurity.com",
+        applyProcedure: "1. Send your CV, National ID copy, Driving License (if driver), and Good Conduct to recruitment@bmsecurity.com or visit BM Security HQ.",
+        benefits: "Full uniform, medical cover, night shift allowances, statutory NSSF/SHIF.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
+      {
+        id: 31,
+        title: "Talent Acquisition Lead (Healthcare Recruitment)",
+        location: "Nairobi (Penda Health)",
+        salary: "KES 90,000 - 130,000/mo",
+        deadline: "27 November 2026",
+        education: "Bachelor's Degree in Human Resource Management or Business",
+        experience: "3+ years high-volume clinical and corporate recruitment",
+        requirements: [
+          "Active member of IHRM in good standing",
+          "Proven track record hiring clinical officers, nurses, and branch managers",
+          "Data-driven recruitment funnel tracking"
+        ],
+        applyUrl: "https://www.pendahealth.com/careers",
+        applyEmail: "",
+        applyProcedure: "1. Open Penda Health Careers page. 2. Select 'Talent Acquisition Lead' and submit your application online.",
+        benefits: "Comprehensive medical care at Penda clinics, pension, performance bonus.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 32,
+        title: "Brand & Hospitality Interns (Paid 2026 Cohort)",
+        location: "Nairobi, Mombasa & Kisumu (Java House Africa)",
+        salary: "Paid Internship Stipend + Duty Meals",
+        deadline: "11 December 2026",
+        education: "Diploma or Degree in Marketing, Hospitality, or Business",
+        experience: "Fresh graduates with high energy and customer obsession",
+        requirements: [
+          "Passion for food & beverage brand activation and guest experience",
+          "Valid Food Handlers medical certificate (or willingness to obtain)",
+          "Flexible to work branch rotational hours"
+        ],
+        applyUrl: "https://javahouseafrica.com/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit Java House Africa Careers page. 2. Select your preferred city (Nairobi/Mombasa/Kisumu) and apply online.",
+        benefits: "Daily duty meals, structured management trainee pathway, stipend.",
+        category: "Hospitality / Waiter / Barista / Chef",
+        active: true
+      },
+      {
+        id: 33,
+        title: "Trade Marketing Manager (Solar Energy)",
+        location: "Nairobi (Sun King - Greenlight Planet)",
+        salary: "Competitive Corporate Scale",
+        deadline: "04 December 2026",
+        education: "Bachelor's Degree in Marketing, Business, or Commerce",
+        experience: "4+ years leading below-the-line trade activations and retail merchandising across Kenya",
+        requirements: [
+          "Experience driving rural & peri-urban agent activations in FMCG or solar",
+          "Strong analytical skills to measure campaign ROI",
+          "Willingness to travel upcountry"
+        ],
+        applyUrl: "https://sunking.com/careers",
+        applyEmail: "",
+        applyProcedure: "1. Go to Sun King Global Careers page. 2. Filter Country: 'Kenya' and apply directly with your CV.",
+        benefits: "Medical cover, pension, performance incentives, travel allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 34,
+        title: "Regional Operations Manager & Zonal Monitoring Officers",
+        location: "Nairobi (Oya Microcredit)",
+        salary: "KES 55,000 - 120,000/mo",
+        deadline: "28 November 2026",
+        education: "Bachelor's Degree in Finance, Economics, Accounting, or Business",
+        experience: "1–3+ years in microfinance credit monitoring or regional branch operations",
+        requirements: [
+          "Strong portfolio-at-risk (PAR) tracking and field loan officer supervision",
+          "High analytical proficiency in Excel and core banking systems",
+          "Clean CRB and DCI Certificate of Good Conduct"
+        ],
+        applyUrl: "",
+        applyEmail: "careers@oyamicrocredit.com",
+        applyProcedure: "1. Send your CV and cover letter stating your current/expected salary to careers@oyamicrocredit.com.",
+        benefits: "Performance bonuses, airtime & field transport allowance, medical insurance.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 35,
+        title: "Business Applications Developer",
+        location: "Nakuru County (Valley Hospital)",
+        salary: "KES 70,000 - 100,000/mo",
+        deadline: "05 December 2026",
+        education: "BSc in Computer Science, Software Engineering, or Information Technology",
+        experience: "2+ years developing and integrating Hospital Management Information Systems (HMIS)",
+        requirements: [
+          "Proficiency in SQL databases, API integrations (SHA/insurance claims), and web apps",
+          "Ability to train doctors, nurses, and billing clerks on hospital software",
+          "Based full-time in Nakuru"
+        ],
+        applyUrl: "",
+        applyEmail: "hr@valleyhospital.co.ke",
+        applyProcedure: "1. Email your CV and portfolio of integrated software projects to hr@valleyhospital.co.ke.",
+        benefits: "Hospital medical cover, pension, professional IT certifications.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 36,
+        title: "Front Office Supervisor",
+        location: "Nanyuki / Nyeri (Naro Moru River Lodge)",
+        salary: "KES 40,000 - 55,000/mo",
+        deadline: "03 December 2026",
+        education: "Diploma or Degree in Hotel & Hospitality Management",
+        experience: "3+ years supervising front desk, reservations, and guest relations in a safari lodge",
+        requirements: [
+          "Proficiency in hotel PMS reservation software and OTA channel managers",
+          "Warm hospitality leadership and guest complaint resolution skills",
+          "Valid Certificate of Good Conduct"
+        ],
+        applyUrl: "",
+        applyEmail: "hr@naromoruriverlodge.com",
+        applyProcedure: "1. Send your CV and hospitality references to hr@naromoruriverlodge.com.",
+        benefits: "Staff accommodation on-site, duty meals, service charge share.",
+        category: "Hospitality / Waiter / Barista / Chef",
+        active: true
+      },
+      {
+        id: 37,
+        title: "Senior Property Advisor (Real Estate Sales)",
+        location: "Nairobi (Corporate Staffing Client)",
+        salary: "KES 80,000/mo + Sales Commissions",
+        deadline: "29 November 2026",
+        education: "Bachelor's Degree in Marketing, Real Estate, Business, or Commerce",
+        experience: "3+ years closing high-value residential or commercial property sales/leases",
+        requirements: [
+          "Proven network of property investors and corporate tenants in Nairobi",
+          "Strong negotiation, valuation advisory, and client relationship skills",
+          "Valid driving license is an added advantage"
+        ],
+        applyUrl: "https://www.corporatestaffing.co.ke/jobs",
+        applyEmail: "",
+        applyProcedure: "1. Visit Corporate Staffing Services job board. 2. Search 'Senior Property Advisor' and submit your CV.",
+        benefits: "Attractive base salary of KES 80K plus lucrative closing commissions.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 38,
+        title: "Automotive Technicians & Wheel Mechanics (6 Posts)",
+        location: "Nairobi & Mombasa (AutoXpress Kenya)",
+        salary: "KES 40,000 - 55,000/mo",
+        deadline: "08 December 2026",
+        education: "Certificate or Diploma in Automotive Engineering (NITA Grade I/II)",
+        experience: "2+ years servicing passenger & 4x4 suspension, brakes, and 3D wheel alignment",
+        requirements: [
+          "Valid Kenyan Driving License with clean accident-free record",
+          "Strong technical diagnostic and customer explanation etiquette",
+          "Valid Certificate of Good Conduct from DCI"
+        ],
+        applyUrl: "https://www.auto-xpress.co.ke/careers",
+        applyEmail: "careers@auto-xpress.co.ke",
+        applyProcedure: "1. Email your CV and NITA trade test certificates to careers@auto-xpress.co.ke indicating preferred city (Nairobi or Mombasa).",
+        benefits: "Medical insurance, tool allowances, technical training, annual leave bonus.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      {
+        id: 39,
+        title: "Industrial Electrical Technicians & Overhead Crane Operators",
+        location: "Kajiado / Nairobi (Twyford Tile)",
+        salary: "KES 45,000 - 65,000/mo",
+        deadline: "06 December 2026",
+        education: "Certificate/Diploma in Electrical Engineering or Certified Crane Operator License",
+        experience: "2+ years in manufacturing factory line maintenance or heavy crane operations",
+        requirements: [
+          "Electrical: Troubleshooting 3-phase industrial motors, sensors, and PLCs",
+          "Crane: Valid operator permit compliant with Kenyan safety regulations",
+          "Willingness to work 8-hour day/night shift rotations",
+          "Valid police Certificate of Good Conduct"
+        ],
+        applyUrl: "https://www.linkedin.com/company/twyford-ceramics/jobs",
+        applyEmail: "hr.kenya@twyfordtile.com",
+        applyProcedure: "1. Send your CV and technical licenses (EPRA or Crane Permit) to hr.kenya@twyfordtile.com.",
+        benefits: "Safety gear provided, production bonuses, medical insurance, overtime pay.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      {
+        id: 40,
+        title: "Field Sales & Customer Onboarding Agents (10 Posts)",
+        location: "Nairobi, Mombasa & Nakuru (Rentalle PropTech)",
+        salary: "Commission + Performance Incentives (KES 35,000 - 65,000 potential)",
+        deadline: "10 December 2026",
+        education: "Certificate, Diploma or Degree in Sales, Marketing, ICT, or Business",
+        experience: "Entry level / Field sales, real estate, or digital app onboarding experience",
+        requirements: [
+          "Identify and onboard landlords and property managers to Rentalle platform",
+          "Demonstrate mobile software and register rental units",
+          "Self-motivated, confident communicator able to work independently"
+        ],
+        applyUrl: "https://www.rentalle.dev",
+        applyEmail: "adminrentalle@gmail.com",
+        applyProcedure: "1. Send your CV and a brief cover letter directly to adminrentalle@gmail.com indicating your preferred town.",
+        benefits: "Uncapped performance commissions, proptech sales training, growth to Territory Lead.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 41,
+        title: "Customer Service Centre Agents (Hybrid Remote)",
+        location: "Nairobi (Ideon Limited - Hybrid)",
+        salary: "KES 35,000 - 48,000/mo",
+        deadline: "04 December 2026",
+        education: "KCSE Certificate / College Diploma",
+        experience: "1+ year call center, tele-sales, or customer support experience",
+        requirements: [
+          "Articulate English and Swahili phone etiquette",
+          "Fast typing and CRM ticket logging skills",
+          "Reliable home internet connection for hybrid work days"
+        ],
+        applyUrl: "",
+        applyEmail: "recruitment@ideon.co.ke",
+        applyProcedure: "1. Email your CV to recruitment@ideon.co.ke with 'Customer Service Agent' as the subject.",
+        benefits: "Hybrid work flexibility, monthly airtime/data stipend, performance bonuses.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 42,
+        title: "Mobile Agronomy Content Coordinator (100% Remote)",
+        location: "Kenya (Precision Development - PxD Remote)",
+        salary: "KES 70,000 - 95,000/mo",
+        deadline: "07 December 2026",
+        education: "Bachelor's Degree in Agriculture, Communications, or Development Studies",
+        experience: "2+ years developing digital/SMS agricultural advisories for smallholder farmers",
+        requirements: [
+          "Fluent in English and Swahili with ability to simplify technical agronomy",
+          "Strong self-management for 100% remote work from home",
+          "Experience conducting user testing with rural farmers"
+        ],
+        applyUrl: "https://precisiondev.org/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit Precision Development Careers page. 2. Select Kenya remote roles and submit your CV.",
+        benefits: "100% remote flexibility, home internet stipend, company laptop, medical cover.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 43,
+        title: "Heavy Commercial Articulated Truck Drivers (8 Posts)",
+        location: "Mombasa County (Port & Northern Corridor)",
+        salary: "KES 45,000 - 62,000/mo",
+        deadline: "12 December 2026",
+        education: "KCSE Certificate",
+        experience: "4+ years driving articulated semi-trailers (Mombasa–Malaba/Kampala route)",
+        requirements: [
+          "Valid NTSA Driving License (Class BCE / Articulated Endorsement)",
+          "Valid PSV badge and clean Certificate of Good Conduct from DCI",
+          "Experience with port container gate-passes and transit cargo security",
+          "Clean accident-free driving record"
+        ],
+        applyUrl: "",
+        applyEmail: "fleet.hr@coastallogistics.co.ke",
+        applyProcedure: "1. Send your CV, NTSA License copy, PSV badge, and Good Conduct to fleet.hr@coastallogistics.co.ke.",
+        benefits: "Trip per diems, transit meal allowances, NHIF/SHIF & NSSF cover.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 44,
+        title: "Fresh Produce Packhouse & Sorting Supervisors",
+        location: "Thika, Kiambu County",
+        salary: "KES 38,000 - 52,000/mo",
+        deadline: "08 December 2026",
+        education: "Certificate or Diploma in Food Science, Horticulture, or Production",
+        experience: "2+ years supervising export avocado/mango packhouses or cold rooms",
+        requirements: [
+          "Knowledge of KEPHIS export standards and Global GAP hygiene protocols",
+          "Experience supervising 30+ packhouse sorting and grading casual staff",
+          "Valid Food Handlers medical certificate",
+          "Strong inventory and dispatch manifest accuracy"
+        ],
+        applyUrl: "",
+        applyEmail: "hr@bollardconsulting.co.ke",
+        applyProcedure: "1. Email your CV and Food Science/Horticulture certificates to hr@bollardconsulting.co.ke.",
+        benefits: "Performance incentives, overtime pay, statutory medical cover.",
+        category: "General Work / Factory",
+        active: true
+      },
+      {
+        id: 45,
+        title: "Hospitality Waiters, Baristas & F&B Experts (25 Posts)",
+        location: "Dubai, UAE (Rotana / Marriott / Westin Hotels - Abroad)",
+        salary: "KES 75,000 - 98,000/mo (AED 2,200 - 2,800 + Tips)",
+        deadline: "14 December 2026",
+        education: "KCSE Certificate / Hospitality Certificate",
+        experience: "1+ year restaurant, barista, or hotel F&B customer service",
+        requirements: [
+          "Valid Kenyan Passport (minimum 18 months validity remaining)",
+          "Fluent spoken English etiquette with neat personal grooming",
+          "GAMCA medical fitness clearance (food industry standard)",
+          "Clean Certificate of Good Conduct from DCI"
+        ],
+        applyUrl: "https://www.rotanacareers.com",
+        applyEmail: "",
+        applyProcedure: "1. Ensure your ATS CV includes a full-length professional photo and passport number. 2. Apply directly on Rotana Careers (filter: Dubai) OR forward your verified CV via our WhatsApp Desk for agency batch submission.",
+        benefits: "2-year UAE employment visa, flight ticket, shared hotel accommodation, transport & duty meals.",
+        category: "Hospitality / Waiter / Barista / Chef",
+        active: true
+      },
+      {
+        id: 46,
+        title: "Registered Nurses & Clinical Care Specialists (12 Posts)",
+        location: "Al Ain & Abu Dhabi, UAE (Mediclinic - Abroad)",
+        salary: "KES 220,000 - 310,000/mo (AED 6,500 - 9,000)",
+        deadline: "12 December 2026",
+        education: "BSc Nursing or KRCHN Diploma + Valid NCK Practicing License",
+        experience: "Minimum 2 years acute hospital bedside nursing experience",
+        requirements: [
+          "Valid Kenyan International Passport",
+          "DOH / HAAD exam eligibility or DataFlow verification readiness",
+          "Valid BLS / ACLS certifications",
+          "Clean police clearance and medical fitness"
+        ],
+        applyUrl: "https://careers.mediclinic.ae",
+        applyEmail: "",
+        applyProcedure: "1. Open Mediclinic Middle East Careers portal. 2. Search 'Registered Nurse' and upload your NCK license, BLS certificate, and CV.",
+        benefits: "Tax-free salary, UAE residency visa, flight tickets, housing allowance, medical insurance.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      },
+      {
+        id: 47,
+        title: "Perimeter & Facility Security Marshals (35 Posts)",
+        location: "Doha, Qatar (Overseas / Abroad)",
+        salary: "KES 70,000 - 88,000/mo (QAR 2,000 - 2,500)",
+        deadline: "15 December 2026",
+        education: "KCSE Certificate",
+        experience: "1+ year private security, NYS paramilitary, or crowd control background",
+        requirements: [
+          "Valid Kenyan Passport ready for visa stamping",
+          "Height: 5'9\"+ (Men), 5'5\"+ (Women); physically fit with no visible tattoos",
+          "Clean DCI Certificate of Good Conduct (issued within last 6 months)",
+          "Medically certified fit via GAMCA approved clinic"
+        ],
+        applyUrl: "https://www.g4s.com/en-qa/careers",
+        applyEmail: "",
+        applyProcedure: "1. Prepare your passport bio-page, full-length photo, and DCI Good Conduct. 2. Apply via G4S Qatar careers OR submit to our NEA-vetted partner desk on WhatsApp for interview scheduling.",
+        benefits: "Free Qatar employment visa, return air tickets, air-conditioned housing, uniform & medical cover.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
+      {
+        id: 48,
+        title: "Heavy Equipment Operators & Construction Technicians (20 Posts)",
+        location: "Riyadh & NEOM, Saudi Arabia (Overseas / Abroad)",
+        salary: "KES 85,000 - 125,000/mo (SAR 2,500 - 3,600)",
+        deadline: "18 December 2026",
+        education: "NITA Trade Test Certificate / NTSA License with Heavy Plant Endorsement",
+        experience: "3+ years operating excavators, bulldozers, cranes, or industrial electrical/plumbing",
+        requirements: [
+          "Valid Kenyan Passport",
+          "GAMCA Medical Fitness Clearance",
+          "Practical trade test competence in heavy machinery or MEP trades",
+          "Adaptability to desert project site conditions"
+        ],
+        applyUrl: "https://careers.neom.com",
+        applyEmail: "",
+        applyProcedure: "1. Submit your trade certificates, NTSA plant license, and passport copy on the portal or through our vetted Gulf technical trade-test desk.",
+        benefits: "Free Saudi work visa, flight tickets, camp accommodation, 3 daily meals provided, overtime pay.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
+      {
+        id: 49,
+        title: "Skilled Joiners, Bricklayers & Groundworkers (Visa Sponsored)",
+        location: "United Kingdom & Isle of Man (Dandara Construction - Abroad)",
+        salary: "KES 280,000 - 380,000/mo (£1,800 - £2,400/mo)",
+        deadline: "24 December 2026",
+        education: "NITA / TVET Trade Certificate in Carpentry, Masonry, or Civil Construction",
+        experience: "3+ years verifiable residential or commercial construction experience",
+        requirements: [
+          "Valid Kenyan International Passport (2+ years validity)",
+          "UKVI English language proficiency (IELTS B1 level)",
+          "IOM Tuberculosis (TB) clearance and clean international police record",
+          "Employer offers UK Skilled Worker Visa sponsorship on eligibility"
+        ],
+        applyUrl: "https://www.dandara.com/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit Dandara Construction Careers page. 2. Select 'Skilled Trades - Visa Sponsorship Eligible' and upload your TVET/NITA trade credentials.",
+        benefits: "UK Visa sponsorship pathway, pension scheme, paid annual leave, UK statutory protections.",
+        category: "Construction / Electrical / Plumbing",
+        active: true
+      },
+      {
+        id: 50,
+        title: "Certified Home Caregivers & Elderly Aides (10 Posts)",
+        location: "Ontario & Alberta, Canada (Overseas / Abroad)",
+        salary: "KES 240,000 - 320,000/mo (CAD $18 - $23/hr)",
+        deadline: "20 December 2026",
+        education: "Certificate or Diploma in Nursing, Community Health, or Caregiving",
+        experience: "Minimum 2 years verifiable hands-on elderly or palliative patient care",
+        requirements: [
+          "Valid Kenyan International Passport",
+          "Recognized Caregiving credentials or Nursing Council registration",
+          "IELTS General Training test (minimum CLB 5 score)",
+          "Clean police certificate and panel physician medical examination"
+        ],
+        applyUrl: "https://www.jobbank.gc.ca",
+        applyEmail: "",
+        applyProcedure: "1. Visit official Government of Canada Job Bank (jobbank.gc.ca). 2. Filter 'Temporary Foreign Workers - Home Support Worker (NOC 44101)' and apply directly to LMIA-approved employers.",
+        benefits: "Legal Canadian work permit sponsorship pathway, provincial healthcare coverage, paid vacation.",
+        category: "Healthcare / Nursing / Caregiver",
+        active: true
+      }
+    ];
 
-  try {
-    await fetch(`${API_BASE}/api/registrations`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+    let activeFilterTerm = "";
+
+    // SEARCH & FILTER LOGIC
+    function setFilterLocation(term) {
+      if (term === "all") {
+        document.getElementById("jobSearchInput").value = "";
+        activeFilterTerm = "";
+      } else {
+        document.getElementById("jobSearchInput").value = term;
+        activeFilterTerm = term.toLowerCase();
+      }
+      renderJobs();
+      document.getElementById("vacancies").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterJobsLive() {
+      const term = document.getElementById("jobSearchInput").value.toLowerCase().trim();
+      activeFilterTerm = term;
+      renderJobs();
+    }
+
+    // AUTOMATIC JOB CARD GENERATOR
+    function renderJobs() {
+      const container = document.getElementById("vacanciesContainer");
+      if (!container) return;
+
+      const filtered = MY_JOBS.filter(job => {
+        if (!activeFilterTerm) return true;
+        return (
+          job.title.toLowerCase().includes(activeFilterTerm) ||
+          job.location.toLowerCase().includes(activeFilterTerm) ||
+          job.category.toLowerCase().includes(activeFilterTerm) ||
+          job.education.toLowerCase().includes(activeFilterTerm) ||
+          (job.requirements && job.requirements.some(r => r.toLowerCase().includes(activeFilterTerm)))
+        );
+      });
+
+      document.getElementById("jobCountDisplay").innerText = `Showing ${filtered.length} of ${MY_JOBS.length} positions`;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center bg-white rounded-2xl border border-slate-200">
+            <i class="fas fa-search text-3xl text-slate-300 mb-2"></i>
+            <p class="text-sm font-bold text-slate-700">No vacancies matched "${activeFilterTerm}"</p>
+            <p class="text-xs text-slate-500 mt-1">Try searching for "Remote", "Government", "NGO", "Driver", "Mombasa", or "Abroad".</p>
+            <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all ${MY_JOBS.length} jobs</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map((job) => {
+        const isClosed = (job.active === false);
+        const originalIndex = MY_JOBS.findIndex(j => j.id === job.id);
+        return `
+          <div class="bg-white p-5 rounded-2xl border ${isClosed ? 'border-slate-300 opacity-60 bg-slate-50' : 'border-slate-200'} shadow-sm space-y-3 flex flex-col justify-between hover:border-emerald-500 transition duration-150">
+            <div class="space-y-2">
+              <div class="flex justify-between items-start gap-2">
+                <span class="${isClosed ? 'bg-slate-200 text-slate-600' : 'bg-emerald-100 text-emerald-800'} text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
+                  ${job.location}
+                </span>
+                <span class="${isClosed ? 'text-slate-500 line-through' : 'text-emerald-700'} font-bold text-xs text-right">
+                  ${job.salary}
+                </span>
+              </div>
+              <h3 class="font-bold text-slate-900 ${isClosed ? 'line-through text-slate-500' : ''}">
+                ${job.title}
+              </h3>
+              <p class="text-xs text-slate-500">
+                <i class="far fa-calendar-alt text-amber-600 mr-1"></i> Deadline: <strong class="text-slate-700">${job.deadline}</strong>
+              </p>
+            </div>
+
+            <div class="pt-2 flex flex-col gap-2">
+              ${isClosed ? `
+                <div class="w-full text-center bg-slate-200 text-slate-600 font-bold py-2 rounded-lg text-xs cursor-not-allowed">
+                  <i class="fas fa-ban mr-1"></i> Position Filled / Closed
+                </div>
+              ` : `
+                <button onclick="openJobDetailsModal(${originalIndex})" class="w-full text-center ${isMemberUnlocked ? 'bg-emerald-600 hover:bg-emerald-700 text-white' : 'bg-slate-900 hover:bg-slate-800 text-white'} font-bold py-2.5 rounded-lg text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+                  <i class="fas ${isMemberUnlocked ? 'fa-external-link-alt' : 'fa-eye'}"></i>
+                  ${isMemberUnlocked ? 'Apply Now (Direct Link & Email)' : 'View Details & How to Apply'}
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // MODAL HANDLER WITH SELF-SERVICE DIRECT APPLICATION UNLOCK
+    function openJobDetailsModal(index) {
+      const job = MY_JOBS[index];
+      if (!job) return;
+
+      const reqListHtml = (job.requirements || []).map(r => `
+        <li class="flex items-start gap-2 text-xs text-slate-700">
+          <i class="fas fa-check-circle text-emerald-600 mt-0.5 flex-shrink-0"></i>
+          <span>${r}</span>
+        </li>
+      `).join('');
+
+      let directApplySectionHtml = "";
+      if (isMemberUnlocked) {
+        const emailSubject = encodeURIComponent(`Application for ${job.title}`);
+        directApplySectionHtml = `
+          <div class="bg-emerald-50 border-2 border-emerald-500 rounded-xl p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-black uppercase tracking-wider bg-emerald-600 text-white px-2 py-0.5 rounded">
+                <i class="fas fa-unlock mr-1"></i> Member Self-Apply Unlocked
+              </span>
+              <span class="text-[10px] font-bold text-emerald-800">Direct Employer Channel</span>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-500 mb-1">Step-by-Step Application Procedure</span>
+              <p class="text-xs text-slate-800 leading-relaxed bg-white p-2.5 rounded-lg border border-emerald-200">${job.applyProcedure}</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 pt-1">
+              ${job.applyUrl ? `
+                <a href="${job.applyUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5 shadow">
+                  <i class="fas fa-globe"></i> Open Application Portal
+                </a>
+              ` : ''}
+              ${job.applyEmail ? `
+                <a href="mailto:${job.applyEmail}?subject=${emailSubject}" class="flex-1 bg-blue-700 hover:bg-blue-800 text-white font-bold py-2.5 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5 shadow">
+                  <i class="fas fa-envelope"></i> Email CV (${job.applyEmail})
+                </a>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      } else {
+        directApplySectionHtml = `
+          <div class="bg-slate-900 text-white rounded-xl p-4 space-y-3 text-center">
+            <div class="w-9 h-9 bg-amber-500/20 text-amber-400 rounded-full flex items-center justify-center mx-auto text-base">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-white">Direct Application Link & Email Locked</h4>
+              <p class="text-[11px] text-slate-300 mt-1">
+                Direct employer websites, remote sign-up links, HR emails, and step-by-step application procedures are reserved for registered 6-Month Members.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 pt-1">
+              <button onclick="closeJobDetailsModal(); openMemberUnlockModal();" class="flex-1 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black py-2.5 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5">
+                <i class="fas fa-key"></i> Already Paid? Enter Passcode
+              </button>
+              <button onclick="closeJobDetailsModal(); applyForRole('${job.category}');" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5">
+                <i class="fas fa-user-plus"></i> Get 6-Mo Pass (KES 199)
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      document.getElementById("modalJobContent").innerHTML = `
+        <div class="space-y-4">
+          <div class="border-b border-slate-200 pb-3">
+            <div class="flex justify-between items-start gap-2">
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">
+                ${job.location}
+              </span>
+              <span class="text-emerald-700 font-bold text-sm">${job.salary}</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900 mt-2">${job.title}</h3>
+            <p class="text-xs text-amber-700 font-semibold mt-1">
+              <i class="far fa-clock mr-1"></i> Application Deadline: ${job.deadline}
+            </p>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div>
+              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-400">Education Level</span>
+              <p class="text-slate-700 font-medium">${job.education}</p>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-400">Experience Required</span>
+              <p class="text-slate-700 font-medium">${job.experience}</p>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 block uppercase text-[10px] text-slate-400 mb-1">Key Requirements</span>
+              <ul class="space-y-1.5">${reqListHtml}</ul>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+              <span class="font-bold text-slate-800 block uppercase text-[10px] mb-0.5">Benefits & Contract</span>
+              <p class="text-slate-700 text-xs">${job.benefits}</p>
+            </div>
+          </div>
+
+          ${directApplySectionHtml}
+        </div>
+      `;
+
+      document.getElementById("jobDetailsModal").classList.remove("hidden");
+    }
+
+    function closeJobDetailsModal() {
+      document.getElementById("jobDetailsModal").classList.add("hidden");
+    }
+
+    // Initialize UI on load
+    document.addEventListener("DOMContentLoaded", () => {
+      updateMemberUIState();
+      renderJobs();
     });
-  } catch {
-    // Still open WhatsApp so the user isn't blocked if offline
-  }
+    updateMemberUIState();
+    renderJobs();
 
-  const msg = encodeURIComponent(
-    `Hello Admin, I just submitted my registration on KaziKenya&Abroad.\nName: ${payload.name}\nPhone: ${payload.phone}\nDestination: ${payload.destination}\nField: ${payload.field}\nCV: ${payload.cvFile}\nCV Revamp (+300): ${payload.cvUpsell ? "Yes" : "No"}\nM-Pesa Code: ${payload.mpesaCode || "Will pay via " + MPESA_NUMBER}\nTotal: KES ${total}`
-  );
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
-  alert(`Registration submitted! Send KES ${total} to M-Pesa ${MPESA_NUMBER} (if not sent) and watch WhatsApp for your passcode.`);
-}
+    // Standard Numbers and Admin Passcode
+    const MPESA_PAYMENT_LINE = "0708 743 931";
+    const WHATSAPP_DESK_NUMBER = "254739658520";
+    const ADMIN_PASSCODE = "7439";
+    let currentPayable = 199;
+
+    function updateTotalPayable() {
+      const isChecked = document.getElementById("cvUpsellCheckbox").checked;
+      const upsellRow = document.getElementById("upsellSummaryRow");
+      const totalText = document.getElementById("totalPayableText");
+      if (isChecked) {
+        currentPayable = 499;
+        upsellRow.classList.remove("hidden");
+        totalText.innerText = "KES 499";
+      } else {
+        currentPayable = 199;
+        upsellRow.classList.add("hidden");
+        totalText.innerText = "KES 199";
+      }
+    }
+
+    function applyForRole(roleName) {
+      document.getElementById("regField").value = roleName;
+      document.getElementById("register").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleRegistrationSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("regName").value;
+      const phone = document.getElementById("regPhone").value;
+      const dest = document.getElementById("regDest").value;
+      const passport = document.getElementById("regPassport").value;
+      const field = document.getElementById("regField").value;
+      const cvInput = document.getElementById("regCV");
+      const cvRevamp = document.getElementById("cvUpsellCheckbox").checked;
+      const mpesaCode = document.getElementById("regMpesaCode").value.trim().toUpperCase() || "PENDING";
+      const cvFileName = cvInput.files[0] ? cvInput.files[0].name : "cv_document.pdf";
+
+      const candidateRecord = {
+        id: "CAN-" + Date.now().toString().slice(-6),
+        name, phone, dest, passport, field, cvFileName, cvRevamp, mpesaCode,
+        amount: currentPayable,
+        status: mpesaCode !== "PENDING" ? "Submitted (Pending Check)" : "Payment Pending",
+        date: new Date().toLocaleDateString("en-GB")
+      };
+
+      const existing = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
+      existing.unshift(candidateRecord);
+      localStorage.setItem("kazi_candidates", JSON.stringify(existing));
+
+      alert("REGISTRATION RECEIVED!\n\nAmount: KES " + currentPayable + "\n1. Send to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to open WhatsApp Desk (" + WHATSAPP_DESK_NUMBER + ") to receive your 6-Month Member Passcode.");
+
+      const waText = encodeURIComponent(
+        "Hello Admin, I submitted my 6-Month Member registration.\n\n" +
+        "• Name: " + name + "\n• Phone: " + phone + "\n• Target: " + field + " (" + dest + ")\n" +
+        "• Total Due: KES " + currentPayable + " (Payable to " + MPESA_PAYMENT_LINE + ")\n" +
+        "• CV Revamp: " + (cvRevamp ? "YES (KES 300 included)" : "NO") + "\n" +
+        "• M-Pesa Code: " + mpesaCode + "\n\nPlease verify my payment and share my Member Passcode."
+      );
+      window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + waText, "_blank");
+      document.getElementById("candidateForm").reset();
+      updateTotalPayable();
+    }
+
+    function filterCandidateBank() {
+      const fieldFilter = document.getElementById("empFilterField").value;
+      const passportFilter = document.getElementById("empFilterPassport").value;
+      const cards = document.querySelectorAll(".candidate-card");
+      cards.forEach(card => {
+        const matchesField = (fieldFilter === "all" || card.getAttribute("data-field") === fieldFilter);
+        const matchesPassport = (passportFilter === "all" || card.getAttribute("data-passport") === passportFilter);
+        card.classList.toggle("hidden", !(matchesField && matchesPassport));
+      });
+    }
+
+    function orderCVRevampOnly() {
+      if (confirm("ORDER PROFESSIONAL CV REVAMP (KES 300):\n\n1. Send KES 300 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to send CV via WhatsApp.")) {
+        const text = encodeURIComponent("Hello Admin, I want to order the KES 300 ATS CV Revamp.\nPayment sent to " + MPESA_PAYMENT_LINE + ". Attached is my CV.");
+        window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + text, "_blank");
+      }
+    }
+
+    function orderEmployerPass() {
+      if (confirm("EMPLOYER 20-CV UNLOCK PASS (KES 1,000):\n\n1. Send KES 1,000 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to request unlock on WhatsApp.")) {
+        const text = encodeURIComponent("Hello Admin, I am an agency/employer unlocking 20 candidate CVs for KES 1,000.\nPayment sent to " + MPESA_PAYMENT_LINE + ".");
+        window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + text, "_blank");
+      }
+    }
+
+    function toggleAdminModal() {
+      document.getElementById("adminModal").classList.toggle("hidden");
+    }
+
+    function verifyAdminPIN() {
+      const pin = document.getElementById("adminPinInput").value;
+      if (pin === ADMIN_PASSCODE) {
+        document.getElementById("adminLoginView").classList.add("hidden");
+        document.getElementById("adminPanelView").classList.remove("hidden");
+        loadAdminRecords();
+      } else {
+        document.getElementById("pinErrorMsg").classList.remove("hidden");
+      }
+    }
+
+    function loadAdminRecords() {
+      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
+      const tbody = document.getElementById("adminTableBody");
+      let totalRev = 0, paidCount = 0, revampCount = 0;
+      candidates.forEach(c => {
+        if (c.status === "Verified Paid") { paidCount++; totalRev += Number(c.amount) || 199; }
+        if (c.cvRevamp) revampCount++;
+      });
+      document.getElementById("adminTotalLeads").innerText = candidates.length;
+      document.getElementById("adminPaidLeads").innerText = paidCount;
+      document.getElementById("adminRevampLeads").innerText = revampCount;
+      document.getElementById("adminTotalRev").innerText = "KES " + totalRev.toLocaleString();
+
+      if (candidates.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-slate-400">No candidate submissions yet.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = candidates.map((c, index) => `
+        <tr class="hover:bg-slate-50 transition">
+          <td class="p-3"><div class="font-bold text-slate-900">${c.name}</div><div class="text-[10px] text-slate-500">${c.phone} • ${c.date}</div></td>
+          <td class="p-3"><div class="font-medium text-slate-800">${c.field}</div><div class="text-[10px] text-slate-500">${c.dest} • ${c.passport}</div></td>
+          <td class="p-3 font-bold text-slate-900">KES ${c.amount}${c.cvRevamp ? ' <span class="block text-[9px] text-amber-700 font-black">+ CV REVAMP</span>' : ''}</td>
+          <td class="p-3"><span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold ${c.status === 'Verified Paid' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">${c.status}</span>${c.mpesaCode ? `<div class="font-mono text-[9px] text-slate-500 mt-0.5 font-bold">${c.mpesaCode}</div>` : ''}</td>
+          <td class="p-3 text-right space-x-1">
+            <a href="https://wa.me/254${c.phone.replace(/[^0-9]/g, '').slice(-9)}" target="_blank" class="inline-block bg-emerald-600 text-white px-2 py-1 rounded text-[10px] font-bold">Chat</a>
+            ${c.status !== 'Verified Paid' ? `<button onclick="markCandidatePaid(${index})" class="bg-slate-900 text-white px-2 py-1 rounded text-[10px] font-bold">Verify</button>` : ''}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function markCandidatePaid(index) {
+      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
+      if (candidates[index]) {
+        candidates[index].status = "Verified Paid";
+        localStorage.setItem("kazi_candidates", JSON.stringify(candidates));
+        loadAdminRecords();
+      }
+    }
+
+    function exportCandidatesCSV() {
+      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
+      if (candidates.length === 0) { alert("No candidate data to export."); return; }
+      let csv = "ID,Name,Phone,Target,Passport,Field,Amount,Status,M-Pesa Code,CV Revamp,Date\n";
+      candidates.forEach(c => {
+        csv += `"${c.id}","${c.name}","${c.phone}","${c.dest}","${c.passport}","${c.field}","${c.amount}","${c.status}","${c.mpesaCode || ''}","${c.cvRevamp ? 'Yes' : 'No'}","${c.date}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.setAttribute('hidden', '');
+      a.setAttribute('href', url);
+      a.setAttribute('download', 'kazi_candidates_' + new Date().toISOString().slice(0,10) + '.csv');
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>
