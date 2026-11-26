@@ -415,15 +415,15 @@
           </div>
         </div>
 
-        <!-- Security Hash Generator Tool (Admin Only) -->
+        <!-- Security Token Generator Tool (Admin Only) -->
         <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-2">
           <div class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-            <i class="fas fa-shield-alt text-emerald-700"></i> Security Credential Hash Generator (Change PIN or Passcode)
+            <i class="fas fa-shield-alt text-emerald-700"></i> Security Token Generator (Rotate PIN or Member Passcode)
           </div>
-          <p class="text-[11px] text-slate-500">Type a new PIN or Member Passcode below to generate its encrypted SHA-256 hash for GitHub:</p>
+          <p class="text-[11px] text-slate-500">Type a new PIN or Member Passcode below to generate its obfuscated token for GitHub:</p>
           <div class="flex flex-col sm:flex-row gap-2">
             <input type="text" id="newSecretInput" placeholder="Enter new PIN or Passcode..." class="flex-1 border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-mono outline-none">
-            <button onclick="generateSecretHash()" class="bg-slate-900 text-white text-xs font-bold px-4 py-1.5 rounded-lg">Generate Hash</button>
+            <button onclick="generateSecretHash()" class="bg-slate-900 text-white text-xs font-bold px-4 py-1.5 rounded-lg">Generate Token</button>
           </div>
           <div id="generatedHashOutput" class="hidden text-[11px] font-mono bg-white p-2 rounded border border-slate-300 break-all text-emerald-800 select-all"></div>
         </div>
@@ -468,26 +468,24 @@
 
   <script>
     /* =====================================================================
-       CRYPTOGRAPHIC SHA-256 AUTHENTICATION (NO PLAIN-TEXT PINS/PASSCODES)
+       OBFUSCATED CREDENTIAL VERIFICATION (WORKS ON ALL BROWSERS & PHONES)
+       Member Passcode: KENYA26VIP | Admin PIN: 908412
        ===================================================================== */
-  // SHA-256 hash of Member Passcode: "KENYA26VIP"
-    const MEMBER_PASSCODE_HASH = "b84a45e62c7233640f0129771f81f90c0b81036679d292241e3962e0e84d5e3c";
-    // SHA-256 hash of Admin PIN: "908412"
-    const ADMIN_PIN_HASH = "789b0360448c9f58f9c2429a311e255469492f9d2971b68e78306f3e4a98f5c1";
-
-    async function sha256(message) {
-      const msgBuffer = new TextEncoder().encode(message);
-      const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+    function encodeSecret(str) {
+      return btoa(str.split("").reverse().join("") + "::KZ26");
     }
 
-    async function generateSecretHash() {
+    // Encoded "KENYA26VIP" -> "UElWNjJBWU5FSzo6S1oyNg=="
+    const MEMBER_PASSCODE_TOKEN = "UElWNjJBWU5FSzo6S1oyNg==";
+    // Encoded "908412" -> "MjE0ODA5OjpLWjI2"
+    const ADMIN_PIN_TOKEN = "MjE0ODA5OjpLWjI2";
+
+    function generateSecretHash() {
       const raw = document.getElementById("newSecretInput").value.trim().toUpperCase();
       if (!raw) return;
-      const hashed = await sha256(raw);
+      const encoded = encodeSecret(raw);
       const out = document.getElementById("generatedHashOutput");
-      out.innerText = `SHA-256 Hash for "${raw}":\n${hashed}`;
+      out.innerText = `Encoded Token for "${raw}":\n${encoded}`;
       out.classList.remove("hidden");
     }
 
@@ -536,11 +534,10 @@
       document.getElementById("memberUnlockModal").classList.add("hidden");
     }
 
-    async function verifyMemberCode(e) {
+    function verifyMemberCode(e) {
       e.preventDefault();
       const entered = document.getElementById("memberCodeInput").value.trim().toUpperCase();
-      const enteredHash = await sha256(entered);
-      if (enteredHash === MEMBER_PASSCODE_HASH) {
+      if (encodeSecret(entered) === MEMBER_PASSCODE_TOKEN) {
         isMemberUnlocked = true;
         localStorage.setItem("kazi_member_unlocked_v2", "true");
         closeMemberUnlockModal();
@@ -2120,10 +2117,9 @@
       document.getElementById("adminModal").classList.toggle("hidden");
     }
 
-    async function verifyAdminPIN() {
+    function verifyAdminPIN() {
       const pin = document.getElementById("adminPinInput").value.trim();
-      const pinHash = await sha256(pin);
-      if (pinHash === ADMIN_PIN_HASH) {
+      if (encodeSecret(pin) === ADMIN_PIN_TOKEN) {
         document.getElementById("adminLoginView").classList.add("hidden");
         document.getElementById("adminPanelView").classList.remove("hidden");
         loadAdminRecords();
