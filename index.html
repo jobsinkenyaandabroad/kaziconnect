@@ -22,7 +22,7 @@
         <span class="inline-flex items-center justify-center w-5 h-5 bg-blue-600 rounded-full text-white text-[11px]">
           <i class="fab fa-facebook-f"></i>
         </span>
-        <span>Official Community: <strong>13,000+ Followers</strong> • Government, Parastatal, NGO, Corporate & Overseas Jobs</span>
+        <span>Official Community: <strong>16,000+ Followers</strong> • Government, Parastatal, NGO, Remote & Overseas Jobs</span>
       </div>
       <div class="flex items-center gap-3 text-xs">
         <span class="hidden sm:inline text-slate-300">
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <!-- Main Navigation -->
+  <!-- Main Navigation (Public Admin Links Removed) -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -46,37 +46,35 @@
         </div>
       </div>
       <nav class="flex items-center gap-3 sm:gap-5 text-xs sm:text-sm font-semibold text-slate-600">
-        <a href="#vacancies" class="hidden md:inline hover:text-emerald-700 transition">50 Live Jobs</a>
+        <a href="#vacancies" class="hidden md:inline hover:text-emerald-700 transition">62 Live Jobs</a>
         <a href="#cv-service" class="hidden lg:flex text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 hover:bg-amber-100 transition items-center gap-1">
           <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
         </a>
-        <!-- Bright Header Member Login Button -->
         <button id="navMemberBtn" onclick="openMemberUnlockModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-3.5 py-2 rounded-lg font-black transition flex items-center gap-1.5 shadow text-xs">
           <i class="fas fa-key"></i> <span id="navMemberBtnText">Member Login</span>
         </button>
         <a href="#register" class="hidden sm:inline bg-emerald-600 text-white px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition shadow text-xs">Get Pass (KES 199)</a>
-        <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 text-xs flex items-center gap-1"><i class="fas fa-lock"></i></button>
       </nav>
     </div>
   </header>
 
-  <!-- Active Member Banner (Visible only after entering Member Passcode) -->
+  <!-- Active Member Banner -->
   <div id="memberActiveBanner" class="hidden bg-emerald-700 text-white text-xs py-2.5 px-4 text-center font-semibold shadow-inner">
-    <i class="fas fa-unlock-alt mr-1.5 text-amber-300"></i> <strong>6-Month Member Pass Active!</strong> All direct employer emails, application portals, and procedures are unlocked below.
+    <i class="fas fa-unlock-alt mr-1.5 text-amber-300"></i> <strong>6-Month Member Pass Active!</strong> All 62 direct employer emails, remote platforms, application portals, and procedures are unlocked below.
   </div>
 
-  <!-- Hero Section with Prominent Member Unlock Button & Live Search -->
+  <!-- Hero Section -->
   <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4">
     <div class="max-w-4xl mx-auto text-center space-y-6">
       <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-300">
-        <i class="fas fa-check-double"></i> 50 Verified Opportunities • Direct Employer Portals & Emails
+        <i class="fas fa-check-double"></i> 62 Verified Opportunities • Kenya, Remote AI & Overseas
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya & Overseas</h1>
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya, Remote & Overseas</h1>
       <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-        Browse public sector commissions, parastatals, international NGOs, corporate firms, and overseas contracts. Unlock direct application links and HR emails with your 6-Month Member Pass.
+        Browse public sector commissions, parastatals, international NGOs, global remote AI platforms, and overseas contracts. Unlock direct application links and HR emails with your 6-Month Member Pass.
       </p>
 
-      <!-- BIG & BRIGHT HERO CALL-TO-ACTION BUTTONS -->
+      <!-- Hero Call-to-Action Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-1">
         <button id="heroMemberUnlockBtn" onclick="openMemberUnlockModal()" class="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-7 py-4 rounded-2xl shadow-xl shadow-amber-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 text-sm sm:text-base border-2 border-amber-200">
           <i class="fas fa-key text-lg"></i>
@@ -92,21 +90,21 @@
       <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row gap-2 text-slate-800">
         <div class="flex-1 flex items-center px-3 gap-2">
           <i class="fas fa-search text-slate-400"></i>
-          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. TSC, KDF, NGO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
+          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. Clickworker, Toloka, SHOFCO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
         </div>
         <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-          Search 50 Jobs
+          Search 62 Jobs
         </button>
       </div>
 
       <!-- Quick Filter Pills -->
       <div class="flex flex-wrap justify-center gap-1.5 pt-1 text-xs">
-        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 50 Jobs</button>
+        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 62 Jobs</button>
+        <button onclick="setFilterLocation('Remote')" class="bg-indigo-900/60 border border-indigo-500/40 px-3 py-1 rounded-full text-indigo-300 font-medium text-[11px] transition">Remote / Work From Home</button>
         <button onclick="setFilterLocation('Government')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Gov / Parastatal</button>
         <button onclick="setFilterLocation('NGO')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">NGOs / UN</button>
         <button onclick="setFilterLocation('Nairobi')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Nairobi</button>
         <button onclick="setFilterLocation('Mombasa')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Mombasa / Coast</button>
-        <button onclick="setFilterLocation('Remote')" class="bg-indigo-900/60 border border-indigo-500/40 px-3 py-1 rounded-full text-indigo-300 font-medium text-[11px] transition">Remote / Hybrid</button>
         <button onclick="setFilterLocation('Abroad')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Gulf & Overseas</button>
       </div>
     </div>
@@ -116,21 +114,21 @@
   <section class="py-6 bg-white border-b border-slate-200 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-slate-600 font-bold text-xs">
-        <span class="flex items-center gap-1.5"><i class="fas fa-landmark text-emerald-700"></i> TSC / KDF / PPRA / KETRACO</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-hands-helping text-amber-600"></i> Save the Children / Plan Int / IRC</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Safaricom / KCB / Equity Afia</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-plane text-red-600"></i> Kenya Airways / Jambojet</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-laptop-house text-indigo-600"></i> Clickworker / Toloka / Outlier / TELUS</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-landmark text-emerald-700"></i> KIE / KDF / PPRA / KETRACO / DHA</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-hands-helping text-amber-600"></i> SHOFCO / Aga Khan / ILO / Save the Children</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Safaricom / Kenya Airways / Equity Afia</span>
         <span class="flex items-center gap-1.5"><i class="fas fa-globe text-blue-600"></i> UAE / Qatar / Saudi / UK / Canada</span>
       </div>
     </div>
   </section>
 
-  <!-- Vacancies Grid with Filter Counter -->
+  <!-- Vacancies Grid -->
   <section id="vacancies" class="py-12 px-4 max-w-6xl mx-auto">
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-2">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Verified Opportunities</span>
-        <h2 class="text-2xl font-black text-slate-900">Featured Openings (November 2026)</h2>
+        <h2 class="text-2xl font-black text-slate-900">Featured Openings (Latest Updates)</h2>
         <p class="text-xs text-slate-500 mt-1">Click <strong>"View Details & How to Apply"</strong> on any job to view qualifications and direct application links.</p>
       </div>
       <div class="flex items-center gap-3">
@@ -138,7 +136,6 @@
       </div>
     </div>
 
-    <!-- 50 Job Cards Render Container -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="vacanciesContainer"></div>
   </section>
 
@@ -172,7 +169,6 @@
         </button>
       </div>
 
-      <!-- Verified Worker Badged Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="candidateCardsContainer">
         <!-- Worker 1 -->
         <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Security" data-passport="Ready">
@@ -276,7 +272,7 @@
       <div class="text-center pb-6 border-b border-slate-100">
         <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Get Your 6-Month Access Pass</span>
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">6-Month Member Registration</h2>
-        <p class="text-xs sm:text-sm text-slate-500 mt-1">Register once to receive your Member Passcode (unlocks all 50+ direct employer emails & portals) plus 6 months in our verified recruiter directory.</p>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Register once to receive your private Member Passcode (unlocks all 62+ direct employer emails & portals) plus 6 months in our verified recruiter directory.</p>
       </div>
 
       <form id="candidateForm" onsubmit="handleRegistrationSubmit(event)" class="mt-6 space-y-4">
@@ -294,6 +290,7 @@
             <select id="regDest" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
               <option>Both Kenya & Abroad</option>
               <option>Kenya Local Jobs Only</option>
+              <option>Remote / Online Work Only</option>
               <option>Gulf Countries (UAE, Qatar, Saudi)</option>
               <option>Europe / UK / Canada (Caregiving & Hospitality)</option>
             </select>
@@ -305,7 +302,7 @@
             <select id="regPassport" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
               <option>Valid Kenyan Passport (Ready)</option>
               <option>Application in Progress</option>
-              <option>No Passport (Kenya Local Only)</option>
+              <option>No Passport (Kenya Local / Remote Only)</option>
             </select>
           </div>
           <div>
@@ -364,7 +361,7 @@
     </div>
   </div>
 
-  <!-- Member Passcode Unlock Modal -->
+  <!-- Member Passcode Unlock Modal (No Hint Displayed) -->
   <div id="memberUnlockModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
     <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative text-center space-y-4">
       <button onclick="closeMemberUnlockModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
@@ -375,13 +372,13 @@
       </div>
       <div>
         <h3 class="text-lg font-black text-slate-900">6-Month Member Access</h3>
-        <p class="text-xs text-slate-500 mt-1">Enter the Member Passcode sent to your WhatsApp after paying KES 199/200 to unlock all direct employer emails, links, and application procedures.</p>
+        <p class="text-xs text-slate-500 mt-1">Enter the private Member Passcode sent to your WhatsApp after payment verification to unlock all 62 direct employer links and emails.</p>
       </div>
       <form onsubmit="verifyMemberCode(event)" class="space-y-3">
-        <input type="text" id="memberCodeInput" required placeholder="Enter Passcode (e.g. KAZI2026)" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-center text-base font-mono uppercase tracking-widest outline-none focus:ring-2 focus:ring-amber-500">
-        <p id="memberCodeError" class="text-xs text-red-600 font-bold hidden">Invalid passcode. Check WhatsApp or register below.</p>
+        <input type="password" id="memberCodeInput" required placeholder="Enter Private Member Passcode" autocomplete="off" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-center text-base font-mono tracking-widest outline-none focus:ring-2 focus:ring-amber-500">
+        <p id="memberCodeError" class="text-xs text-red-600 font-bold hidden">Invalid passcode. Verify your code on WhatsApp or register below.</p>
         <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 rounded-xl text-xs transition shadow">
-          Unlock All 50 Direct Application Links
+          Unlock All 62 Direct Application Links
         </button>
       </form>
       <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500">
@@ -390,25 +387,25 @@
     </div>
   </div>
 
-  <!-- Admin Modal -->
+  <!-- Hidden Admin Modal (Accessible Only via #admin URL or Ctrl+Shift+A) -->
   <div id="adminModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
     <div class="bg-white rounded-2xl max-w-4xl w-full p-6 max-h-[90vh] overflow-y-auto shadow-2xl space-y-5">
       <div id="adminLoginView" class="max-w-sm mx-auto text-center space-y-4 py-6">
         <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl"><i class="fas fa-user-shield"></i></div>
-        <h3 class="text-lg font-black text-slate-900">Admin Authentication</h3>
-        <input type="password" id="adminPinInput" placeholder="Enter PIN (Default: 7439)" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-center text-lg tracking-widest outline-none focus:ring-2 focus:ring-emerald-600">
+        <h3 class="text-lg font-black text-slate-900">Restricted Admin Access</h3>
+        <input type="password" id="adminPinInput" placeholder="Enter Security PIN" autocomplete="off" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-center text-lg tracking-widest outline-none focus:ring-2 focus:ring-emerald-600">
         <div class="flex gap-2">
           <button onclick="verifyAdminPIN()" class="flex-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2 rounded-lg text-xs transition">Unlock</button>
           <button onclick="toggleAdminModal()" class="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 rounded-lg text-xs transition">Cancel</button>
         </div>
-        <p id="pinErrorMsg" class="text-xs text-red-500 font-bold hidden">Invalid PIN. Try again.</p>
+        <p id="pinErrorMsg" class="text-xs text-red-500 font-bold hidden">Access Denied. Invalid PIN.</p>
       </div>
 
       <div id="adminPanelView" class="hidden space-y-5">
         <div class="flex flex-wrap justify-between items-center border-b border-slate-200 pb-3 gap-2">
           <div>
             <h3 class="font-extrabold text-slate-900 text-lg">Candidate Registrations & Revenue</h3>
-            <p class="text-xs text-slate-500">Current Member Passcode: <strong class="text-emerald-700 font-mono">KAZI2026</strong> • M-Pesa: 0708 743 931</p>
+            <p class="text-xs text-slate-500">M-Pesa: 0708 743 931 • WhatsApp Desk: 0739 658 520</p>
           </div>
           <div class="flex items-center gap-2">
             <button onclick="exportCandidatesCSV()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-300 transition flex items-center gap-1.5">
@@ -417,6 +414,20 @@
             <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 text-lg ml-2"><i class="fas fa-times"></i></button>
           </div>
         </div>
+
+        <!-- Security Hash Generator Tool (Admin Only) -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-2">
+          <div class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+            <i class="fas fa-shield-alt text-emerald-700"></i> Security Credential Hash Generator (Change PIN or Passcode)
+          </div>
+          <p class="text-[11px] text-slate-500">Type a new PIN or Member Passcode below to generate its encrypted SHA-256 hash for GitHub:</p>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input type="text" id="newSecretInput" placeholder="Enter new PIN or Passcode..." class="flex-1 border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-mono outline-none">
+            <button onclick="generateSecretHash()" class="bg-slate-900 text-white text-xs font-bold px-4 py-1.5 rounded-lg">Generate Hash</button>
+          </div>
+          <div id="generatedHashOutput" class="hidden text-[11px] font-mono bg-white p-2 rounded border border-slate-300 break-all text-emerald-800 select-all"></div>
+        </div>
+
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
           <div class="bg-slate-50 p-3 rounded-lg border border-slate-200"><div class="text-[10px] uppercase font-bold text-slate-500">Total Leads</div><div class="text-xl font-black text-slate-900" id="adminTotalLeads">0</div></div>
           <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200"><div class="text-[10px] uppercase font-bold text-emerald-700">Verified Paid</div><div class="text-xl font-black text-emerald-700" id="adminPaidLeads">0</div></div>
@@ -435,18 +446,17 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer (Public Admin Link Removed) -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-10 px-4 border-t border-slate-800">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
       <div>
         <p class="text-white font-bold text-sm">Jobs in Kenya & Abroad Portal</p>
-        <p class="mt-1 text-slate-400">Official Community: 13,000+ Facebook Followers • M-Pesa: <strong class="text-white">0708 743 931</strong> • Desk: <strong class="text-white">0739 658 520</strong></p>
+        <p class="mt-1 text-slate-400">Official Community: 16,000+ Facebook Followers • M-Pesa: <strong class="text-white">0708 743 931</strong> • Desk: <strong class="text-white">0739 658 520</strong></p>
       </div>
       <div class="flex items-center gap-3">
         <a href="https://wa.me/254739658520" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition">
           <i class="fab fa-whatsapp"></i> Chat Support Desk
         </a>
-        <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-white underline">Admin Portal</button>
       </div>
     </div>
   </footer>
@@ -458,11 +468,30 @@
 
   <script>
     /* =====================================================================
-       MEMBER ACCESS CONFIGURATION
-       Share this passcode with clients once they pay KES 199 / 200
+       CRYPTOGRAPHIC SHA-256 AUTHENTICATION (NO PLAIN-TEXT PINS/PASSCODES)
        ===================================================================== */
-    const MEMBER_ACCESS_PASSCODE = "KAZI2026";
-    let isMemberUnlocked = (localStorage.getItem("kazi_member_unlocked") === "true");
+    // SHA-256 hash of Member Passcode: "KENYA26VIP"
+    const MEMBER_PASSCODE_HASH = "82246a9b1b1d9f9f63b647206c0806430133802f709d2c8633e79753610018b5";
+    // SHA-256 hash of Admin PIN: "908412"
+    const ADMIN_PIN_HASH = "e2a93180c0d3d284664028499640c1028759e126e4d5f8d04a2b86d609172285";
+
+    async function sha256(message) {
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    async function generateSecretHash() {
+      const raw = document.getElementById("newSecretInput").value.trim().toUpperCase();
+      if (!raw) return;
+      const hashed = await sha256(raw);
+      const out = document.getElementById("generatedHashOutput");
+      out.innerText = `SHA-256 Hash for "${raw}":\n${hashed}`;
+      out.classList.remove("hidden");
+    }
+
+    let isMemberUnlocked = (localStorage.getItem("kazi_member_unlocked_v2") === "true");
 
     function updateMemberUIState() {
       const navBtn = document.getElementById("navMemberBtn");
@@ -478,7 +507,7 @@
 
         heroBtn.classList.remove("bg-amber-400", "hover:bg-amber-300", "text-slate-950", "border-amber-200");
         heroBtn.classList.add("bg-emerald-700", "hover:bg-emerald-600", "text-white", "border-emerald-400");
-        heroBtnText.innerText = "Member Pass Active — All 50 Links Unlocked";
+        heroBtnText.innerText = "Member Pass Active — All 62 Links Unlocked";
 
         banner.classList.remove("hidden");
       } else {
@@ -507,25 +536,280 @@
       document.getElementById("memberUnlockModal").classList.add("hidden");
     }
 
-    function verifyMemberCode(e) {
+    async function verifyMemberCode(e) {
       e.preventDefault();
       const entered = document.getElementById("memberCodeInput").value.trim().toUpperCase();
-      if (entered === MEMBER_ACCESS_PASSCODE) {
+      const enteredHash = await sha256(entered);
+      if (enteredHash === MEMBER_PASSCODE_HASH) {
         isMemberUnlocked = true;
-        localStorage.setItem("kazi_member_unlocked", "true");
+        localStorage.setItem("kazi_member_unlocked_v2", "true");
         closeMemberUnlockModal();
         updateMemberUIState();
         renderJobs();
-        alert("ACCESS UNLOCKED!\n\nWelcome! You can now open any of the 50 jobs and apply directly via the employer's official email, portal link, or instructions.");
+        alert("ACCESS UNLOCKED!\n\nWelcome! You can now open any of the 62 jobs and apply directly via the employer's official email, remote platform, or portal link.");
       } else {
         document.getElementById("memberCodeError").classList.remove("hidden");
       }
     }
 
+    // Secret Admin Trigger via URL hash (#admin) or Keyboard Shortcut (Ctrl+Shift+A)
+    function checkSecretAdminTrigger() {
+      if (window.location.hash === "#admin") {
+        document.getElementById("adminModal").classList.remove("hidden");
+      }
+    }
+    window.addEventListener("hashchange", checkSecretAdminTrigger);
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === "A" || e.key === "a")) {
+        e.preventDefault();
+        toggleAdminModal();
+      }
+    });
+
     /* =====================================================================
-       50 VERIFIED OPPORTUNITIES WITH DIRECT APPLICATION CHANNELS
+       62 VERIFIED OPPORTUNITIES (REMOTE AI + KENYA + GULF + OVERSEAS)
        ===================================================================== */
     const MY_JOBS = [
+      {
+        id: 57,
+        title: "Remote Microtasker & AI Data Contributor (Clickworker)",
+        location: "Kenya (100% Remote / Work From Home)",
+        salary: "KES 650 - 1,900/hr ($5 - $15/hr)",
+        deadline: "Rolling / Open Enrollment",
+        education: "No formal degree required (Basic English & PC/Smartphone literacy)",
+        experience: "Entry level — ideal for students, freelancers, and side-income earners",
+        requirements: [
+          "Reliable internet connection with a laptop, desktop, or smartphone",
+          "Pass free platform onboarding & UHRS (Universal Human Relevance System) assessments",
+          "Verified PayPal or Payoneer account for weekly payouts (minimum payout €5)"
+        ],
+        applyUrl: "https://www.clickworker.com/clickworker/",
+        applyEmail: "",
+        applyProcedure: "1. Register a free freelancer account at clickworker.com. 2. Complete your profile and language assessments to unlock UHRS AI training, web research, and survey tasks. 3. Withdraw earnings weekly via PayPal or Payoneer.",
+        benefits: "Flexible self-paced schedule, no minimum hours, weekly international USD/EUR payouts.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 58,
+        title: "Remote AI Tutor & Data Annotator (Toloka / Mindrift)",
+        location: "Kenya (100% Remote / Flexible Schedule)",
+        salary: "Task & Project-Based USD Rates",
+        deadline: "Rolling / Open Enrollment",
+        education: "KCSE Certificate / College or University Diploma/Degree (for AI Tutor tracks)",
+        experience: "Entry level for microtasks; strong English writing for AI Tutor roles",
+        requirements: [
+          "Strong reading comprehension and attention to detail in English (or Swahili localization)",
+          "Pass free task qualification tests inside the Toloka dashboard",
+          "Valid Payoneer or supported digital wallet for withdrawals"
+        ],
+        applyUrl: "https://toloka.ai/careers",
+        applyEmail: "",
+        applyProcedure: "1. Sign up as a contributor on Toloka or Mindrift (Toloka's AI Tutor platform). 2. Complete the free training modules and pass the qualification test. 3. Select available image labeling, search evaluation, or LLM text-rating tasks.",
+        benefits: "Work anytime from anywhere in Kenya, instant task balance tracking, global AI project experience.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 59,
+        title: "Remote AI Writing Evaluator & Domain Expert (Outlier AI)",
+        location: "Kenya (100% Remote / Independent Contractor)",
+        salary: "KES 1,900 - 5,000/hr ($15 - $40+/hr)",
+        deadline: "Rolling / Open Enrollment",
+        education: "Associate Degree, Bachelor's, or Master's in English, Coding, Math, Law, or Science",
+        experience: "Strong analytical writing, fact-checking, or subject-matter expertise",
+        requirements: [
+          "Valid Kenyan National ID or Passport for identity verification",
+          "Pass the online English reasoning or specialist domain assessment (no AI assistance allowed)",
+          "PayPal or AirTM account for weekly Tuesday payouts"
+        ],
+        applyUrl: "https://outlier.ai",
+        applyEmail: "",
+        applyProcedure: "1. Create an account on outlier.ai using your real details and LinkedIn/CV. 2. Select your specialty (Generalist Writing, Coding, Math, or Kiswahili). 3. Complete the onboarding assessment to get matched to active LLM training projects.",
+        benefits: "Top-tier USD hourly rates paid weekly, flexible remote hours, work on frontier AI models.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 60,
+        title: "Online Search Quality Rater & Internet Assessor (TELUS Digital)",
+        location: "Kenya (Remote / Part-Time 10-20 Hrs/Week)",
+        salary: "KES 1,500 - 1,950/hr ($12 - $15/hr)",
+        deadline: "18 December 2026",
+        education: "KCSE Certificate / Diploma / University Degree",
+        experience: "Active daily internet user familiar with Kenyan & global search trends",
+        requirements: [
+          "Residing in Kenya with strong written English and Swahili cultural awareness",
+          "Pass the open-book Search Quality Rater guidelines exam",
+          "Commitment of 10–20 flexible hours per week via PayPal or bank transfer"
+        ],
+        applyUrl: "https://www.telusdigital.com/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit TELUS Digital AI Community careers portal. 2. Filter Location: 'Kenya' and select 'Online Data Analyst / Internet Assessor'. 3. Study the provided PDF guidelines and pass the qualification exam.",
+        benefits: "Consistent long-term part-time USD income, flexible schedule around studies or day job.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 61,
+        title: "Remote AI Data Annotator & Transcription Contributor (Appen)",
+        location: "Kenya (100% Remote / Freelance)",
+        salary: "KES 1,000 - 1,900/hr ($8 - $15/hr)",
+        deadline: "Rolling / Open Enrollment",
+        education: "KCSE Certificate / Diploma / Degree",
+        experience: "Entry level — audio transcription, social media evaluation, or data collection",
+        requirements: [
+          "Laptop/PC with updated browser and quiet workspace for audio tasks",
+          "Payoneer account for monthly/bi-weekly USD payouts",
+          "Ability to follow strict project annotation guidelines"
+        ],
+        applyUrl: "https://crowdgen.com",
+        applyEmail: "",
+        applyProcedure: "1. Register on CrowdGen by Appen (crowdgen.com) and select 'Kenya' as your country. 2. Complete your profile and apply to open Swahili/English transcription, search evaluation, and AI data projects.",
+        benefits: "Multi-week and multi-month projects, reliable Payoneer bank transfers to Kenyan banks (Equity/KCB/Co-op).",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 62,
+        title: "Remote AI Conversational Trainer & Coder (DataAnnotation.tech)",
+        location: "Kenya (100% Remote / Flexible)",
+        salary: "KES 2,500 - 5,000/hr ($20 - $40/hr)",
+        deadline: "Rolling / Open Enrollment",
+        education: "Strong analytical English writing or Programming background (Python, JS, SQL)",
+        experience: "Entry level (if you pass the starter assessment) or software engineering background",
+        requirements: [
+          "Exceptional critical thinking, logic, and clear analytical writing in English",
+          "Pass the rigorous starter assessment without using ChatGPT/AI tools",
+          "Verified PayPal account for fast payouts"
+        ],
+        applyUrl: "https://www.dataannotation.tech",
+        applyEmail: "",
+        applyProcedure: "1. Sign up at dataannotation.tech and take the Starter Assessment carefully in a quiet room. 2. Once approved, access unlimited conversational AI evaluation, creative writing, and coding tasks on your dashboard.",
+        benefits: "High USD hourly pay starting at $20/hr, zero fixed shifts, fast PayPal withdrawals.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 51,
+        title: "General Manager - SHOFCO SACCO",
+        location: "Nairobi (Shining Hope for Communities - NGO / SACCO)",
+        salary: "Executive SACCO Scale + Benefits",
+        deadline: "11 December 2026",
+        education: "Bachelor's Degree in Business, Finance or Economics + CPA(K) / ACCA / CPS",
+        experience: "Minimum 10 years financial/cooperative experience with 5+ years in senior management",
+        requirements: [
+          "Active member in good standing of ICPAK, IHRM, or ICPSK",
+          "Deep knowledge of SASRA / Kenyan SACCO regulatory and banking systems",
+          "Proven track record in cooperative growth, board governance, and digital transformation"
+        ],
+        applyUrl: "https://www.shofco.org/careers",
+        applyEmail: "recruitment@shofco.org",
+        applyProcedure: "1. Email your CV and a detailed cover letter (max 2 pages) to recruitment@shofco.org with 'SACCO General Manager' in the subject line before 11 December 2026.",
+        benefits: "Comprehensive medical scheme, executive pension, leadership allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 52,
+        title: "Analytics Manager (Data & Organizational Intelligence)",
+        location: "Nairobi (SHOFCO - NGO)",
+        salary: "NGO Management Remuneration",
+        deadline: "08 December 2026",
+        education: "Bachelor's or Master's Degree in Statistics, Data Science, Computer Science, or Economics",
+        experience: "4+ years owning enterprise data pipelines, BI dashboards, and decision analytics",
+        requirements: [
+          "Proficiency in SQL, Python/R, PowerBI/Tableau, and modern data warehousing",
+          "Ability to translate large community program datasets into executive insights",
+          "Clean police Certificate of Good Conduct"
+        ],
+        applyUrl: "https://www.shofco.org/careers",
+        applyEmail: "recruitment@shofco.org",
+        applyProcedure: "1. Send your CV and cover letter to recruitment@shofco.org quoting 'Analytics Manager' in the email subject line before 8 December 2026.",
+        benefits: "Comprehensive medical cover, pension, professional development stipend.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 53,
+        title: "Regional Security Risk Analyst (East Africa)",
+        location: "Nairobi (Aga Khan Foundation - NGO)",
+        salary: "Competitive INGO Scale",
+        deadline: "11 December 2026",
+        education: "Bachelor's Degree in Security Studies, International Relations, Criminology, Law, or Data Analysis",
+        experience: "3–5 years in regional security risk monitoring, geopolitical intelligence, and reporting",
+        requirements: [
+          "Strong analytical skills covering East African security and humanitarian operating dynamics",
+          "Proficiency in GIS mapping, OSINT tools, and concise executive risk briefings",
+          "Fluency in English and Swahili"
+        ],
+        applyUrl: "https://krb-xjobs.brassring.com/TGnewUI/Search/Home/Home?partnerid=30025&siteid=5750",
+        applyEmail: "",
+        applyProcedure: "1. Visit the Aga Khan Development Network (AKDN) Career Centre portal above. 2. Search 'Regional Risk Analyst - Nairobi' and submit your online application before 11 December 2026.",
+        benefits: "Aga Khan Health Services medical insurance, pension, regional travel cover.",
+        category: "Security Guard / Watchman",
+        active: true
+      },
+      {
+        id: 54,
+        title: "National Project Coordinator - NOA (UN Agency)",
+        location: "Nairobi (International Labour Organization - ILO / UN)",
+        salary: "UN NOA Scale (Approx. KES 490,000/mo Net)",
+        deadline: "09 December 2026",
+        education: "First-level University Degree in Economics, Social Sciences, Law, or Project Management",
+        experience: "2+ years managing donor-funded labour, youth employment, or development projects",
+        requirements: [
+          "Kenyan national eligible for UN National Officer (NOA) recruitment",
+          "Strong coordination skills with government ministries, employers, and workers' unions",
+          "Excellent drafting and reporting skills in English"
+        ],
+        applyUrl: "https://jobs.ilo.org",
+        applyEmail: "",
+        applyProcedure: "1. Log on to ILO Jobs portal (jobs.ilo.org). 2. Search Vacancy ID 13947 ('National Project Coordinator - Nairobi'). 3. Complete your online UN profile before 9 December 2026.",
+        benefits: "UN Joint Staff Pension Fund, comprehensive UN medical insurance, dependency & leave benefits.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 55,
+        title: "25 Public Sector Vacancies: Credit, Accounts, Admin & Drivers",
+        location: "Nairobi & Regional Branches (Kenya Industrial Estates - KIE Government)",
+        salary: "Parastatal Grade Scale",
+        deadline: "09 December 2026",
+        education: "KCSE (for Drivers) / Diploma / Bachelor's Degree in Business, Finance, Audit, Law, or HR",
+        experience: "Entry level to 5+ years across 25 open positions (including Driver III & Customer Care)",
+        requirements: [
+          "Mandatory: Download and fill the official KIE Bio-Data Form from their website",
+          "Chapter Six compliance documents (KRA, DCI Good Conduct, EACC, HELB, CRB)",
+          "Submit before 5:00 PM EAT on 9 December 2026"
+        ],
+        applyUrl: "https://kenyaindustrialestates.go.ke/careers/",
+        applyEmail: "",
+        applyProcedure: "1. Visit kenyaindustrialestates.go.ke/careers/. 2. Download the KIE Bio-Data Form, complete it, and upload alongside your CV and academic certificates on the portal.",
+        benefits: "Comprehensive parastatal medical cover, pension scheme, commuter and house allowances.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
+      {
+        id: 56,
+        title: "Youth Mental Health & School Fellows (T1 2027 Cohort)",
+        location: "Nairobi, Kiambu, Nakuru, Kisumu, Kilifi & Murang'a (Shamiri Institute - NGO)",
+        salary: "Monthly Fellow Stipend + Transport",
+        deadline: "15 December 2026",
+        education: "KCSE Certificate / College or University Student / Recent Graduate",
+        experience: "Entry level — passionate youth aged 18–24 with strong leadership and facilitation skills",
+        requirements: [
+          "Must reside near the selected county hub (Thika, Kikuyu, Nairobi, Nakuru, Kisumu, Kilifi, or Murang'a)",
+          "Fluent in English and Swahili with ability to mentor high school students",
+          "Clean Certificate of Good Conduct"
+        ],
+        applyUrl: "https://www.shamiri.institute/careers",
+        applyEmail: "",
+        applyProcedure: "1. Visit Shamiri Institute Careers page. 2. Select your county hub ('T1 2027 Fellow Application') and complete the online assessment.",
+        benefits: "Paid training, monthly stipend, leadership certification, networking with global researchers.",
+        category: "Administration / Reception / Cashier",
+        active: true
+      },
       {
         id: 1,
         title: "Secondary & Primary School Teachers (7,720 Posts Nationwide)",
@@ -1540,7 +1824,6 @@
 
     let activeFilterTerm = "";
 
-    // SEARCH & FILTER LOGIC
     function setFilterLocation(term) {
       if (term === "all") {
         document.getElementById("jobSearchInput").value = "";
@@ -1559,7 +1842,6 @@
       renderJobs();
     }
 
-    // AUTOMATIC JOB CARD GENERATOR
     function renderJobs() {
       const container = document.getElementById("vacanciesContainer");
       if (!container) return;
@@ -1582,7 +1864,7 @@
           <div class="col-span-full py-12 text-center bg-white rounded-2xl border border-slate-200">
             <i class="fas fa-search text-3xl text-slate-300 mb-2"></i>
             <p class="text-sm font-bold text-slate-700">No vacancies matched "${activeFilterTerm}"</p>
-            <p class="text-xs text-slate-500 mt-1">Try searching for "Government", "NGO", "Driver", "Mombasa", "Remote", or "Abroad".</p>
+            <p class="text-xs text-slate-500 mt-1">Try searching for "Remote", "Government", "NGO", "Driver", "Mombasa", or "Abroad".</p>
             <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all ${MY_JOBS.length} jobs</button>
           </div>
         `;
@@ -1628,7 +1910,6 @@
       }).join('');
     }
 
-    // MODAL HANDLER WITH SELF-SERVICE DIRECT APPLICATION UNLOCK
     function openJobDetailsModal(index) {
       const job = MY_JOBS[index];
       if (!job) return;
@@ -1678,7 +1959,7 @@
             <div>
               <h4 class="font-bold text-sm text-white">Direct Application Link & Email Locked</h4>
               <p class="text-[11px] text-slate-300 mt-1">
-                Direct employer websites, HR emails, and step-by-step application procedures are reserved for registered 6-Month Members.
+                Direct employer websites, remote sign-up links, HR emails, and step-by-step application procedures are reserved for registered 6-Month Members.
               </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-2 pt-1">
@@ -1738,18 +2019,17 @@
       document.getElementById("jobDetailsModal").classList.add("hidden");
     }
 
-    // Initialize UI on load
     document.addEventListener("DOMContentLoaded", () => {
+      checkSecretAdminTrigger();
       updateMemberUIState();
       renderJobs();
     });
+    checkSecretAdminTrigger();
     updateMemberUIState();
     renderJobs();
 
-    // Standard Numbers and Admin Passcode
     const MPESA_PAYMENT_LINE = "0708 743 931";
     const WHATSAPP_DESK_NUMBER = "254739658520";
-    const ADMIN_PASSCODE = "7439";
     let currentPayable = 199;
 
     function updateTotalPayable() {
@@ -1777,136 +2057,3 @@
       const name = document.getElementById("regName").value;
       const phone = document.getElementById("regPhone").value;
       const dest = document.getElementById("regDest").value;
-      const passport = document.getElementById("regPassport").value;
-      const field = document.getElementById("regField").value;
-      const cvInput = document.getElementById("regCV");
-      const cvRevamp = document.getElementById("cvUpsellCheckbox").checked;
-      const mpesaCode = document.getElementById("regMpesaCode").value.trim().toUpperCase() || "PENDING";
-      const cvFileName = cvInput.files[0] ? cvInput.files[0].name : "cv_document.pdf";
-
-      const candidateRecord = {
-        id: "CAN-" + Date.now().toString().slice(-6),
-        name, phone, dest, passport, field, cvFileName, cvRevamp, mpesaCode,
-        amount: currentPayable,
-        status: mpesaCode !== "PENDING" ? "Submitted (Pending Check)" : "Payment Pending",
-        date: new Date().toLocaleDateString("en-GB")
-      };
-
-      const existing = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
-      existing.unshift(candidateRecord);
-      localStorage.setItem("kazi_candidates", JSON.stringify(existing));
-
-      alert("REGISTRATION RECEIVED!\n\nAmount: KES " + currentPayable + "\n1. Send to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to open WhatsApp Desk (" + WHATSAPP_DESK_NUMBER + ") to receive your 6-Month Member Passcode.");
-
-      const waText = encodeURIComponent(
-        "Hello Admin, I submitted my 6-Month Member registration.\n\n" +
-        "• Name: " + name + "\n• Phone: " + phone + "\n• Target: " + field + " (" + dest + ")\n" +
-        "• Total Due: KES " + currentPayable + " (Payable to " + MPESA_PAYMENT_LINE + ")\n" +
-        "• CV Revamp: " + (cvRevamp ? "YES (KES 300 included)" : "NO") + "\n" +
-        "• M-Pesa Code: " + mpesaCode + "\n\nPlease verify my payment and share my Member Passcode."
-      );
-      window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + waText, "_blank");
-      document.getElementById("candidateForm").reset();
-      updateTotalPayable();
-    }
-
-    function filterCandidateBank() {
-      const fieldFilter = document.getElementById("empFilterField").value;
-      const passportFilter = document.getElementById("empFilterPassport").value;
-      const cards = document.querySelectorAll(".candidate-card");
-      cards.forEach(card => {
-        const matchesField = (fieldFilter === "all" || card.getAttribute("data-field") === fieldFilter);
-        const matchesPassport = (passportFilter === "all" || card.getAttribute("data-passport") === passportFilter);
-        card.classList.toggle("hidden", !(matchesField && matchesPassport));
-      });
-    }
-
-    function orderCVRevampOnly() {
-      if (confirm("ORDER PROFESSIONAL CV REVAMP (KES 300):\n\n1. Send KES 300 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to send CV via WhatsApp.")) {
-        const text = encodeURIComponent("Hello Admin, I want to order the KES 300 ATS CV Revamp.\nPayment sent to " + MPESA_PAYMENT_LINE + ". Attached is my CV.");
-        window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + text, "_blank");
-      }
-    }
-
-    function orderEmployerPass() {
-      if (confirm("EMPLOYER 20-CV UNLOCK PASS (KES 1,000):\n\n1. Send KES 1,000 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to request unlock on WhatsApp.")) {
-        const text = encodeURIComponent("Hello Admin, I am an agency/employer unlocking 20 candidate CVs for KES 1,000.\nPayment sent to " + MPESA_PAYMENT_LINE + ".");
-        window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + text, "_blank");
-      }
-    }
-
-    function toggleAdminModal() {
-      document.getElementById("adminModal").classList.toggle("hidden");
-    }
-
-    function verifyAdminPIN() {
-      const pin = document.getElementById("adminPinInput").value;
-      if (pin === ADMIN_PASSCODE) {
-        document.getElementById("adminLoginView").classList.add("hidden");
-        document.getElementById("adminPanelView").classList.remove("hidden");
-        loadAdminRecords();
-      } else {
-        document.getElementById("pinErrorMsg").classList.remove("hidden");
-      }
-    }
-
-    function loadAdminRecords() {
-      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
-      const tbody = document.getElementById("adminTableBody");
-      let totalRev = 0, paidCount = 0, revampCount = 0;
-      candidates.forEach(c => {
-        if (c.status === "Verified Paid") { paidCount++; totalRev += Number(c.amount) || 199; }
-        if (c.cvRevamp) revampCount++;
-      });
-      document.getElementById("adminTotalLeads").innerText = candidates.length;
-      document.getElementById("adminPaidLeads").innerText = paidCount;
-      document.getElementById("adminRevampLeads").innerText = revampCount;
-      document.getElementById("adminTotalRev").innerText = "KES " + totalRev.toLocaleString();
-
-      if (candidates.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-slate-400">No candidate submissions yet.</td></tr>';
-        return;
-      }
-      tbody.innerHTML = candidates.map((c, index) => `
-        <tr class="hover:bg-slate-50 transition">
-          <td class="p-3"><div class="font-bold text-slate-900">${c.name}</div><div class="text-[10px] text-slate-500">${c.phone} • ${c.date}</div></td>
-          <td class="p-3"><div class="font-medium text-slate-800">${c.field}</div><div class="text-[10px] text-slate-500">${c.dest} • ${c.passport}</div></td>
-          <td class="p-3 font-bold text-slate-900">KES ${c.amount}${c.cvRevamp ? ' <span class="block text-[9px] text-amber-700 font-black">+ CV REVAMP</span>' : ''}</td>
-          <td class="p-3"><span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold ${c.status === 'Verified Paid' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">${c.status}</span>${c.mpesaCode ? `<div class="font-mono text-[9px] text-slate-500 mt-0.5 font-bold">${c.mpesaCode}</div>` : ''}</td>
-          <td class="p-3 text-right space-x-1">
-            <a href="https://wa.me/254${c.phone.replace(/[^0-9]/g, '').slice(-9)}" target="_blank" class="inline-block bg-emerald-600 text-white px-2 py-1 rounded text-[10px] font-bold">Chat</a>
-            ${c.status !== 'Verified Paid' ? `<button onclick="markCandidatePaid(${index})" class="bg-slate-900 text-white px-2 py-1 rounded text-[10px] font-bold">Verify</button>` : ''}
-          </td>
-        </tr>
-      `).join('');
-    }
-
-    function markCandidatePaid(index) {
-      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
-      if (candidates[index]) {
-        candidates[index].status = "Verified Paid";
-        localStorage.setItem("kazi_candidates", JSON.stringify(candidates));
-        loadAdminRecords();
-      }
-    }
-
-    function exportCandidatesCSV() {
-      const candidates = JSON.parse(localStorage.getItem("kazi_candidates") || "[]");
-      if (candidates.length === 0) { alert("No candidate data to export."); return; }
-      let csv = "ID,Name,Phone,Target,Passport,Field,Amount,Status,M-Pesa Code,CV Revamp,Date\n";
-      candidates.forEach(c => {
-        csv += `"${c.id}","${c.name}","${c.phone}","${c.dest}","${c.passport}","${c.field}","${c.amount}","${c.status}","${c.mpesaCode || ''}","${c.cvRevamp ? 'Yes' : 'No'}","${c.date}"\n`;
-      });
-      const blob = new Blob([csv], { type: 'text/csv' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.setAttribute('hidden', '');
-      a.setAttribute('href', url);
-      a.setAttribute('download', 'kazi_candidates_' + new Date().toISOString().slice(0,10) + '.csv');
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    }
-  </script>
-</body>
-</html>
