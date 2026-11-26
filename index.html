@@ -22,7 +22,7 @@
         <span class="inline-flex items-center justify-center w-5 h-5 bg-blue-600 rounded-full text-white text-[11px]">
           <i class="fab fa-facebook-f"></i>
         </span>
-        <span>Official Community: <strong>16,000+ Followers</strong> • Government, Parastatal, NGO, Remote & Overseas Jobs</span>
+        <span>Official Community: <strong>16,000+ Followers</strong> • Government, Parastatal, NGO, Corporate & Overseas Jobs</span>
       </div>
       <div class="flex items-center gap-3 text-xs">
         <span class="hidden sm:inline text-slate-300">
@@ -46,7 +46,7 @@
         </div>
       </div>
       <nav class="flex items-center gap-3 sm:gap-5 text-xs sm:text-sm font-semibold text-slate-600">
-        <a href="#vacancies" class="hidden md:inline hover:text-emerald-700 transition">62 Live Jobs</a>
+        <a href="#vacancies" class="hidden md:inline hover:text-emerald-700 transition">56 Live Jobs</a>
         <a href="#cv-service" class="hidden lg:flex text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 hover:bg-amber-100 transition items-center gap-1">
           <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
         </a>
@@ -62,18 +62,18 @@
 
   <!-- Active Member Banner (Visible only after entering Member Passcode) -->
   <div id="memberActiveBanner" class="hidden bg-emerald-700 text-white text-xs py-2.5 px-4 text-center font-semibold shadow-inner">
-    <i class="fas fa-unlock-alt mr-1.5 text-amber-300"></i> <strong>6-Month Member Pass Active!</strong> All 62 direct employer emails, remote platforms, application portals, and procedures are unlocked below.
+    <i class="fas fa-unlock-alt mr-1.5 text-amber-300"></i> <strong>6-Month Member Pass Active!</strong> All direct employer emails, application portals, and procedures are unlocked below.
   </div>
 
   <!-- Hero Section with Prominent Member Unlock Button & Live Search -->
   <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4">
     <div class="max-w-4xl mx-auto text-center space-y-6">
       <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-300">
-        <i class="fas fa-check-double"></i> 62 Verified Opportunities • Kenya, Remote AI & Overseas
+        <i class="fas fa-check-double"></i> 56 Verified Opportunities • Updated for December 2026
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya, Remote & Overseas</h1>
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya & Overseas</h1>
       <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-        Browse public sector commissions, parastatals, international NGOs, global remote AI platforms, and overseas contracts. Unlock direct application links and HR emails with your 6-Month Member Pass.
+        Browse public sector commissions, parastatals, international NGOs, corporate firms, and overseas contracts. Unlock direct application links and HR emails with your 6-Month Member Pass.
       </p>
 
       <!-- BIG & BRIGHT HERO CALL-TO-ACTION BUTTONS -->
@@ -92,21 +92,21 @@
       <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row gap-2 text-slate-800">
         <div class="flex-1 flex items-center px-3 gap-2">
           <i class="fas fa-search text-slate-400"></i>
-          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. Clickworker, Toloka, SHOFCO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
+          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. SHOFCO, KDF, NGO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
         </div>
         <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-          Search 62 Jobs
+          Search 56 Jobs
         </button>
       </div>
 
       <!-- Quick Filter Pills -->
       <div class="flex flex-wrap justify-center gap-1.5 pt-1 text-xs">
-        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 62 Jobs</button>
-        <button onclick="setFilterLocation('Remote')" class="bg-indigo-900/60 border border-indigo-500/40 px-3 py-1 rounded-full text-indigo-300 font-medium text-[11px] transition">Remote / Work From Home</button>
+        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 56 Jobs</button>
         <button onclick="setFilterLocation('Government')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Gov / Parastatal</button>
         <button onclick="setFilterLocation('NGO')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">NGOs / UN</button>
         <button onclick="setFilterLocation('Nairobi')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Nairobi</button>
         <button onclick="setFilterLocation('Mombasa')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Mombasa / Coast</button>
+        <button onclick="setFilterLocation('Remote')" class="bg-indigo-900/60 border border-indigo-500/40 px-3 py-1 rounded-full text-indigo-300 font-medium text-[11px] transition">Remote / Hybrid</button>
         <button onclick="setFilterLocation('Abroad')" class="bg-emerald-900/60 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-300 font-medium text-[11px] transition">Gulf & Overseas</button>
       </div>
     </div>
@@ -116,10 +116,10 @@
   <section class="py-6 bg-white border-b border-slate-200 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-slate-600 font-bold text-xs">
-        <span class="flex items-center gap-1.5"><i class="fas fa-laptop-house text-indigo-600"></i> Clickworker / Toloka / Outlier / TELUS</span>
         <span class="flex items-center gap-1.5"><i class="fas fa-landmark text-emerald-700"></i> KIE / KDF / PPRA / KETRACO / DHA</span>
         <span class="flex items-center gap-1.5"><i class="fas fa-hands-helping text-amber-600"></i> SHOFCO / Aga Khan / ILO / Save the Children</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Safaricom / Kenya Airways / Equity Afia</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Safaricom / Equity Afia / Sun King</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-plane text-red-600"></i> Kenya Airways / Jambojet</span>
         <span class="flex items-center gap-1.5"><i class="fas fa-globe text-blue-600"></i> UAE / Qatar / Saudi / UK / Canada</span>
       </div>
     </div>
@@ -138,7 +138,7 @@
       </div>
     </div>
 
-    <!-- 62 Job Cards Render Container -->
+    <!-- 56 Job Cards Render Container -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="vacanciesContainer"></div>
   </section>
 
@@ -276,7 +276,7 @@
       <div class="text-center pb-6 border-b border-slate-100">
         <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Get Your 6-Month Access Pass</span>
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">6-Month Member Registration</h2>
-        <p class="text-xs sm:text-sm text-slate-500 mt-1">Register once to receive your Member Passcode (unlocks all 62+ direct employer emails & portals) plus 6 months in our verified recruiter directory.</p>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Register once to receive your Member Passcode (unlocks all 56+ direct employer emails & portals) plus 6 months in our verified recruiter directory.</p>
       </div>
 
       <form id="candidateForm" onsubmit="handleRegistrationSubmit(event)" class="mt-6 space-y-4">
@@ -294,7 +294,6 @@
             <select id="regDest" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
               <option>Both Kenya & Abroad</option>
               <option>Kenya Local Jobs Only</option>
-              <option>Remote / Online Work Only</option>
               <option>Gulf Countries (UAE, Qatar, Saudi)</option>
               <option>Europe / UK / Canada (Caregiving & Hospitality)</option>
             </select>
@@ -306,7 +305,7 @@
             <select id="regPassport" class="w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 outline-none bg-white">
               <option>Valid Kenyan Passport (Ready)</option>
               <option>Application in Progress</option>
-              <option>No Passport (Kenya Local / Remote Only)</option>
+              <option>No Passport (Kenya Local Only)</option>
             </select>
           </div>
           <div>
@@ -376,13 +375,13 @@
       </div>
       <div>
         <h3 class="text-lg font-black text-slate-900">6-Month Member Access</h3>
-        <p class="text-xs text-slate-500 mt-1">Enter the Member Passcode sent to your WhatsApp after paying KES 199/200 to unlock all 62 direct employer emails, remote platforms, and application procedures.</p>
+        <p class="text-xs text-slate-500 mt-1">Enter the Member Passcode sent to your WhatsApp after paying KES 199/200 to unlock all direct employer emails, links, and application procedures.</p>
       </div>
       <form onsubmit="verifyMemberCode(event)" class="space-y-3">
         <input type="text" id="memberCodeInput" required placeholder="Enter Passcode (e.g. KAZI2026)" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-center text-base font-mono uppercase tracking-widest outline-none focus:ring-2 focus:ring-amber-500">
         <p id="memberCodeError" class="text-xs text-red-600 font-bold hidden">Invalid passcode. Check WhatsApp or register below.</p>
         <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 rounded-xl text-xs transition shadow">
-          Unlock All 62 Direct Application Links
+          Unlock All 56 Direct Application Links
         </button>
       </form>
       <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500">
@@ -479,7 +478,7 @@
 
         heroBtn.classList.remove("bg-amber-400", "hover:bg-amber-300", "text-slate-950", "border-amber-200");
         heroBtn.classList.add("bg-emerald-700", "hover:bg-emerald-600", "text-white", "border-emerald-400");
-        heroBtnText.innerText = "Member Pass Active — All 62 Links Unlocked";
+        heroBtnText.innerText = "Member Pass Active — All 56 Links Unlocked";
 
         banner.classList.remove("hidden");
       } else {
@@ -517,139 +516,17 @@
         closeMemberUnlockModal();
         updateMemberUIState();
         renderJobs();
-        alert("ACCESS UNLOCKED!\n\nWelcome! You can now open any of the 62 jobs and apply directly via the employer's official email, remote platform, or portal link.");
+        alert("ACCESS UNLOCKED!\n\nWelcome! You can now open any of the 56 jobs and apply directly via the employer's official email, portal link, or instructions.");
       } else {
         document.getElementById("memberCodeError").classList.remove("hidden");
       }
     }
 
     /* =====================================================================
-       62 VERIFIED OPPORTUNITIES (REMOTE AI + KENYA + GULF + OVERSEAS)
+       56 VERIFIED OPPORTUNITIES (LATEST DECEMBER 2026 & ONGOING)
        ===================================================================== */
     const MY_JOBS = [
-      // --- GLOBAL REMOTE & AI MICROTASK PLATFORMS (IDs 57-62) ---
-      {
-        id: 57,
-        title: "Remote Microtasker & AI Data Contributor (Clickworker)",
-        location: "Kenya (100% Remote / Work From Home)",
-        salary: "KES 650 - 1,900/hr ($5 - $15/hr)",
-        deadline: "Rolling / Open Enrollment",
-        education: "No formal degree required (Basic English & PC/Smartphone literacy)",
-        experience: "Entry level — ideal for students, freelancers, and side-income earners",
-        requirements: [
-          "Reliable internet connection with a laptop, desktop, or smartphone",
-          "Pass free platform onboarding & UHRS (Universal Human Relevance System) assessments",
-          "Verified PayPal or Payoneer account for weekly payouts (minimum payout €5)"
-        ],
-        applyUrl: "https://www.clickworker.com/clickworker/",
-        applyEmail: "",
-        applyProcedure: "1. Register a free freelancer account at clickworker.com. 2. Complete your profile and language assessments to unlock UHRS AI training, web research, and survey tasks. 3. Withdraw earnings weekly via PayPal or Payoneer.",
-        benefits: "Flexible self-paced schedule, no minimum hours, weekly international USD/EUR payouts.",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-      {
-        id: 58,
-        title: "Remote AI Tutor & Data Annotator (Toloka / Mindrift)",
-        location: "Kenya (100% Remote / Flexible Schedule)",
-        salary: "Task & Project-Based USD Rates",
-        deadline: "Rolling / Open Enrollment",
-        education: "KCSE Certificate / College or University Diploma/Degree (for AI Tutor tracks)",
-        experience: "Entry level for microtasks; strong English writing for AI Tutor roles",
-        requirements: [
-          "Strong reading comprehension and attention to detail in English (or Swahili localization)",
-          "Pass free task qualification tests inside the Toloka dashboard",
-          "Valid Payoneer or supported digital wallet for withdrawals"
-        ],
-        applyUrl: "https://toloka.ai/careers",
-        applyEmail: "",
-        applyProcedure: "1. Sign up as a contributor on Toloka or Mindrift (Toloka's AI Tutor platform). 2. Complete the free training modules and pass the qualification test. 3. Select available image labeling, search evaluation, or LLM text-rating tasks.",
-        benefits: "Work anytime from anywhere in Kenya, instant task balance tracking, global AI project experience.",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-      {
-        id: 59,
-        title: "Remote AI Writing Evaluator & Domain Expert (Outlier AI)",
-        location: "Kenya (100% Remote / Independent Contractor)",
-        salary: "KES 1,900 - 5,000/hr ($15 - $40+/hr)",
-        deadline: "Rolling / Open Enrollment",
-        education: "Associate Degree, Bachelor's, or Master's in English, Coding, Math, Law, or Science",
-        experience: "Strong analytical writing, fact-checking, or subject-matter expertise",
-        requirements: [
-          "Valid Kenyan National ID or Passport for identity verification",
-          "Pass the online English reasoning or specialist domain assessment (no AI assistance allowed)",
-          "PayPal or AirTM account for weekly Tuesday payouts"
-        ],
-        applyUrl: "https://outlier.ai",
-        applyEmail: "",
-        applyProcedure: "1. Create an account on outlier.ai using your real details and LinkedIn/CV. 2. Select your specialty (Generalist Writing, Coding, Math, or Kiswahili). 3. Complete the onboarding assessment to get matched to active LLM training projects.",
-        benefits: "Top-tier USD hourly rates paid weekly, flexible remote hours, work on frontier AI models.",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-      {
-        id: 60,
-        title: "Online Search Quality Rater & Internet Assessor (TELUS Digital)",
-        location: "Kenya (Remote / Part-Time 10-20 Hrs/Week)",
-        salary: "KES 1,500 - 1,950/hr ($12 - $15/hr)",
-        deadline: "18 December 2026",
-        education: "KCSE Certificate / Diploma / University Degree",
-        experience: "Active daily internet user familiar with Kenyan & global search trends",
-        requirements: [
-          "Residing in Kenya with strong written English and Swahili cultural awareness",
-          "Pass the open-book Search Quality Rater guidelines exam",
-          "Commitment of 10–20 flexible hours per week via PayPal or bank transfer"
-        ],
-        applyUrl: "https://www.telusdigital.com/careers",
-        applyEmail: "",
-        applyProcedure: "1. Visit TELUS Digital AI Community careers portal. 2. Filter Location: 'Kenya' and select 'Online Data Analyst / Internet Assessor'. 3. Study the provided PDF guidelines and pass the qualification exam.",
-        benefits: "Consistent long-term part-time USD income, flexible schedule around studies or day job.",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-      {
-        id: 61,
-        title: "Remote AI Data Annotator & Transcription Contributor (Appen)",
-        location: "Kenya (100% Remote / Freelance)",
-        salary: "KES 1,000 - 1,900/hr ($8 - $15/hr)",
-        deadline: "Rolling / Open Enrollment",
-        education: "KCSE Certificate / Diploma / Degree",
-        experience: "Entry level — audio transcription, social media evaluation, or data collection",
-        requirements: [
-          "Laptop/PC with updated browser and quiet workspace for audio tasks",
-          "Payoneer account for monthly/bi-weekly USD payouts",
-          "Ability to follow strict project annotation guidelines"
-        ],
-        applyUrl: "https://crowdgen.com",
-        applyEmail: "",
-        applyProcedure: "1. Register on CrowdGen by Appen (crowdgen.com) and select 'Kenya' as your country. 2. Complete your profile and apply to open Swahili/English transcription, search evaluation, and AI data projects.",
-        benefits: "Multi-week and multi-month projects, reliable Payoneer bank transfers to Kenyan banks (Equity/KCB/Co-op).",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-      {
-        id: 62,
-        title: "Remote AI Conversational Trainer & Coder (DataAnnotation.tech)",
-        location: "Kenya (100% Remote / Flexible)",
-        salary: "KES 2,500 - 5,000/hr ($20 - $40/hr)",
-        deadline: "Rolling / Open Enrollment",
-        education: "Strong analytical English writing or Programming background (Python, JS, SQL)",
-        experience: "Entry level (if you pass the starter assessment) or software engineering background",
-        requirements: [
-          "Exceptional critical thinking, logic, and clear analytical writing in English",
-          "Pass the rigorous starter assessment without using ChatGPT/AI tools",
-          "Verified PayPal account for fast payouts"
-        ],
-        applyUrl: "https://www.dataannotation.tech",
-        applyEmail: "",
-        applyProcedure: "1. Sign up at dataannotation.tech and take the Starter Assessment carefully in a quiet room. 2. Once approved, access unlimited conversational AI evaluation, creative writing, and coding tasks on your dashboard.",
-        benefits: "High USD hourly pay starting at $20/hr, zero fixed shifts, fast PayPal withdrawals.",
-        category: "Administration / Reception / Cashier",
-        active: true
-      },
-
-      // --- LATEST KENYAN NGO, PARASTATAL & CORPORATE OPENINGS (IDs 51-56) ---
+      // --- NEWEST VERIFIED ADDITIONS (IDs 51-56 AT TOP) ---
       {
         id: 51,
         title: "General Manager - SHOFCO SACCO",
@@ -1828,7 +1705,7 @@
           <div class="col-span-full py-12 text-center bg-white rounded-2xl border border-slate-200">
             <i class="fas fa-search text-3xl text-slate-300 mb-2"></i>
             <p class="text-sm font-bold text-slate-700">No vacancies matched "${activeFilterTerm}"</p>
-            <p class="text-xs text-slate-500 mt-1">Try searching for "Remote", "Government", "NGO", "Driver", "Mombasa", or "Abroad".</p>
+            <p class="text-xs text-slate-500 mt-1">Try searching for "Government", "NGO", "Driver", "Mombasa", "Remote", or "Abroad".</p>
             <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all ${MY_JOBS.length} jobs</button>
           </div>
         `;
@@ -1924,7 +1801,7 @@
             <div>
               <h4 class="font-bold text-sm text-white">Direct Application Link & Email Locked</h4>
               <p class="text-[11px] text-slate-300 mt-1">
-                Direct employer websites, remote sign-up links, HR emails, and step-by-step application procedures are reserved for registered 6-Month Members.
+                Direct employer websites, HR emails, and step-by-step application procedures are reserved for registered 6-Month Members.
               </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-2 pt-1">
