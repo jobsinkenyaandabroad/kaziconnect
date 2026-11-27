@@ -676,18 +676,81 @@
         passport: "Kenya"
       }
     ];
+    function isJobExpired(deadlineStr) {
+      if (!deadlineStr || deadlineStr.toLowerCase().includes("rolling") || deadlineStr.toLowerCase().includes("open")) {
+        return false;
+      }
+      const parsedDate = new Date(deadlineStr);
+      if (isNaN(parsedDate.getTime())) return false;
 
-    function renderVerifiedWorkers() {
-      const container = document.getElementById("candidateCardsContainer");
+      // Expire at the end of the deadline day (11:59:59 PM)
+      parsedDate.setHours(23, 59, 59, 999);
+      return new Date() > parsedDate;
+    }
+
+    function renderJobs() {
+      const container = document.getElementById("vacanciesContainer");
       if (!container) return;
 
-      const fieldFilter = document.getElementById("empFilterField").value;
-      const passportFilter = document.getElementById("empFilterPassport").value;
+      // Automatically exclude expired jobs and closed jobs
+      const activeJobs = MY_JOBS.filter(job => job.active !== false && !isJobExpired(job.deadline));
 
-      const filtered = VERIFIED_WORKERS.filter(w => {
-        const matchesField = (fieldFilter === "all" || w.field === fieldFilter);
-        const matchesPassport = (passportFilter === "all" || w.passport === passportFilter);
-        return matchesField && matchesPassport;
+      const filtered = activeJobs.filter(job => {
+        if (!activeFilterTerm) return true;
+        return (
+          job.title.toLowerCase().includes(activeFilterTerm) ||
+          job.location.toLowerCase().includes(activeFilterTerm) ||
+          job.category.toLowerCase().includes(activeFilterTerm) ||
+          job.education.toLowerCase().includes(activeFilterTerm) ||
+          (job.requirements && job.requirements.some(r => r.toLowerCase().includes(activeFilterTerm)))
+        );
+      });
+
+      document.getElementById("jobCountDisplay").innerText = `Showing ${filtered.length} of ${activeJobs.length} active positions`;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center bg-white rounded-2xl border border-slate-200">
+            <i class="fas fa-search text-3xl text-slate-300 mb-2"></i>
+            <p class="text-sm font-bold text-slate-700">No active vacancies matched "${activeFilterTerm}"</p>
+            <p class="text-xs text-slate-500 mt-1">Try searching for "Remote", "Government", "NGO", "Driver", "Mombasa", or "Abroad".</p>
+            <button onclick="setFilterLocation('all')" class="mt-3 text-xs text-emerald-700 font-bold underline">Show all ${activeJobs.length} active jobs</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map((job) => {
+        const originalIndex = MY_JOBS.findIndex(j => j.id === job.id);
+        return `
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3 flex flex-col justify-between hover:border-emerald-500 transition duration-150">
+            <div class="space-y-2">
+              <div class="flex justify-between items-start gap-2">
+                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
+                  ${job.location}
+                </span>
+                <span class="text-emerald-700 font-bold text-xs text-right">
+                  ${job.salary}
+                </span>
+              </div>
+              <h3 class="font-bold text-slate-900">
+                ${job.title}
+              </h3>
+              <p class="text-xs text-slate-500">
+                <i class="far fa-calendar-alt text-amber-600 mr-1"></i> Deadline: <strong class="text-slate-700">${job.deadline}</strong>
+              </p>
+            </div>
+
+            <div class="pt-2 flex flex-col gap-2">
+              <button onclick="openJobDetailsModal(${originalIndex})" class="w-full text-center ${isMemberUnlocked ? 'bg-emerald-600 hover:bg-emerald-700 text-white' : 'bg-slate-900 hover:bg-slate-800 text-white'} font-bold py-2.5 rounded-lg text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+                <i class="fas ${isMemberUnlocked ? 'fa-external-link-alt' : 'fa-eye'}"></i>
+                ${isMemberUnlocked ? 'Apply Now (Direct Link & Email)' : 'View Details & How to Apply'}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
       });
 
       container.innerHTML = filtered.map(w => {
