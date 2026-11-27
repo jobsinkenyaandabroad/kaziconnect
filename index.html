@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <!-- Main Navigation (Public Admin Links Removed) -->
+  <!-- Main Navigation -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -46,7 +46,8 @@
         </div>
       </div>
       <nav class="flex items-center gap-3 sm:gap-5 text-xs sm:text-sm font-semibold text-slate-600">
-        <a href="#vacancies" class="hidden md:inline hover:text-emerald-700 transition">62 Live Jobs</a>
+        <a href="#vacancies" class="hidden md:inline hover:text-emerald-700 transition">63 Live Jobs</a>
+        <a href="#employers" class="hidden md:inline hover:text-emerald-700 transition">For Employers</a>
         <a href="#cv-service" class="hidden lg:flex text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 hover:bg-amber-100 transition items-center gap-1">
           <i class="fas fa-wand-magic-sparkles text-amber-600"></i> CV Revamp (KES 300)
         </a>
@@ -60,14 +61,14 @@
 
   <!-- Active Member Banner -->
   <div id="memberActiveBanner" class="hidden bg-emerald-700 text-white text-xs py-2.5 px-4 text-center font-semibold shadow-inner">
-    <i class="fas fa-unlock-alt mr-1.5 text-amber-300"></i> <strong>6-Month Member Pass Active!</strong> All 62 direct employer emails, remote platforms, application portals, and procedures are unlocked below.
+    <i class="fas fa-unlock-alt mr-1.5 text-amber-300"></i> <strong>6-Month Member Pass Active!</strong> All 63 direct employer emails, remote platforms, application portals, and procedures are unlocked below.
   </div>
 
   <!-- Hero Section -->
   <section class="bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4">
     <div class="max-w-4xl mx-auto text-center space-y-6">
       <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-300">
-        <i class="fas fa-check-double"></i> 62 Verified Opportunities • Kenya, Remote AI & Overseas
+        <i class="fas fa-check-double"></i> 63 Verified Opportunities • Kenya, Remote AI & Overseas
       </div>
       <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Verified Jobs in Kenya, Remote & Overseas</h1>
       <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
@@ -90,16 +91,16 @@
       <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row gap-2 text-slate-800">
         <div class="flex-1 flex items-center px-3 gap-2">
           <i class="fas fa-search text-slate-400"></i>
-          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. Clickworker, Toloka, SHOFCO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
+          <input type="text" id="jobSearchInput" oninput="filterJobsLive()" placeholder="Search by role, company, county, or sector (e.g. Kenpoly, Clickworker, SHOFCO, Driver, Dubai)..." class="w-full text-xs sm:text-sm outline-none py-2 bg-transparent">
         </div>
         <button onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-          Search 62 Jobs
+          Search 63 Jobs
         </button>
       </div>
 
       <!-- Quick Filter Pills -->
       <div class="flex flex-wrap justify-center gap-1.5 pt-1 text-xs">
-        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 62 Jobs</button>
+        <button onclick="setFilterLocation('all')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">All 63 Jobs</button>
         <button onclick="setFilterLocation('Remote')" class="bg-indigo-900/60 border border-indigo-500/40 px-3 py-1 rounded-full text-indigo-300 font-medium text-[11px] transition">Remote / Work From Home</button>
         <button onclick="setFilterLocation('Government')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">Gov / Parastatal</button>
         <button onclick="setFilterLocation('NGO')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1 rounded-full text-slate-300 font-medium text-[11px] transition">NGOs / UN</button>
@@ -117,7 +118,7 @@
         <span class="flex items-center gap-1.5"><i class="fas fa-laptop-house text-indigo-600"></i> Clickworker / Toloka / Outlier / TELUS</span>
         <span class="flex items-center gap-1.5"><i class="fas fa-landmark text-emerald-700"></i> KIE / KDF / PPRA / KETRACO / DHA</span>
         <span class="flex items-center gap-1.5"><i class="fas fa-hands-helping text-amber-600"></i> SHOFCO / Aga Khan / ILO / Save the Children</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Safaricom / Kenya Airways / Equity Afia</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-university text-emerald-800"></i> Safaricom / Kenpoly / Kenya Airways / Equity Afia</span>
         <span class="flex items-center gap-1.5"><i class="fas fa-globe text-blue-600"></i> UAE / Qatar / Saudi / UK / Canada</span>
       </div>
     </div>
@@ -139,13 +140,18 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="vacanciesContainer"></div>
   </section>
 
-  <!-- Verified Workers Section -->
+  <!-- Verified Workers Section with Employer Passcode Unlock -->
   <section id="employers" class="py-14 bg-slate-100 px-4 border-t border-slate-200">
     <div class="max-w-6xl mx-auto space-y-6">
-      <div class="text-center max-w-xl mx-auto">
-        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">For Recruiters & Contractors</span>
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">For Recruiters, Agencies & Contractors</span>
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Browse Verified Workers in Kenya</h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-1">Pre-vetted workers with police clearance and validated identification. Unlock 20 verified profiles for KES 1,000.</p>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">Pre-vetted workers with police clearance and validated identification. Pay KES 1,000 via M-Pesa to receive your Employer Passcode and unlock direct phone numbers, emails, and CVs.</p>
+      </div>
+
+      <!-- Active Employer Banner -->
+      <div id="employerActiveBanner" class="hidden bg-slate-900 text-white text-xs py-2.5 px-4 rounded-xl text-center font-semibold shadow">
+        <i class="fas fa-unlock-alt mr-1.5 text-amber-400"></i> <strong>Employer CV Bank Pass Active!</strong> Candidate phone numbers, emails, and verification IDs are now unblurred below.
       </div>
 
       <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-wrap gap-3 items-center justify-between">
@@ -164,75 +170,18 @@
             <option value="Kenya">Kenya Local Ready</option>
           </select>
         </div>
-        <button onclick="orderEmployerPass()" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-4 py-2 rounded-lg text-xs transition shadow flex items-center justify-center gap-1.5">
-          <i class="fas fa-key"></i> Unlock 20 Verified Contacts (KES 1,000)
-        </button>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="candidateCardsContainer">
-        <!-- Worker 1 -->
-        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Security" data-passport="Ready">
-          <div class="flex justify-between items-start">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">JM</div>
-              <div>
-                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">John M. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
-                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Nairobi • Security Guard</span>
-              </div>
-            </div>
-            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
-          </div>
-          <div class="text-xs space-y-1 text-slate-600 pt-1">
-            <div><strong class="text-slate-800">Experience:</strong> 4 Years Commercial Security</div>
-            <div><strong class="text-slate-800">Expected Salary:</strong> KES 30,000 – 40,000/mo</div>
-            <div><strong class="text-slate-800">Status:</strong> Passport Ready • Clean DCI Certificate</div>
-          </div>
-          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 712 345 *** | M-Pesa ID: Verified</div>
-          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
-        </div>
-
-        <!-- Worker 2 -->
-        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Healthcare" data-passport="Ready">
-          <div class="flex justify-between items-start">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-sm">FW</div>
-              <div>
-                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">Faith W. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
-                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Mombasa • Caregiver / Nurse</span>
-              </div>
-            </div>
-            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
-          </div>
-          <div class="text-xs space-y-1 text-slate-600 pt-1">
-            <div><strong class="text-slate-800">Experience:</strong> 3 Years Bedside & Homecare</div>
-            <div><strong class="text-slate-800">Expected Salary:</strong> KES 50,000 – 70,000/mo</div>
-            <div><strong class="text-slate-800">Status:</strong> UK / Gulf Ready • BLS Certified</div>
-          </div>
-          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 722 890 *** | Nursing Lic: Verified</div>
-          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
-        </div>
-
-        <!-- Worker 3 -->
-        <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3" data-field="Driver" data-passport="Kenya">
-          <div class="flex justify-between items-start">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-sm">DK</div>
-              <div>
-                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">David K. <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
-                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">Nakuru • Commercial Driver</span>
-              </div>
-            </div>
-            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
-          </div>
-          <div class="text-xs space-y-1 text-slate-600 pt-1">
-            <div><strong class="text-slate-800">Experience:</strong> 7 Years Transit & BCE Heavy Truck</div>
-            <div><strong class="text-slate-800">Expected Salary:</strong> KES 45,000 – 60,000/mo</div>
-            <div><strong class="text-slate-800">Status:</strong> Clean NTSA Record • PSV Badge</div>
-          </div>
-          <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 733 456 *** | License: Verified</div>
-          <button onclick="orderEmployerPass()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
+        <div class="flex flex-wrap gap-2 w-full sm:w-auto">
+          <button id="employerLoginBtn" onclick="openEmployerUnlockModal()" class="flex-1 sm:flex-none bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-4 py-2 rounded-lg text-xs transition shadow flex items-center justify-center gap-1.5">
+            <i class="fas fa-key"></i> <span id="employerLoginBtnText">Employer Login (Enter Passcode)</span>
+          </button>
+          <button onclick="orderEmployerPass()" class="flex-1 sm:flex-none bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-4 py-2 rounded-lg text-xs transition shadow flex items-center justify-center gap-1.5">
+            <i class="fas fa-shopping-cart"></i> Get Pass (KES 1,000)
+          </button>
         </div>
       </div>
+
+      <!-- Dynamic Verified Worker Cards Container -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="candidateCardsContainer"></div>
     </div>
   </section>
 
@@ -272,7 +221,7 @@
       <div class="text-center pb-6 border-b border-slate-100">
         <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Get Your 6-Month Access Pass</span>
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">6-Month Member Registration</h2>
-        <p class="text-xs sm:text-sm text-slate-500 mt-1">Register once to receive your private Member Passcode (unlocks all 62+ direct employer emails & portals) plus 6 months in our verified recruiter directory.</p>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Register once to receive your private Member Passcode (unlocks all 63+ direct employer emails & portals) plus 6 months in our verified recruiter directory.</p>
       </div>
 
       <form id="candidateForm" onsubmit="handleRegistrationSubmit(event)" class="mt-6 space-y-4">
@@ -361,7 +310,7 @@
     </div>
   </div>
 
-  <!-- Member Passcode Unlock Modal (No Hint Displayed) -->
+  <!-- Member Passcode Unlock Modal -->
   <div id="memberUnlockModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
     <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative text-center space-y-4">
       <button onclick="closeMemberUnlockModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
@@ -372,17 +321,43 @@
       </div>
       <div>
         <h3 class="text-lg font-black text-slate-900">6-Month Member Access</h3>
-        <p class="text-xs text-slate-500 mt-1">Enter the private Member Passcode sent to your WhatsApp after payment verification to unlock all 62 direct employer links and emails.</p>
+        <p class="text-xs text-slate-500 mt-1">Enter the private Member Passcode sent to your WhatsApp after payment verification to unlock all 63 direct employer links and emails.</p>
       </div>
       <form onsubmit="verifyMemberCode(event)" class="space-y-3">
         <input type="password" id="memberCodeInput" required placeholder="Enter Private Member Passcode" autocomplete="off" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-center text-base font-mono tracking-widest outline-none focus:ring-2 focus:ring-amber-500">
         <p id="memberCodeError" class="text-xs text-red-600 font-bold hidden">Invalid passcode. Verify your code on WhatsApp or register below.</p>
         <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 rounded-xl text-xs transition shadow">
-          Unlock All 62 Direct Application Links
+          Unlock All 63 Direct Application Links
         </button>
       </form>
       <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500">
         Don't have a passcode yet? <a href="#register" onclick="closeMemberUnlockModal()" class="text-emerald-700 font-bold underline">Register here (KES 199)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Employer Passcode Unlock Modal -->
+  <div id="employerUnlockModal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative text-center space-y-4">
+      <button onclick="closeEmployerUnlockModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl">
+        <i class="fas fa-briefcase"></i>
+      </div>
+      <div>
+        <h3 class="text-lg font-black text-slate-900">Employer CV Bank Access</h3>
+        <p class="text-xs text-slate-500 mt-1">Enter the Employer Passcode issued after paying KES 1,000 to unlock direct candidate phone numbers, emails, and CVs.</p>
+      </div>
+      <form onsubmit="verifyEmployerCode(event)" class="space-y-3">
+        <input type="password" id="employerCodeInput" required placeholder="Enter Employer Passcode" autocomplete="off" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-center text-base font-mono tracking-widest outline-none focus:ring-2 focus:ring-emerald-600">
+        <p id="employerCodeError" class="text-xs text-red-600 font-bold hidden">Invalid Employer Passcode. Contact WhatsApp Desk to get yours.</p>
+        <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-black py-3 rounded-xl text-xs transition shadow">
+          Unlock Verified Worker Contacts
+        </button>
+      </form>
+      <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500">
+        Need an Employer Pass? <button onclick="closeEmployerUnlockModal(); orderEmployerPass();" class="text-emerald-700 font-bold underline">Order 20-CV Pass (KES 1,000)</button>
       </div>
     </div>
   </div>
@@ -418,9 +393,9 @@
         <!-- Security Token Generator Tool (Admin Only) -->
         <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-2">
           <div class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-            <i class="fas fa-shield-alt text-emerald-700"></i> Security Token Generator (Rotate PIN or Member Passcode)
+            <i class="fas fa-shield-alt text-emerald-700"></i> Security Token Generator (Rotate PIN, Member Passcode, or Employer Passcode)
           </div>
-          <p class="text-[11px] text-slate-500">Type a new PIN or Member Passcode below to generate its obfuscated token for GitHub:</p>
+          <p class="text-[11px] text-slate-500">Type a new PIN or Passcode below to generate its obfuscated token for GitHub:</p>
           <div class="flex flex-col sm:flex-row gap-2">
             <input type="text" id="newSecretInput" placeholder="Enter new PIN or Passcode..." class="flex-1 border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-mono outline-none">
             <button onclick="generateSecretHash()" class="bg-slate-900 text-white text-xs font-bold px-4 py-1.5 rounded-lg">Generate Token</button>
@@ -446,7 +421,7 @@
     </div>
   </div>
 
-  <!-- Footer (Public Admin Link Removed) -->
+  <!-- Footer -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-10 px-4 border-t border-slate-800">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
       <div>
@@ -469,7 +444,7 @@
   <script>
     /* =====================================================================
        OBFUSCATED CREDENTIAL VERIFICATION (WORKS ON ALL BROWSERS & PHONES)
-       Member Passcode: KENYA26VIP | Admin PIN: 908412
+       Member Passcode: KENYA26VIP | Employer Passcode: EMPLOYER1K | Admin PIN: 908412
        ===================================================================== */
     function encodeSecret(str) {
       return btoa(str.split("").reverse().join("") + "::KZ26");
@@ -477,6 +452,8 @@
 
     // Encoded "KENYA26VIP" -> "UElWNjJBWU5FSzo6S1oyNg=="
     const MEMBER_PASSCODE_TOKEN = "UElWNjJBWU5FSzo6S1oyNg==";
+    // Encoded "EMPLOYER1K" -> "SzFSRVlPTFBFRTo6S1oyNg=="
+    const EMPLOYER_PASSCODE_TOKEN = "SzFSRVlPTFBFRTo6S1oyNg==";
     // Encoded "908412" -> "MjE0ODA5OjpLWjI2"
     const ADMIN_PIN_TOKEN = "MjE0ODA5OjpLWjI2";
 
@@ -490,6 +467,7 @@
     }
 
     let isMemberUnlocked = (localStorage.getItem("kazi_member_unlocked_v2") === "true");
+    let isEmployerUnlocked = (localStorage.getItem("kazi_employer_unlocked_v1") === "true");
 
     function updateMemberUIState() {
       const navBtn = document.getElementById("navMemberBtn");
@@ -505,7 +483,7 @@
 
         heroBtn.classList.remove("bg-amber-400", "hover:bg-amber-300", "text-slate-950", "border-amber-200");
         heroBtn.classList.add("bg-emerald-700", "hover:bg-emerald-600", "text-white", "border-emerald-400");
-        heroBtnText.innerText = "Member Pass Active — All 62 Links Unlocked";
+        heroBtnText.innerText = "Member Pass Active — All 63 Links Unlocked";
 
         banner.classList.remove("hidden");
       } else {
@@ -518,6 +496,24 @@
         heroBtnText.innerText = "Already Paid? Unlock Jobs (Enter Passcode)";
 
         banner.classList.add("hidden");
+      }
+    }
+
+    function updateEmployerUIState() {
+      const empBtn = document.getElementById("employerLoginBtn");
+      const empBtnText = document.getElementById("employerLoginBtnText");
+      const empBanner = document.getElementById("employerActiveBanner");
+
+      if (isEmployerUnlocked) {
+        empBtn.classList.remove("bg-amber-400", "hover:bg-amber-300", "text-slate-950");
+        empBtn.classList.add("bg-slate-900", "text-emerald-400");
+        empBtnText.innerText = "Employer Pass Active";
+        empBanner.classList.remove("hidden");
+      } else {
+        empBtn.classList.add("bg-amber-400", "hover:bg-amber-300", "text-slate-950");
+        empBtn.classList.remove("bg-slate-900", "text-emerald-400");
+        empBtnText.innerText = "Employer Login (Enter Passcode)";
+        empBanner.classList.add("hidden");
       }
     }
 
@@ -543,9 +539,37 @@
         closeMemberUnlockModal();
         updateMemberUIState();
         renderJobs();
-        alert("ACCESS UNLOCKED!\n\nWelcome! You can now open any of the 62 jobs and apply directly via the employer's official email, remote platform, or portal link.");
+        alert("ACCESS UNLOCKED!\n\nWelcome! You can now open any of the 63 jobs and apply directly via the employer's official email, remote platform, or portal link.");
       } else {
         document.getElementById("memberCodeError").classList.remove("hidden");
+      }
+    }
+
+    function openEmployerUnlockModal() {
+      if (isEmployerUnlocked) {
+        document.getElementById("employers").scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+      document.getElementById("employerCodeError").classList.add("hidden");
+      document.getElementById("employerUnlockModal").classList.remove("hidden");
+    }
+
+    function closeEmployerUnlockModal() {
+      document.getElementById("employerUnlockModal").classList.add("hidden");
+    }
+
+    function verifyEmployerCode(e) {
+      e.preventDefault();
+      const entered = document.getElementById("employerCodeInput").value.trim().toUpperCase();
+      if (encodeSecret(entered) === EMPLOYER_PASSCODE_TOKEN) {
+        isEmployerUnlocked = true;
+        localStorage.setItem("kazi_employer_unlocked_v1", "true");
+        closeEmployerUnlockModal();
+        updateEmployerUIState();
+        renderVerifiedWorkers();
+        alert("EMPLOYER ACCESS UNLOCKED!\n\nAll verified candidate phone numbers, emails, and CV request links are now unlocked below.");
+      } else {
+        document.getElementById("employerCodeError").classList.remove("hidden");
       }
     }
 
@@ -564,9 +588,174 @@
     });
 
     /* =====================================================================
-       62 VERIFIED OPPORTUNITIES (REMOTE AI + KENYA + GULF + OVERSEAS)
+       VERIFIED CANDIDATE SHOWCASE DATA (FOR EMPLOYER CV BANK)
+       ===================================================================== */
+    const VERIFIED_WORKERS = [
+      {
+        initials: "JM",
+        badgeColor: "bg-emerald-100 text-emerald-800",
+        name: "John M.",
+        locationRole: "Nairobi • Security Guard",
+        experience: "4 Years Commercial Security",
+        salary: "KES 30,000 – 40,000/mo",
+        status: "Passport Ready • Clean DCI Certificate",
+        phone: "+254 712 345 891",
+        email: "john.mwangi.sec@gmail.com",
+        idRef: "DCI-2026-88412",
+        field: "Security",
+        passport: "Ready"
+      },
+      {
+        initials: "FW",
+        badgeColor: "bg-blue-100 text-blue-800",
+        name: "Faith W.",
+        locationRole: "Mombasa • Caregiver / Nurse",
+        experience: "3 Years Bedside & Homecare",
+        salary: "KES 50,000 – 70,000/mo",
+        status: "UK / Gulf Ready • BLS Certified",
+        phone: "+254 722 890 432",
+        email: "faith.wanjiku.rn@yahoo.com",
+        idRef: "NCK-REG-44910",
+        field: "Healthcare",
+        passport: "Ready"
+      },
+      {
+        initials: "DK",
+        badgeColor: "bg-amber-100 text-amber-800",
+        name: "David K.",
+        locationRole: "Nakuru • Commercial Driver",
+        experience: "7 Years Transit & BCE Heavy Truck",
+        salary: "KES 45,000 – 60,000/mo",
+        status: "Clean NTSA Record • PSV Badge",
+        phone: "+254 733 456 219",
+        email: "david.kiprop.bce@outlook.com",
+        idRef: "NTSA-BCE-90124",
+        field: "Driver",
+        passport: "Kenya"
+      },
+      {
+        initials: "SA",
+        badgeColor: "bg-purple-100 text-purple-800",
+        name: "Sarah A.",
+        locationRole: "Nairobi • Hospitality & Barista",
+        experience: "4 Years 5-Star Hotel & Cafe Service",
+        salary: "KES 35,000 – 50,000/mo",
+        status: "Passport Ready • Food Handler Valid",
+        phone: "+254 701 672 310",
+        email: "sarah.akinyi.hosp@gmail.com",
+        idRef: "PPT-AK094821",
+        field: "Hospitality",
+        passport: "Ready"
+      },
+      {
+        initials: "PO",
+        badgeColor: "bg-slate-200 text-slate-800",
+        name: "Peter O.",
+        locationRole: "Kisumu • Industrial Electrician",
+        experience: "5 Years 3-Phase & Plant Maintenance",
+        salary: "KES 48,000 – 65,000/mo",
+        status: "EPRA Class C1 • Clean Good Conduct",
+        phone: "+254 718 903 774",
+        email: "peter.odhiambo.elec@gmail.com",
+        idRef: "EPRA-C1-55210",
+        field: "Construction",
+        passport: "Kenya"
+      },
+      {
+        initials: "MN",
+        badgeColor: "bg-rose-100 text-rose-800",
+        name: "Mary N.",
+        locationRole: "Thika / Kiambu • Warehouse & Stores Clerk",
+        experience: "3 Years Inventory ERP & Packhouse",
+        salary: "KES 35,000 – 45,000/mo",
+        status: "Kenya Local Ready • Diploma Supply Chain",
+        phone: "+254 790 234 615",
+        email: "mary.njeri.stores@gmail.com",
+        idRef: "DCI-2026-71209",
+        field: "Driver",
+        passport: "Kenya"
+      }
+    ];
+
+    function renderVerifiedWorkers() {
+      const container = document.getElementById("candidateCardsContainer");
+      if (!container) return;
+
+      const fieldFilter = document.getElementById("empFilterField").value;
+      const passportFilter = document.getElementById("empFilterPassport").value;
+
+      const filtered = VERIFIED_WORKERS.filter(w => {
+        const matchesField = (fieldFilter === "all" || w.field === fieldFilter);
+        const matchesPassport = (passportFilter === "all" || w.passport === passportFilter);
+        return matchesField && matchesPassport;
+      });
+
+      container.innerHTML = filtered.map(w => {
+        const waReqText = encodeURIComponent(`Hello Admin, I am a verified Employer requesting the full PDF CV for candidate ${w.name} (${w.locationRole}, Ref: ${w.idRef}).`);
+        return `
+          <div class="candidate-card bg-white p-5 rounded-2xl shadow-sm border ${isEmployerUnlocked ? 'border-emerald-400' : 'border-slate-200'} space-y-3">
+            <div class="flex justify-between items-start">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full ${w.badgeColor} font-bold flex items-center justify-center text-sm">${w.initials}</div>
+                <div>
+                  <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">${w.name} <span class="text-blue-600 text-xs"><i class="fas fa-check-circle"></i></span></h3>
+                  <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${w.locationRole}</span>
+                </div>
+              </div>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded uppercase">Verified</span>
+            </div>
+            <div class="text-xs space-y-1 text-slate-600 pt-1">
+              <div><strong class="text-slate-800">Experience:</strong> ${w.experience}</div>
+              <div><strong class="text-slate-800">Expected Salary:</strong> ${w.salary}</div>
+              <div><strong class="text-slate-800">Status:</strong> ${w.status}</div>
+            </div>
+            ${isEmployerUnlocked ? `
+              <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-lg text-xs text-slate-800 space-y-1">
+                <div><strong>Direct Tel:</strong> <a href="tel:${w.phone}" class="text-emerald-700 font-bold underline">${w.phone}</a></div>
+                <div><strong>Email:</strong> <a href="mailto:${w.email}" class="text-blue-700 underline">${w.email}</a></div>
+                <div class="text-[10px] text-slate-500 font-mono">Verification Ref: ${w.idRef}</div>
+              </div>
+              <a href="https://wa.me/254739658520?text=${waReqText}" target="_blank" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold py-2 rounded-lg transition flex items-center justify-center gap-1.5">
+                <i class="fab fa-whatsapp"></i> Get Full CV File via Desk
+              </a>
+            ` : `
+              <div class="bg-slate-50 p-2.5 rounded-lg text-xs text-slate-400 select-none blur-[3px]">Tel: +254 712 345 *** | Email: hidden@mail.com</div>
+              <button onclick="openEmployerUnlockModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 rounded-lg transition">Unlock Verified Phone & CV</button>
+            `}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterCandidateBank() {
+      renderVerifiedWorkers();
+    }
+
+    /* =====================================================================
+       63 VERIFIED OPPORTUNITIES (KENPOLY + REMOTE AI + KENYA + OVERSEAS)
        ===================================================================== */
     const MY_JOBS = [
+      {
+        id: 63,
+        title: "Warehouse Coordinator (Internal Vacancy - Kenpoly Employees Only)",
+        location: "Nairobi (Kenpoly Manufacturers Limited - Manufacturing Plant)",
+        salary: "Competitive Manufacturing Scale",
+        deadline: "03 December 2026",
+        education: "Diploma or Bachelor's Degree in Supply Chain Management, Logistics, Procurement or related field",
+        experience: "At least 2 years' experience in warehouse operations, preferably in a manufacturing environment",
+        requirements: [
+          "STRICTLY INTERNAL: Open only to current employees of Kenpoly Manufacturers Limited",
+          "Coordinate receipt, weighing, labelling, storage, and issuance of raw materials, masterbatch, and finished goods",
+          "Strong knowledge of inventory management, cycle counts, stock reconciliation, and ERP systems",
+          "Proficiency in MS Excel, warehouse documentation, and PPE safety compliance"
+        ],
+        applyUrl: "https://www.kenpoly.com",
+        applyEmail: "jobs@kenpoly.com",
+        applyProcedure: "1. Eligible current Kenpoly employees should prepare an updated CV and application letter. 2. Email both documents to jobs@kenpoly.com using the exact subject line: \"Warehouse Coordinator - Internal\" before 3 December 2026.",
+        benefits: "Career-growth progression into a warehouse coordination leadership role within a safety-first manufacturing plant.",
+        category: "Driver / Logistics / Heavy Equipment",
+        active: true
+      },
       {
         id: 57,
         title: "Remote Microtasker & AI Data Contributor (Clickworker)",
@@ -786,28 +975,7 @@
         benefits: "Comprehensive parastatal medical cover, pension scheme, commuter and house allowances.",
         category: "Administration / Reception / Cashier",
         active: true
-      }, 
-      {
-    id: 63,
-    title: "Warehouse Coordinator (Internal Vacancy - Kenpoly Employees Only)",
-    location: "Nairobi (Kenpoly Manufacturers Limited - Manufacturing Plant)",
-    salary: "Competitive Manufacturing Scale",
-    deadline: "03 December 2026",
-    education: "Diploma or Bachelor's Degree in Supply Chain Management, Logistics, Procurement or related field",
-    experience: "At least 2 years' experience in warehouse operations, preferably in a manufacturing environment",
-    requirements: [
-      "STRICTLY INTERNAL: Open only to current employees of Kenpoly Manufacturers Limited",
-      "Coordinate receipt, weighing, labelling, storage, and issuance of raw materials, masterbatch, and finished goods",
-      "Strong knowledge of inventory management, cycle counts, stock reconciliation, and ERP systems",
-      "Proficiency in MS Excel, warehouse documentation, and PPE safety compliance"
-    ],
-    applyUrl: "https://www.kenpoly.com",
-    applyEmail: "jobs@kenpoly.com",
-    applyProcedure: "1. Eligible current Kenpoly employees should prepare an updated CV and application letter. 2. Email both documents to jobs@kenpoly.com using the exact subject line: \"Warehouse Coordinator - Internal\" before 3 December 2026.",
-    benefits: "Career-growth progression into a warehouse coordination leadership role within a safety-first manufacturing plant.",
-    category: "Driver / Logistics / Heavy Equipment",
-    active: true
-  },
+      },
       {
         id: 56,
         title: "Youth Mental Health & School Fellows (T1 2027 Cohort)",
@@ -2040,11 +2208,15 @@
     document.addEventListener("DOMContentLoaded", () => {
       checkSecretAdminTrigger();
       updateMemberUIState();
+      updateEmployerUIState();
       renderJobs();
+      renderVerifiedWorkers();
     });
     checkSecretAdminTrigger();
     updateMemberUIState();
+    updateEmployerUIState();
     renderJobs();
+    renderVerifiedWorkers();
 
     const MPESA_PAYMENT_LINE = "0708 743 931";
     const WHATSAPP_DESK_NUMBER = "254739658520";
@@ -2108,17 +2280,6 @@
       updateTotalPayable();
     }
 
-    function filterCandidateBank() {
-      const fieldFilter = document.getElementById("empFilterField").value;
-      const passportFilter = document.getElementById("empFilterPassport").value;
-      const cards = document.querySelectorAll(".candidate-card");
-      cards.forEach(card => {
-        const matchesField = (fieldFilter === "all" || card.getAttribute("data-field") === fieldFilter);
-        const matchesPassport = (passportFilter === "all" || card.getAttribute("data-passport") === passportFilter);
-        card.classList.toggle("hidden", !(matchesField && matchesPassport));
-      });
-    }
-
     function orderCVRevampOnly() {
       if (confirm("ORDER PROFESSIONAL CV REVAMP (KES 300):\n\n1. Send KES 300 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to send CV via WhatsApp.")) {
         const text = encodeURIComponent("Hello Admin, I want to order the KES 300 ATS CV Revamp.\nPayment sent to " + MPESA_PAYMENT_LINE + ". Attached is my CV.");
@@ -2127,8 +2288,8 @@
     }
 
     function orderEmployerPass() {
-      if (confirm("EMPLOYER 20-CV UNLOCK PASS (KES 1,000):\n\n1. Send KES 1,000 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to request unlock on WhatsApp.")) {
-        const text = encodeURIComponent("Hello Admin, I am an agency/employer unlocking 20 candidate CVs for KES 1,000.\nPayment sent to " + MPESA_PAYMENT_LINE + ".");
+      if (confirm("EMPLOYER 20-CV UNLOCK PASS (KES 1,000):\n\n1. Send KES 1,000 to M-Pesa: " + MPESA_PAYMENT_LINE + "\n2. Click OK to request your Employer Passcode on WhatsApp.")) {
+        const text = encodeURIComponent("Hello Admin, I am an agency/employer unlocking the Verified Worker CV Bank for KES 1,000.\nPayment sent to " + MPESA_PAYMENT_LINE + ". Please share my Employer Passcode.");
         window.open("https://wa.me/" + WHATSAPP_DESK_NUMBER + "?text=" + text, "_blank");
       }
     }
